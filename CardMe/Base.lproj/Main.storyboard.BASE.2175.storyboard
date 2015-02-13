@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kvh-9x-Vn0">
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="eXc-bu-9WI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kvh-9x-Vn0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -19,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="ycx-MW-uaT">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Business_Cards_Assorted" translatesAutoresizingMaskIntoConstraints="NO" id="ycx-MW-uaT">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CardMe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUW-hM-GeX">
@@ -169,14 +168,14 @@
                                 <exclude reference="AKG-VM-P0I"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Vyb-lq-8or"/>
-                                <exclude reference="tWj-VC-Kom"/>
-                                <exclude reference="hqP-Dn-lyS"/>
-                                <exclude reference="kiL-C0-prG"/>
-                                <exclude reference="lsd-SJ-Qv0"/>
                                 <exclude reference="Ibk-xl-cGx"/>
                                 <exclude reference="dGH-qR-Xbv"/>
                                 <exclude reference="waa-a2-JUR"/>
+                                <exclude reference="hqP-Dn-lyS"/>
+                                <exclude reference="kiL-C0-prG"/>
+                                <exclude reference="lsd-SJ-Qv0"/>
+                                <exclude reference="Vyb-lq-8or"/>
+                                <exclude reference="tWj-VC-Kom"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -186,14 +185,14 @@
                                 <include reference="AKG-VM-P0I"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Vyb-lq-8or"/>
-                                <include reference="tWj-VC-Kom"/>
-                                <include reference="hqP-Dn-lyS"/>
-                                <include reference="kiL-C0-prG"/>
-                                <include reference="lsd-SJ-Qv0"/>
                                 <include reference="Ibk-xl-cGx"/>
                                 <include reference="dGH-qR-Xbv"/>
                                 <include reference="waa-a2-JUR"/>
+                                <include reference="hqP-Dn-lyS"/>
+                                <include reference="kiL-C0-prG"/>
+                                <include reference="lsd-SJ-Qv0"/>
+                                <include reference="Vyb-lq-8or"/>
+                                <include reference="tWj-VC-Kom"/>
                             </mask>
                         </variation>
                     </view>
@@ -212,14 +211,13 @@
                         <viewControllerLayoutGuide type="bottom" id="Tfd-54-0gx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7k8-HU-bX2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="anh-iY-7B2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="IYZ-ZG-37Q">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="IYZ-ZG-37Q">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IYZ-ZG-37Q" id="oFg-Ka-7lc">
@@ -245,10 +243,10 @@
                                 <exclude reference="anh-iY-7B2"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Tjk-OM-YpQ"/>
                                 <exclude reference="8cc-iz-ASM"/>
                                 <exclude reference="G4O-Sj-pg5"/>
                                 <exclude reference="hIY-zO-i0N"/>
+                                <exclude reference="Tjk-OM-YpQ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -256,10 +254,10 @@
                                 <include reference="anh-iY-7B2"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Tjk-OM-YpQ"/>
                                 <include reference="8cc-iz-ASM"/>
                                 <include reference="G4O-Sj-pg5"/>
                                 <include reference="hIY-zO-i0N"/>
+                                <include reference="Tjk-OM-YpQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -283,7 +281,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="i5s-D1-rhs">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Business_Cards_Assorted" translatesAutoresizingMaskIntoConstraints="NO" id="i5s-D1-rhs">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65E-yf-8AV">
@@ -292,9 +290,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="eU4-MQ-fUt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="      Connect with Linkedin">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -339,8 +337,8 @@ To start is really easy, we need you to link our app with your Linkedin account 
 
 
 </string>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -465,7 +463,7 @@ To start is really easy, we need you to link our app with your Linkedin account 
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="414" height="687"/>
+        <image name="Business_Cards_Assorted" width="414" height="687"/>
         <image name="linkedin" width="400" height="400"/>
     </resources>
 </document>

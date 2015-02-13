@@ -10,21 +10,23 @@
 #import "SessionController.h"
 #import "Card.h"
 #import "AppDelegate.h"
+<<<<<<< HEAD
+=======
 #import "CardDTO.h"
 #import "CardInfo.h"
-
+>>>>>>> master
 
 @interface MCPBrowerViewController () <SessionControllerDelegate>
 @property (nonatomic, strong) SessionController *sessionController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+<<<<<<< HEAD
 @property NSManagedObjectContext *moc;
-
+=======
 @property NSManagedObjectContext * context;
 
 
 //temporary
-
+>>>>>>> master
 @property Card * testCard;
 @property NSMutableArray * cardArray;
 
@@ -38,11 +40,11 @@
 
     self.moc =  [AppDelegate appDelegate].managedObjectContext;
     self.sessionController = [[SessionController alloc] init];
-
+<<<<<<< HEAD
     Card * testCard = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:self.moc];
     testCard.cardType = @"fuckFace";
     testCard.isMainUser = @(1);
-
+=======
     self.sessionController.delegate = self;
     self.context = [AppDelegate appDelegate].managedObjectContext;
     [self loadCards];
@@ -64,7 +66,7 @@
         [self save];
         [self loadCards];
     }
-
+>>>>>>> master
 }
 
 #pragma mark - Helper methods
@@ -154,16 +156,16 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+<<<<<<< HEAD
 
-
-    //NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:self.testCard];
+    NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:self.testCard];
     NSLog(@"Archived self.testCard, %@", self.testCard);
     //[self.moc insertObject:<#(NSManagedObject *)#>]
-
+=======
     CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:self.testCard];
-    NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
+    NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
     NSLog(@"Archived testDTO, %@", testDTO);
-
+>>>>>>> master
     NSArray * peerArray = [NSArray arrayWithObject:[self.sessionController.connectedPeers objectAtIndex:indexPath.row]];
     NSError *error;
     [self.sessionController.session sendData:myData
