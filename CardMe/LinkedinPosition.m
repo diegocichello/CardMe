@@ -12,7 +12,7 @@
 
 @implementation LinkedinPosition
 
-@dynamic id;
+@dynamic positionId;
 @dynamic companyId;
 @dynamic companyName;
 @dynamic isCurrent;

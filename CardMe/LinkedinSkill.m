@@ -12,7 +12,7 @@
 
 @implementation LinkedinSkill
 
-@dynamic id;
+@dynamic skillId;
 @dynamic name;
 @dynamic info;
 

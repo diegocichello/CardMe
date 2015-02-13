@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString * degree;
 @property (nonatomic, retain) NSDate * endDate;
 @property (nonatomic, retain) NSString * fieldOfStudy;
-@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSNumber * educationId;
 @property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) NSString * schoolName;
 @property (nonatomic, retain) NSDate * startDate;

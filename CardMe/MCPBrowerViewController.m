@@ -10,12 +10,25 @@
 #import "SessionController.h"
 #import "Card.h"
 #import "AppDelegate.h"
+<<<<<<< HEAD
+=======
+#import "CardDTO.h"
+#import "CardInfo.h"
+>>>>>>> master
 
 @interface MCPBrowerViewController () <SessionControllerDelegate>
 @property (nonatomic, strong) SessionController *sessionController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+<<<<<<< HEAD
 @property NSManagedObjectContext *moc;
+=======
+@property NSManagedObjectContext * context;
+
+
+//temporary
+>>>>>>> master
 @property Card * testCard;
+@property NSMutableArray * cardArray;
 
 @end
 
@@ -27,11 +40,53 @@
 
     self.moc =  [AppDelegate appDelegate].managedObjectContext;
     self.sessionController = [[SessionController alloc] init];
+<<<<<<< HEAD
     Card * testCard = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:self.moc];
     testCard.cardType = @"fuckFace";
     testCard.isMainUser = @(1);
+=======
+    self.sessionController.delegate = self;
+    self.context = [AppDelegate appDelegate].managedObjectContext;
+    [self loadCards];
+    if ( self.cardArray.count == 0)
+    {
+        Card * testCard = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:self.context];
+        testCard.isMainUser = @(1);
+        testCard.cardType = @"Business";
+
+        CardInfo *cardInfo = [NSEntityDescription insertNewObjectForEntityForName:@"CardInfo" inManagedObjectContext:self.context];
+
+        cardInfo.email = @"gustavocoutoeom@gmail.com";
+        cardInfo.address = @"shady lane";
+        cardInfo.contactPhone = @"twotwoonethree";
+        cardInfo.fullName = @"Gustavo Couto";
+        cardInfo.headline = @"Major retard";
+
+        [testCard setInfo:cardInfo];
+        [self save];
+        [self loadCards];
+    }
+>>>>>>> master
 }
 
+#pragma mark - Helper methods
+- (void)loadCards
+{
+    self.cardArray = [NSMutableArray new];
+    NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:[Card description]];
+    self.cardArray =  [[self.context executeFetchRequest:request error:nil] mutableCopy];
+    self.testCard = self.cardArray.firstObject;
+    
+}
+
+-(void)save
+{
+    NSError *error = nil;
+    if (![self.context save:&error]) {
+        NSLog(@"failed to save core data %@ %@", error, [error localizedDescription]);
+        return;
+    }
+}
 
 #pragma mark - Memory management
 
@@ -57,36 +112,14 @@
 {
     // We have 3 sections in our grouped table view,
     // one for each MCSessionState
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
     NSInteger rows = 0;
 
-    // Each tableView section represents an MCSessionState
-    MCSessionState sessionState = section;
-
-    switch (sessionState)
-    {
-        case MCSessionStateConnecting:
-        {
-            rows = self.sessionController.connectingPeers.count;
-            break;
-        }
-
-        case MCSessionStateConnected:
-        {
-            rows = self.sessionController.connectedPeers.count;
-            break;
-        }
-
-        case MCSessionStateNotConnected:
-        {
-            rows = self.sessionController.disconnectedPeers.count;
-            break;
-        }
-    }
+    rows = self.sessionController.connectedPeers.count;
 
     // Always show at least 1 row for each MCSessionState.
     if (rows < 1)
@@ -99,10 +132,8 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    // Each tableView section represents an MCSessionState
-    MCSessionState sessionState = section;
 
-    return [self.sessionController stringForPeerConnectionState:sessionState];
+    return @"Connected";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -113,52 +144,28 @@
 
     cell.textLabel.text = @"None";
 
-    NSArray *peers = nil;
-
-    // Each tableView section represents an MCSessionState
-    MCSessionState sessionState = indexPath.section;
-    NSInteger peerIndex = indexPath.row;
-
-    switch (sessionState)
+    if ( self.sessionController.connectedPeers.count > 0)
     {
-        case MCSessionStateConnecting:
-        {
-            peers = self.sessionController.connectingPeers;
-            break;
-        }
-
-        case MCSessionStateConnected:
-        {
-            peers = self.sessionController.connectedPeers;
-            break;
-        }
-
-        case MCSessionStateNotConnected:
-        {
-            peers = self.sessionController.disconnectedPeers;
-            break;
-        }
+        MCPeerID * peerid = self.sessionController.connectedPeers[indexPath.row];
+        cell.textLabel.text = peerid.displayName;
     }
 
-    if ((peers.count > 0) && (peerIndex < peers.count))
-    {
-        MCPeerID *peerID = [peers objectAtIndex:peerIndex];
-
-        if (peerID)
-        {
-            cell.textLabel.text = peerID.displayName;
-        }
-    }
 
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+<<<<<<< HEAD
 
     NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:self.testCard];
     NSLog(@"Archived self.testCard, %@", self.testCard);
     //[self.moc insertObject:<#(NSManagedObject *)#>]
+=======
+    CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:self.testCard];
+    NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
+    NSLog(@"Archived testDTO, %@", testDTO);
+>>>>>>> master
     NSArray * peerArray = [NSArray arrayWithObject:[self.sessionController.connectedPeers objectAtIndex:indexPath.row]];
     NSError *error;
     [self.sessionController.session sendData:myData

@@ -12,7 +12,7 @@
 
 @implementation LinkedinLanguage
 
-@dynamic id;
+@dynamic languageId;
 @dynamic name;
 @dynamic info;
 

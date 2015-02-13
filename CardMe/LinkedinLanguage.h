@@ -13,7 +13,7 @@
 
 @interface LinkedinLanguage : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSNumber * languageId;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) LinkedinInfo *info;
 
