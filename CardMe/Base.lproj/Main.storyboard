@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kvh-9x-Vn0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -81,12 +82,12 @@
                                 <exclude reference="0kB-2x-v0w"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="IrS-yL-maG"/>
+                                <exclude reference="a0O-B2-SRn"/>
+                                <exclude reference="8G5-ob-b7x"/>
                                 <exclude reference="LZw-YF-n3P"/>
                                 <exclude reference="M5n-3J-f5L"/>
                                 <exclude reference="kBo-6B-0tO"/>
-                                <exclude reference="8G5-ob-b7x"/>
-                                <exclude reference="IrS-yL-maG"/>
-                                <exclude reference="a0O-B2-SRn"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -96,12 +97,12 @@
                                 <include reference="0kB-2x-v0w"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="IrS-yL-maG"/>
+                                <include reference="a0O-B2-SRn"/>
+                                <include reference="8G5-ob-b7x"/>
                                 <include reference="LZw-YF-n3P"/>
                                 <include reference="M5n-3J-f5L"/>
                                 <include reference="kBo-6B-0tO"/>
-                                <include reference="8G5-ob-b7x"/>
-                                <include reference="IrS-yL-maG"/>
-                                <include reference="a0O-B2-SRn"/>
                             </mask>
                         </variation>
                     </view>
@@ -123,6 +124,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3CK-jT-24S"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rNc-mo-Gxd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACG-9I-lar">
@@ -152,10 +154,10 @@
                                 <exclude reference="82A-Wf-m3m"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Vyb-lq-8or"/>
                                 <exclude reference="Ibk-xl-cGx"/>
                                 <exclude reference="dGH-qR-Xbv"/>
                                 <exclude reference="waa-a2-JUR"/>
-                                <exclude reference="Vyb-lq-8or"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -164,10 +166,10 @@
                                 <include reference="82A-Wf-m3m"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Vyb-lq-8or"/>
                                 <include reference="Ibk-xl-cGx"/>
                                 <include reference="dGH-qR-Xbv"/>
                                 <include reference="waa-a2-JUR"/>
-                                <include reference="Vyb-lq-8or"/>
                             </mask>
                         </variation>
                     </view>
@@ -186,6 +188,7 @@
                         <viewControllerLayoutGuide type="bottom" id="RBC-oh-pB0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qeG-r3-m6U">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Business_Cards_Assorted" translatesAutoresizingMaskIntoConstraints="NO" id="i5s-D1-rhs">
@@ -277,23 +280,23 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <exclude reference="ZTh-ZJ-wpP"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="HR2-kH-c8R"/>
+                                <exclude reference="I0M-Ja-x0i"/>
+                                <exclude reference="PTp-Te-2OE"/>
+                                <exclude reference="gdx-O9-eUy"/>
+                                <exclude reference="9Io-xY-bc7"/>
+                                <exclude reference="gNI-In-MlH"/>
+                                <exclude reference="6Fy-dA-MpZ"/>
+                                <exclude reference="JjY-9Y-g9N"/>
+                                <exclude reference="3y9-YN-78E"/>
+                                <exclude reference="4rR-BD-fzg"/>
+                                <exclude reference="Pao-et-Ufl"/>
                                 <exclude reference="PbE-dn-af2"/>
                                 <exclude reference="WjB-DR-fcx"/>
                                 <exclude reference="bix-hE-Noa"/>
                                 <exclude reference="c8Q-8u-HpM"/>
                                 <exclude reference="o0n-DG-A2g"/>
                                 <exclude reference="w4G-7G-lP0"/>
-                                <exclude reference="3y9-YN-78E"/>
-                                <exclude reference="4rR-BD-fzg"/>
-                                <exclude reference="Pao-et-Ufl"/>
-                                <exclude reference="9Io-xY-bc7"/>
-                                <exclude reference="gNI-In-MlH"/>
-                                <exclude reference="6Fy-dA-MpZ"/>
-                                <exclude reference="JjY-9Y-g9N"/>
-                                <exclude reference="HR2-kH-c8R"/>
-                                <exclude reference="I0M-Ja-x0i"/>
-                                <exclude reference="PTp-Te-2OE"/>
-                                <exclude reference="gdx-O9-eUy"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -304,23 +307,23 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <include reference="ZTh-ZJ-wpP"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="HR2-kH-c8R"/>
+                                <include reference="I0M-Ja-x0i"/>
+                                <include reference="PTp-Te-2OE"/>
+                                <include reference="gdx-O9-eUy"/>
+                                <include reference="9Io-xY-bc7"/>
+                                <include reference="gNI-In-MlH"/>
+                                <include reference="6Fy-dA-MpZ"/>
+                                <include reference="JjY-9Y-g9N"/>
+                                <include reference="3y9-YN-78E"/>
+                                <include reference="4rR-BD-fzg"/>
+                                <include reference="Pao-et-Ufl"/>
                                 <include reference="PbE-dn-af2"/>
                                 <include reference="WjB-DR-fcx"/>
                                 <include reference="bix-hE-Noa"/>
                                 <include reference="c8Q-8u-HpM"/>
                                 <include reference="o0n-DG-A2g"/>
                                 <include reference="w4G-7G-lP0"/>
-                                <include reference="3y9-YN-78E"/>
-                                <include reference="4rR-BD-fzg"/>
-                                <include reference="Pao-et-Ufl"/>
-                                <include reference="9Io-xY-bc7"/>
-                                <include reference="gNI-In-MlH"/>
-                                <include reference="6Fy-dA-MpZ"/>
-                                <include reference="JjY-9Y-g9N"/>
-                                <include reference="HR2-kH-c8R"/>
-                                <include reference="I0M-Ja-x0i"/>
-                                <include reference="PTp-Te-2OE"/>
-                                <include reference="gdx-O9-eUy"/>
                             </mask>
                         </variation>
                     </view>
