@@ -10,9 +10,8 @@
 		291BD7001A8BDF6F00B8FE20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD6FF1A8BDF6F00B8FE20 /* main.m */; };
 		291BD7031A8BDF6F00B8FE20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7021A8BDF6F00B8FE20 /* AppDelegate.m */; };
 		291BD7061A8BDF6F00B8FE20 /* CardMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7041A8BDF6F00B8FE20 /* CardMe.xcdatamodeld */; };
-		291BD7091A8BDF6F00B8FE20 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7081A8BDF6F00B8FE20 /* ViewController.m */; };
+		291BD7091A8BDF6F00B8FE20 /* ExplainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7081A8BDF6F00B8FE20 /* ExplainViewController.m */; };
 		291BD70C1A8BDF6F00B8FE20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 291BD70A1A8BDF6F00B8FE20 /* Main.storyboard */; };
-		291BD70E1A8BDF6F00B8FE20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291BD70D1A8BDF6F00B8FE20 /* Images.xcassets */; };
 		291BD7111A8BDF6F00B8FE20 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 291BD70F1A8BDF6F00B8FE20 /* LaunchScreen.xib */; };
 		291BD71D1A8BDF6F00B8FE20 /* CardMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD71C1A8BDF6F00B8FE20 /* CardMeTests.m */; };
 		291BD73A1A8BDFAB00B8FE20 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7281A8BDFAB00B8FE20 /* AFHTTPRequestOperation.m */; };
@@ -57,6 +56,9 @@
 		291BD7911A8D6E7F00B8FE20 /* LinkedinLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7901A8D6E7F00B8FE20 /* LinkedinLanguage.m */; };
 		291BD7941A8D6E8000B8FE20 /* LinkedinSkill.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7931A8D6E8000B8FE20 /* LinkedinSkill.m */; };
 		291BD7971A8D6E8000B8FE20 /* LinkedinPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7961A8D6E8000B8FE20 /* LinkedinPhoneNumber.m */; };
+		291BD79A1A8D8F4300B8FE20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291BD7991A8D8F4300B8FE20 /* Images.xcassets */; };
+		291BD79D1A8D90D600B8FE20 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD79C1A8D90D600B8FE20 /* RootViewController.m */; };
+		291BD7A01A8DA82000B8FE20 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD79F1A8DA82000B8FE20 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,10 +78,9 @@
 		291BD7011A8BDF6F00B8FE20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		291BD7021A8BDF6F00B8FE20 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		291BD7051A8BDF6F00B8FE20 /* CardMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CardMe.xcdatamodel; sourceTree = "<group>"; };
-		291BD7071A8BDF6F00B8FE20 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		291BD7081A8BDF6F00B8FE20 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		291BD7071A8BDF6F00B8FE20 /* ExplainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExplainViewController.h; sourceTree = "<group>"; };
+		291BD7081A8BDF6F00B8FE20 /* ExplainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExplainViewController.m; sourceTree = "<group>"; };
 		291BD70B1A8BDF6F00B8FE20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		291BD70D1A8BDF6F00B8FE20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		291BD7101A8BDF6F00B8FE20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		291BD7161A8BDF6F00B8FE20 /* CardMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		291BD71B1A8BDF6F00B8FE20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +152,11 @@
 		291BD7931A8D6E8000B8FE20 /* LinkedinSkill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinSkill.m; sourceTree = "<group>"; };
 		291BD7951A8D6E8000B8FE20 /* LinkedinPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinPhoneNumber.h; sourceTree = "<group>"; };
 		291BD7961A8D6E8000B8FE20 /* LinkedinPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinPhoneNumber.m; sourceTree = "<group>"; };
+		291BD7991A8D8F4300B8FE20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		291BD79B1A8D90D600B8FE20 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		291BD79C1A8D90D600B8FE20 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		291BD79E1A8DA82000B8FE20 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		291BD79F1A8DA82000B8FE20 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,13 +216,13 @@
 			isa = PBXGroup;
 			children = (
 				291BD7551A8BDFD500B8FE20 /* Framework */,
+				291BD7981A8D6EE500B8FE20 /* Data Model Core Data */,
+				291BD7A21A8DA83500B8FE20 /* Views */,
 				291BD7011A8BDF6F00B8FE20 /* AppDelegate.h */,
 				291BD7021A8BDF6F00B8FE20 /* AppDelegate.m */,
-				291BD7071A8BDF6F00B8FE20 /* ViewController.h */,
-				291BD7081A8BDF6F00B8FE20 /* ViewController.m */,
 				291BD70A1A8BDF6F00B8FE20 /* Main.storyboard */,
-				291BD70D1A8BDF6F00B8FE20 /* Images.xcassets */,
 				291BD70F1A8BDF6F00B8FE20 /* LaunchScreen.xib */,
+				291BD7991A8D8F4300B8FE20 /* Images.xcassets */,
 				291BD7041A8BDF6F00B8FE20 /* CardMe.xcdatamodeld */,
 				291BD6FD1A8BDF6F00B8FE20 /* Supporting Files */,
 			);
@@ -304,7 +310,6 @@
 		291BD7551A8BDFD500B8FE20 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				291BD7981A8D6EE500B8FE20 /* Data Model Core Data */,
 				291BD7561A8D1F6B00B8FE20 /* Bolts.framework */,
 				291BD7571A8D1F6B00B8FE20 /* Parse.framework */,
 				291BD7581A8D1F6B00B8FE20 /* ParseCrashReporting.framework */,
@@ -361,6 +366,19 @@
 				291BD7781A8D6E7E00B8FE20 /* User.m */,
 			);
 			name = "Data Model Core Data";
+			sourceTree = "<group>";
+		};
+		291BD7A21A8DA83500B8FE20 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				291BD79E1A8DA82000B8FE20 /* MainViewController.h */,
+				291BD79F1A8DA82000B8FE20 /* MainViewController.m */,
+				291BD7071A8BDF6F00B8FE20 /* ExplainViewController.h */,
+				291BD7081A8BDF6F00B8FE20 /* ExplainViewController.m */,
+				291BD79B1A8D90D600B8FE20 /* RootViewController.h */,
+				291BD79C1A8D90D600B8FE20 /* RootViewController.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,9 +462,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				291BD70C1A8BDF6F00B8FE20 /* Main.storyboard in Resources */,
+				291BD79A1A8D8F4300B8FE20 /* Images.xcassets in Resources */,
 				291BD7111A8BDF6F00B8FE20 /* LaunchScreen.xib in Resources */,
 				291BD7531A8BDFCB00B8FE20 /* 01-refresh.png in Resources */,
-				291BD70E1A8BDF6F00B8FE20 /* Images.xcassets in Resources */,
 				291BD7541A8BDFCB00B8FE20 /* 01-refresh@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,14 +496,16 @@
 				291BD78B1A8D6E7F00B8FE20 /* LinkedinEducation.m in Sources */,
 				291BD77F1A8D6E7F00B8FE20 /* LinkedinInfo.m in Sources */,
 				291BD7511A8BDFCB00B8FE20 /* LIALinkedInHttpClient.m in Sources */,
+				291BD7A01A8DA82000B8FE20 /* MainViewController.m in Sources */,
 				291BD73A1A8BDFAB00B8FE20 /* AFHTTPRequestOperation.m in Sources */,
-				291BD7091A8BDF6F00B8FE20 /* ViewController.m in Sources */,
+				291BD7091A8BDF6F00B8FE20 /* ExplainViewController.m in Sources */,
 				291BD7851A8D6E7F00B8FE20 /* Group.m in Sources */,
 				291BD7821A8D6E7F00B8FE20 /* LinkedinPosition.m in Sources */,
 				291BD7401A8BDFAB00B8FE20 /* AFURLRequestSerialization.m in Sources */,
 				291BD73C1A8BDFAB00B8FE20 /* AFHTTPSessionManager.m in Sources */,
 				291BD74F1A8BDFCB00B8FE20 /* LIALinkedInApplication.m in Sources */,
 				291BD73D1A8BDFAB00B8FE20 /* AFNetworkReachabilityManager.m in Sources */,
+				291BD79D1A8D90D600B8FE20 /* RootViewController.m in Sources */,
 				291BD7411A8BDFAB00B8FE20 /* AFURLResponseSerialization.m in Sources */,
 				291BD7911A8D6E7F00B8FE20 /* LinkedinLanguage.m in Sources */,
 				291BD77C1A8D6E7F00B8FE20 /* Card.m in Sources */,
