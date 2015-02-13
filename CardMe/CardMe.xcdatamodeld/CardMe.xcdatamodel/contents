@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Card" representedClassName="Card" syncable="YES">
+        <attribute name="cardId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="color1" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="color2" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="color3" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="color4" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="color5" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="font1" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="font2" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="font3" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="font4" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="font5" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="isMainUser" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="card" inverseEntity="Group" syncable="YES"/>
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardInfo" inverseName="card" inverseEntity="CardInfo" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="card" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="CardInfo" representedClassName="CardInfo" syncable="YES">
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="info" inverseEntity="Card" syncable="YES"/>
+    </entity>
+    <entity name="Group" representedClassName="Group" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="group" inverseEntity="Card" syncable="YES"/>
+    </entity>
+    <entity name="LinkedinCourse" representedClassName="LinkedinCourse" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinInfo" inverseName="courses" inverseEntity="LinkedinInfo" syncable="YES"/>
+    </entity>
+    <entity name="LinkedinEducation" representedClassName="LinkedinEducation" syncable="YES">
+        <attribute name="activities" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="degree" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fieldOfStudy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="schoolName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinInfo" inverseName="education" inverseEntity="LinkedinInfo" syncable="YES"/>
+    </entity>
+    <entity name="LinkedinInfo" representedClassName="LinkedinInfo" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pictureSmall" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinkedinCourse" inverseName="info" inverseEntity="LinkedinCourse" syncable="YES"/>
+        <relationship name="education" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinkedinEducation" inverseName="info" inverseEntity="LinkedinEducation" syncable="YES"/>
+        <relationship name="languages" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinLanguage" inverseName="info" inverseEntity="LinkedinLanguage" syncable="YES"/>
+        <relationship name="phoneNumbers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinPhoneNumber" inverseName="info" inverseEntity="LinkedinPhoneNumber" syncable="YES"/>
+        <relationship name="positions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinPosition" inverseName="info" inverseEntity="LinkedinPosition" syncable="YES"/>
+        <relationship name="role" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinRole" syncable="YES"/>
+        <relationship name="skills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinkedinSkill" inverseName="info" inverseEntity="LinkedinSkill" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="info" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="LinkedinLanguage" representedClassName="LinkedinLanguage" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinInfo" inverseName="languages" inverseEntity="LinkedinInfo" syncable="YES"/>
+    </entity>
+    <entity name="LinkedinPhoneNumber" representedClassName="LinkedinPhoneNumber" syncable="YES">
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneType" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinInfo" inverseName="phoneNumbers" inverseEntity="LinkedinInfo" syncable="YES"/>
+    </entity>
+    <entity name="LinkedinPosition" representedClassName="LinkedinPosition" syncable="YES">
+        <attribute name="companyId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isCurrent" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinInfo" inverseName="positions" inverseEntity="LinkedinInfo" syncable="YES"/>
+    </entity>
+    <entity name="LinkedinRole" syncable="YES"/>
+    <entity name="LinkedinSkill" representedClassName="LinkedinSkill" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinInfo" inverseName="skills" inverseEntity="LinkedinInfo" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="user" inverseEntity="Card" syncable="YES"/>
+        <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinInfo" inverseName="user" inverseEntity="LinkedinInfo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="283"/>
+        <element name="User" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="LinkedinInfo" positionX="-36" positionY="9" width="128" height="223"/>
+        <element name="LinkedinSkill" positionX="0" positionY="45" width="128" height="88"/>
+        <element name="LinkedinRole" positionX="18" positionY="63" width="128" height="45"/>
+        <element name="LinkedinPosition" positionX="36" positionY="81" width="128" height="178"/>
+        <element name="Group" positionX="9" positionY="54" width="128" height="73"/>
+        <element name="LinkedinCourse" positionX="18" positionY="81" width="128" height="88"/>
+        <element name="LinkedinEducation" positionX="27" positionY="90" width="128" height="178"/>
+        <element name="LinkedinLanguage" positionX="36" positionY="162" width="128" height="88"/>
+        <element name="LinkedinPhoneNumber" positionX="45" positionY="171" width="128" height="88"/>
+        <element name="CardInfo" positionX="-9" positionY="108" width="128" height="58"/>
+    </elements>
+</model>
