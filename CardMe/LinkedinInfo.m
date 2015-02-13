@@ -16,9 +16,7 @@
 @dynamic firstName;
 @dynamic lastName;
 @dynamic pictureSmall;
-@dynamic user;
-@dynamic role;
-@dynamic skills;
+@dynamic user;@dynamic skills;
 @dynamic education;
 @dynamic courses;
 @dynamic languages;

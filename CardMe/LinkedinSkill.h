@@ -13,7 +13,7 @@
 
 @interface LinkedinSkill : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSNumber * skillId;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) LinkedinInfo *info;
 

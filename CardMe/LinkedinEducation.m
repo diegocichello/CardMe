@@ -15,7 +15,7 @@
 @dynamic degree;
 @dynamic endDate;
 @dynamic fieldOfStudy;
-@dynamic id;
+@dynamic educationId;
 @dynamic notes;
 @dynamic schoolName;
 @dynamic startDate;

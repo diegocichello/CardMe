@@ -12,7 +12,7 @@
 
 @implementation LinkedinCourse
 
-@dynamic id;
+@dynamic courseId;
 @dynamic name;
 @dynamic info;
 

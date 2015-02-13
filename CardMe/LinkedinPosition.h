@@ -13,7 +13,7 @@
 
 @interface LinkedinPosition : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSNumber * positionId;
 @property (nonatomic, retain) NSNumber * companyId;
 @property (nonatomic, retain) NSString * companyName;
 @property (nonatomic, retain) NSNumber * isCurrent;

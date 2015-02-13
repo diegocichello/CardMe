@@ -46,11 +46,9 @@
 		291BD7731A8D209100B8FE20 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 291BD7721A8D209100B8FE20 /* libz.dylib */; };
 		291BD7751A8D209E00B8FE20 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 291BD7741A8D209E00B8FE20 /* libsqlite3.dylib */; };
 		291BD7791A8D6E7E00B8FE20 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7781A8D6E7E00B8FE20 /* User.m */; };
-		291BD77C1A8D6E7F00B8FE20 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD77B1A8D6E7F00B8FE20 /* Card.m */; };
 		291BD77F1A8D6E7F00B8FE20 /* LinkedinInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD77E1A8D6E7F00B8FE20 /* LinkedinInfo.m */; };
 		291BD7821A8D6E7F00B8FE20 /* LinkedinPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7811A8D6E7F00B8FE20 /* LinkedinPosition.m */; };
 		291BD7851A8D6E7F00B8FE20 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7841A8D6E7F00B8FE20 /* Group.m */; };
-		291BD7881A8D6E7F00B8FE20 /* CardInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7871A8D6E7F00B8FE20 /* CardInfo.m */; };
 		291BD78B1A8D6E7F00B8FE20 /* LinkedinEducation.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD78A1A8D6E7F00B8FE20 /* LinkedinEducation.m */; };
 		291BD78E1A8D6E7F00B8FE20 /* LinkedinCourse.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD78D1A8D6E7F00B8FE20 /* LinkedinCourse.m */; };
 		291BD7911A8D6E7F00B8FE20 /* LinkedinLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7901A8D6E7F00B8FE20 /* LinkedinLanguage.m */; };
@@ -61,6 +59,10 @@
 		291BD7A01A8DA82000B8FE20 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD79F1A8DA82000B8FE20 /* MainViewController.m */; };
 		35DA2A3D1A8DBE9C00E6D1F2 /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A3C1A8DBE9C00E6D1F2 /* SessionController.m */; };
 		35DA2A401A8DC0DF00E6D1F2 /* MCPBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A3F1A8DC0DF00E6D1F2 /* MCPBrowerViewController.m */; };
+		35DA2A431A8E76A600E6D1F2 /* CardDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A421A8E76A600E6D1F2 /* CardDTO.m */; };
+		35DA2A461A8E7B6700E6D1F2 /* LinkedinRole.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A451A8E7B6700E6D1F2 /* LinkedinRole.m */; };
+		35DA2A4C1A8E7DBC00E6D1F2 /* CardInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A4B1A8E7DBC00E6D1F2 /* CardInfo.m */; };
+		35DA2A4F1A8E8E9E00E6D1F2 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A4E1A8E8E9E00E6D1F2 /* Card.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,16 +136,12 @@
 		291BD7741A8D209E00B8FE20 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		291BD7771A8D6E7E00B8FE20 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		291BD7781A8D6E7E00B8FE20 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		291BD77A1A8D6E7F00B8FE20 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
-		291BD77B1A8D6E7F00B8FE20 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		291BD77D1A8D6E7F00B8FE20 /* LinkedinInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinInfo.h; sourceTree = "<group>"; };
 		291BD77E1A8D6E7F00B8FE20 /* LinkedinInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinInfo.m; sourceTree = "<group>"; };
 		291BD7801A8D6E7F00B8FE20 /* LinkedinPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinPosition.h; sourceTree = "<group>"; };
 		291BD7811A8D6E7F00B8FE20 /* LinkedinPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinPosition.m; sourceTree = "<group>"; };
 		291BD7831A8D6E7F00B8FE20 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
 		291BD7841A8D6E7F00B8FE20 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
-		291BD7861A8D6E7F00B8FE20 /* CardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfo.h; sourceTree = "<group>"; };
-		291BD7871A8D6E7F00B8FE20 /* CardInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardInfo.m; sourceTree = "<group>"; };
 		291BD7891A8D6E7F00B8FE20 /* LinkedinEducation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinEducation.h; sourceTree = "<group>"; };
 		291BD78A1A8D6E7F00B8FE20 /* LinkedinEducation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinEducation.m; sourceTree = "<group>"; };
 		291BD78C1A8D6E7F00B8FE20 /* LinkedinCourse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinCourse.h; sourceTree = "<group>"; };
@@ -163,6 +161,14 @@
 		35DA2A3C1A8DBE9C00E6D1F2 /* SessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionController.m; sourceTree = "<group>"; };
 		35DA2A3E1A8DC0DF00E6D1F2 /* MCPBrowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPBrowerViewController.h; sourceTree = "<group>"; };
 		35DA2A3F1A8DC0DF00E6D1F2 /* MCPBrowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPBrowerViewController.m; sourceTree = "<group>"; };
+		35DA2A411A8E76A600E6D1F2 /* CardDTO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDTO.h; sourceTree = "<group>"; };
+		35DA2A421A8E76A600E6D1F2 /* CardDTO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDTO.m; sourceTree = "<group>"; };
+		35DA2A441A8E7B6700E6D1F2 /* LinkedinRole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinRole.h; sourceTree = "<group>"; };
+		35DA2A451A8E7B6700E6D1F2 /* LinkedinRole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinRole.m; sourceTree = "<group>"; };
+		35DA2A4A1A8E7DBC00E6D1F2 /* CardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfo.h; sourceTree = "<group>"; };
+		35DA2A4B1A8E7DBC00E6D1F2 /* CardInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardInfo.m; sourceTree = "<group>"; };
+		35DA2A4D1A8E8E9E00E6D1F2 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		35DA2A4E1A8E8E9E00E6D1F2 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +236,8 @@
 				291BD70F1A8BDF6F00B8FE20 /* LaunchScreen.xib */,
 				291BD7991A8D8F4300B8FE20 /* Images.xcassets */,
 				291BD7041A8BDF6F00B8FE20 /* CardMe.xcdatamodeld */,
+				35DA2A441A8E7B6700E6D1F2 /* LinkedinRole.h */,
+				35DA2A451A8E7B6700E6D1F2 /* LinkedinRole.m */,
 				291BD6FD1A8BDF6F00B8FE20 /* Supporting Files */,
 			);
 			path = CardMe;
@@ -349,6 +357,10 @@
 		291BD7981A8D6EE500B8FE20 /* Data Model Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				35DA2A4D1A8E8E9E00E6D1F2 /* Card.h */,
+				35DA2A4E1A8E8E9E00E6D1F2 /* Card.m */,
+				35DA2A4A1A8E7DBC00E6D1F2 /* CardInfo.h */,
+				35DA2A4B1A8E7DBC00E6D1F2 /* CardInfo.m */,
 				291BD7951A8D6E8000B8FE20 /* LinkedinPhoneNumber.h */,
 				291BD7961A8D6E8000B8FE20 /* LinkedinPhoneNumber.m */,
 				291BD7921A8D6E8000B8FE20 /* LinkedinSkill.h */,
@@ -359,18 +371,16 @@
 				291BD78D1A8D6E7F00B8FE20 /* LinkedinCourse.m */,
 				291BD7891A8D6E7F00B8FE20 /* LinkedinEducation.h */,
 				291BD78A1A8D6E7F00B8FE20 /* LinkedinEducation.m */,
-				291BD7861A8D6E7F00B8FE20 /* CardInfo.h */,
-				291BD7871A8D6E7F00B8FE20 /* CardInfo.m */,
 				291BD7831A8D6E7F00B8FE20 /* Group.h */,
 				291BD7841A8D6E7F00B8FE20 /* Group.m */,
 				291BD7801A8D6E7F00B8FE20 /* LinkedinPosition.h */,
 				291BD7811A8D6E7F00B8FE20 /* LinkedinPosition.m */,
 				291BD77D1A8D6E7F00B8FE20 /* LinkedinInfo.h */,
 				291BD77E1A8D6E7F00B8FE20 /* LinkedinInfo.m */,
-				291BD77A1A8D6E7F00B8FE20 /* Card.h */,
-				291BD77B1A8D6E7F00B8FE20 /* Card.m */,
 				291BD7771A8D6E7E00B8FE20 /* User.h */,
 				291BD7781A8D6E7E00B8FE20 /* User.m */,
+				35DA2A411A8E76A600E6D1F2 /* CardDTO.h */,
+				35DA2A421A8E76A600E6D1F2 /* CardDTO.m */,
 			);
 			name = "Data Model Core Data";
 			sourceTree = "<group>";
@@ -508,27 +518,29 @@
 				35DA2A401A8DC0DF00E6D1F2 /* MCPBrowerViewController.m in Sources */,
 				291BD7061A8BDF6F00B8FE20 /* CardMe.xcdatamodeld in Sources */,
 				291BD7971A8D6E8000B8FE20 /* LinkedinPhoneNumber.m in Sources */,
-				291BD7881A8D6E7F00B8FE20 /* CardInfo.m in Sources */,
 				291BD73B1A8BDFAB00B8FE20 /* AFHTTPRequestOperationManager.m in Sources */,
 				291BD7521A8BDFCB00B8FE20 /* NSString+LIAEncode.m in Sources */,
 				291BD73F1A8BDFAB00B8FE20 /* AFURLConnectionOperation.m in Sources */,
 				35DA2A3D1A8DBE9C00E6D1F2 /* SessionController.m in Sources */,
 				291BD78B1A8D6E7F00B8FE20 /* LinkedinEducation.m in Sources */,
 				291BD77F1A8D6E7F00B8FE20 /* LinkedinInfo.m in Sources */,
+				35DA2A431A8E76A600E6D1F2 /* CardDTO.m in Sources */,
 				291BD7511A8BDFCB00B8FE20 /* LIALinkedInHttpClient.m in Sources */,
 				291BD7A01A8DA82000B8FE20 /* MainViewController.m in Sources */,
 				291BD73A1A8BDFAB00B8FE20 /* AFHTTPRequestOperation.m in Sources */,
+				35DA2A4C1A8E7DBC00E6D1F2 /* CardInfo.m in Sources */,
 				291BD7091A8BDF6F00B8FE20 /* ExplainViewController.m in Sources */,
 				291BD7851A8D6E7F00B8FE20 /* Group.m in Sources */,
 				291BD7821A8D6E7F00B8FE20 /* LinkedinPosition.m in Sources */,
+				35DA2A4F1A8E8E9E00E6D1F2 /* Card.m in Sources */,
 				291BD7401A8BDFAB00B8FE20 /* AFURLRequestSerialization.m in Sources */,
 				291BD73C1A8BDFAB00B8FE20 /* AFHTTPSessionManager.m in Sources */,
+				35DA2A461A8E7B6700E6D1F2 /* LinkedinRole.m in Sources */,
 				291BD74F1A8BDFCB00B8FE20 /* LIALinkedInApplication.m in Sources */,
 				291BD73D1A8BDFAB00B8FE20 /* AFNetworkReachabilityManager.m in Sources */,
 				291BD79D1A8D90D600B8FE20 /* RootViewController.m in Sources */,
 				291BD7411A8BDFAB00B8FE20 /* AFURLResponseSerialization.m in Sources */,
 				291BD7911A8D6E7F00B8FE20 /* LinkedinLanguage.m in Sources */,
-				291BD77C1A8D6E7F00B8FE20 /* Card.m in Sources */,
 				291BD7941A8D6E8000B8FE20 /* LinkedinSkill.m in Sources */,
 				291BD7421A8BDFAB00B8FE20 /* AFURLSessionManager.m in Sources */,
 				291BD7001A8BDF6F00B8FE20 /* main.m in Sources */,

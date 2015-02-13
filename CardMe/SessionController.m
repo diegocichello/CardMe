@@ -1,10 +1,15 @@
 
 #import "SessionController.h"
 #import "Card.h"
+#import "AppDelegate.h"
+#import "CardDTO.h"
+#import "CardInfo.h"
+
 @interface SessionController () // Class extension
 @property (nonatomic, strong) MCPeerID *peerID;
 @property (nonatomic, strong) MCNearbyServiceAdvertiser *serviceAdvertiser;
 @property (nonatomic, strong) MCNearbyServiceBrowser *serviceBrowser;
+@property NSManagedObjectContext * context;
 
 // Connected peers are stored in the MCSession
 // Manually track connecting and disconnected peers
@@ -46,6 +51,7 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
         [self startServices];
 
         _displayName = self.session.myPeerID.displayName;
+        self.context = [AppDelegate appDelegate].managedObjectContext;
     }
     
     return self;
@@ -176,8 +182,30 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
 {
-    Card * card = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    NSLog(@"didReceiveData %@, %@,from %@", card.cardType, card.isMainUser, peerID.displayName);
+    CardDTO * myCardDTO = [CardDTO new];
+    Card * card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:self.context];
+    myCardDTO = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+
+
+    //TO-DO--- Create own method for this
+    CardInfo *cardInfo = [NSEntityDescription insertNewObjectForEntityForName:@"CardInfo" inManagedObjectContext:self.context];
+
+    cardInfo.email = myCardDTO.email;
+    cardInfo.address = myCardDTO.address;
+    cardInfo.contactPhone = myCardDTO.phoneNumber;
+    cardInfo.fullName = myCardDTO.fullName;
+    cardInfo.headline = myCardDTO.headline;
+
+    [card setInfo:cardInfo];
+    [self save];
+
+    [self.context insertObject:card];
+    NSLog(@"didReceiveData %@, %@,from %@", myCardDTO.email, myCardDTO.fullName, peerID.displayName);
+
+    //GET OWN CARD AND SEND IT TO THIS PEERID
+    //TO DO
+    //TO DO
+    //TO DO
 }
 
 - (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress
@@ -277,6 +305,17 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didNotStartAdvertisingPeer:(NSError *)error
 {
     NSLog(@"didNotStartAdvertisingForPeers: %@", error);
+}
+
+#pragma mark - Helper methods
+
+-(void)save
+{
+    NSError *error = nil;
+    if (![self.context save:&error]) {
+        NSLog(@"failed to save core data %@ %@", error, [error localizedDescription]);
+        return;
+    }
 }
 
 @end
