@@ -12,7 +12,7 @@
 
 @implementation Card
 
-@dynamic type;
+@dynamic cardType;
 @dynamic color1;
 @dynamic color2;
 @dynamic color3;
@@ -33,7 +33,7 @@
 {
     self = [super init];
     if (self) {
-        self.type = [coder decodeObjectForKey:@"type"];
+        self.cardType = [coder decodeObjectForKey:@"type"];
         self.color1 = [coder decodeObjectForKey:@"color1"];
         self.color2 = [coder decodeObjectForKey:@"color2"];
         self.color3 = [coder decodeObjectForKey:@"color3"];
@@ -53,7 +53,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
-    [encoder encodeObject:self.type forKey:@"type"];
+    [encoder encodeObject:self.cardType forKey:@"type"];
     [encoder encodeObject:self.color1 forKey:@"color1"];
     [encoder encodeObject:self.color2 forKey:@"color2"];
     [encoder encodeObject:self.color3 forKey:@"color3"];

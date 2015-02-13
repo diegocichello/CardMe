@@ -16,4 +16,7 @@
 @property (nonatomic, retain) NSNumber * name;
 @property (nonatomic, retain) Card *card;
 
+- (id)initWithCoder:(NSCoder *)aDecoder;
+- (void)encodeWithCoder:(NSCoder *)aCoder;
+
 @end

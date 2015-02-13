@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Card" representedClassName="Card" syncable="YES">
         <attribute name="cardId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="cardType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="color1" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="color2" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="color3" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -13,7 +14,6 @@
         <attribute name="font4" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="font5" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="isMainUser" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="card" inverseEntity="Group" syncable="YES"/>
         <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CardInfo" inverseName="card" inverseEntity="CardInfo" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="card" inverseEntity="User" syncable="YES"/>
@@ -89,17 +89,17 @@
         <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinInfo" inverseName="user" inverseEntity="LinkedinInfo" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Card" positionX="-63" positionY="-18" width="128" height="283"/>
-        <element name="User" positionX="-54" positionY="-9" width="128" height="103"/>
-        <element name="LinkedinInfo" positionX="-36" positionY="9" width="128" height="223"/>
-        <element name="LinkedinSkill" positionX="0" positionY="45" width="128" height="88"/>
-        <element name="LinkedinRole" positionX="18" positionY="63" width="128" height="45"/>
-        <element name="LinkedinPosition" positionX="36" positionY="81" width="128" height="178"/>
+        <element name="Card" positionX="-63" positionY="-18" width="128" height="285"/>
+        <element name="CardInfo" positionX="-9" positionY="108" width="128" height="58"/>
         <element name="Group" positionX="9" positionY="54" width="128" height="73"/>
         <element name="LinkedinCourse" positionX="18" positionY="81" width="128" height="88"/>
         <element name="LinkedinEducation" positionX="27" positionY="90" width="128" height="178"/>
+        <element name="LinkedinInfo" positionX="-36" positionY="9" width="128" height="223"/>
         <element name="LinkedinLanguage" positionX="36" positionY="162" width="128" height="88"/>
         <element name="LinkedinPhoneNumber" positionX="45" positionY="171" width="128" height="88"/>
-        <element name="CardInfo" positionX="-9" positionY="108" width="128" height="58"/>
+        <element name="LinkedinPosition" positionX="36" positionY="81" width="128" height="178"/>
+        <element name="LinkedinRole" positionX="18" positionY="63" width="128" height="45"/>
+        <element name="LinkedinSkill" positionX="0" positionY="45" width="128" height="88"/>
+        <element name="User" positionX="-54" positionY="-9" width="128" height="103"/>
     </elements>
 </model>

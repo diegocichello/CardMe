@@ -59,6 +59,8 @@
 		291BD79A1A8D8F4300B8FE20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291BD7991A8D8F4300B8FE20 /* Images.xcassets */; };
 		291BD79D1A8D90D600B8FE20 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD79C1A8D90D600B8FE20 /* RootViewController.m */; };
 		291BD7A01A8DA82000B8FE20 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD79F1A8DA82000B8FE20 /* MainViewController.m */; };
+		35DA2A3D1A8DBE9C00E6D1F2 /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A3C1A8DBE9C00E6D1F2 /* SessionController.m */; };
+		35DA2A401A8DC0DF00E6D1F2 /* MCPBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A3F1A8DC0DF00E6D1F2 /* MCPBrowerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +159,10 @@
 		291BD79C1A8D90D600B8FE20 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		291BD79E1A8DA82000B8FE20 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		291BD79F1A8DA82000B8FE20 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		35DA2A3B1A8DBE9C00E6D1F2 /* SessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionController.h; sourceTree = "<group>"; };
+		35DA2A3C1A8DBE9C00E6D1F2 /* SessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionController.m; sourceTree = "<group>"; };
+		35DA2A3E1A8DC0DF00E6D1F2 /* MCPBrowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPBrowerViewController.h; sourceTree = "<group>"; };
+		35DA2A3F1A8DC0DF00E6D1F2 /* MCPBrowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPBrowerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +316,7 @@
 		291BD7551A8BDFD500B8FE20 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				35DA2A3A1A8DBD7400E6D1F2 /* MPCSession */,
 				291BD7561A8D1F6B00B8FE20 /* Bolts.framework */,
 				291BD7571A8D1F6B00B8FE20 /* Parse.framework */,
 				291BD7581A8D1F6B00B8FE20 /* ParseCrashReporting.framework */,
@@ -377,8 +384,19 @@
 				291BD7081A8BDF6F00B8FE20 /* ExplainViewController.m */,
 				291BD79B1A8D90D600B8FE20 /* RootViewController.h */,
 				291BD79C1A8D90D600B8FE20 /* RootViewController.m */,
+				35DA2A3E1A8DC0DF00E6D1F2 /* MCPBrowerViewController.h */,
+				35DA2A3F1A8DC0DF00E6D1F2 /* MCPBrowerViewController.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		35DA2A3A1A8DBD7400E6D1F2 /* MPCSession */ = {
+			isa = PBXGroup;
+			children = (
+				35DA2A3B1A8DBE9C00E6D1F2 /* SessionController.h */,
+				35DA2A3C1A8DBE9C00E6D1F2 /* SessionController.m */,
+			);
+			name = MPCSession;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,12 +505,14 @@
 				291BD73E1A8BDFAB00B8FE20 /* AFSecurityPolicy.m in Sources */,
 				291BD7791A8D6E7E00B8FE20 /* User.m in Sources */,
 				291BD78E1A8D6E7F00B8FE20 /* LinkedinCourse.m in Sources */,
+				35DA2A401A8DC0DF00E6D1F2 /* MCPBrowerViewController.m in Sources */,
 				291BD7061A8BDF6F00B8FE20 /* CardMe.xcdatamodeld in Sources */,
 				291BD7971A8D6E8000B8FE20 /* LinkedinPhoneNumber.m in Sources */,
 				291BD7881A8D6E7F00B8FE20 /* CardInfo.m in Sources */,
 				291BD73B1A8BDFAB00B8FE20 /* AFHTTPRequestOperationManager.m in Sources */,
 				291BD7521A8BDFCB00B8FE20 /* NSString+LIAEncode.m in Sources */,
 				291BD73F1A8BDFAB00B8FE20 /* AFURLConnectionOperation.m in Sources */,
+				35DA2A3D1A8DBE9C00E6D1F2 /* SessionController.m in Sources */,
 				291BD78B1A8D6E7F00B8FE20 /* LinkedinEducation.m in Sources */,
 				291BD77F1A8D6E7F00B8FE20 /* LinkedinInfo.m in Sources */,
 				291BD7511A8BDFCB00B8FE20 /* LIALinkedInHttpClient.m in Sources */,
@@ -711,6 +731,7 @@
 				291BD7221A8BDF6F00B8FE20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		291BD7231A8BDF6F00B8FE20 /* Build configuration list for PBXNativeTarget "CardMeTests" */ = {
 			isa = XCConfigurationList;
@@ -719,6 +740,7 @@
 				291BD7251A8BDF6F00B8FE20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

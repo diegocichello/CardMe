@@ -13,7 +13,7 @@
 
 @interface Card : NSManagedObject <NSCoding>
 
-@property (nonatomic, retain) NSString * type;
+@property (nonatomic, retain) NSString * cardType;
 @property (nonatomic, retain) NSData * color1;
 @property (nonatomic, retain) NSData * color2;
 @property (nonatomic, retain) NSData * color3;
@@ -28,5 +28,8 @@
 @property (nonatomic, retain) NSNumber * isMainUser;
 @property (nonatomic, retain) User *user;
 @property (nonatomic, retain) NSManagedObject *group;
+
+- (void)encodeWithCoder:(NSCoder *)encoder;
+- (instancetype)initWithCoder:(NSCoder *)coder;
 
 @end
