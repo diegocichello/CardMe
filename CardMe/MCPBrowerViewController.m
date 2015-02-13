@@ -9,10 +9,12 @@
 #import "MCPBrowerViewController.h"
 #import "SessionController.h"
 #import "Card.h"
+#import "AppDelegate.h"
 
 @interface MCPBrowerViewController () <SessionControllerDelegate>
 @property (nonatomic, strong) SessionController *sessionController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSManagedObjectContext *moc;
 @property Card * testCard;
 
 @end
@@ -22,8 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    self.moc =  [AppDelegate appDelegate].managedObjectContext;
     self.sessionController = [[SessionController alloc] init];
-    Card * testCard = [Card new];
+    Card * testCard = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:self.moc];
     testCard.cardType = @"fuckFace";
     testCard.isMainUser = @(1);
 }
@@ -152,8 +156,9 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    NSData * myData = [NSKeyedArchiver archivedDataWithRootObject:self.testCard];
+    NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:self.testCard];
     NSLog(@"Archived self.testCard, %@", self.testCard);
+    //[self.moc insertObject:<#(NSManagedObject *)#>]
     NSArray * peerArray = [NSArray arrayWithObject:[self.sessionController.connectedPeers objectAtIndex:indexPath.row]];
     NSError *error;
     [self.sessionController.session sendData:myData

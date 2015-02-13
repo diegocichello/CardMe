@@ -15,6 +15,11 @@
 
 @implementation AppDelegate
 
++ (instancetype)appDelegate
+{
+    return [[UIApplication sharedApplication]delegate];
+
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
