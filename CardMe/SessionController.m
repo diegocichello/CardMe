@@ -193,7 +193,7 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 
 
 
-    
+
     // CREATE NEW USER
 
     CardInfo *cardInfo = [NSEntityDescription insertNewObjectForEntityForName:@"CardInfo" inManagedObjectContext:self.context];
