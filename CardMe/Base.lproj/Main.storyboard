@@ -62,7 +62,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="onGettingStartedButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nHR-b5-w4r"/>
-                                    <segue destination="rXD-j2-tOL" kind="show" id="8NH-oq-eC2"/>
+                                    <segue destination="rXD-j2-tOL" kind="show" identifier="toExplain" id="8NH-oq-eC2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -151,7 +151,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="yye-i8-cxS" kind="show" id="Y61-tk-G7t"/>
+                                    <segue destination="yye-i8-cxS" kind="show" identifier="toBrowser" id="Y61-tk-G7t"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CardMe Logo Placeholder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuP-74-4L7">
@@ -452,7 +452,7 @@
                     </view>
                     <connections>
                         <outlet property="connectButton" destination="65E-yf-8AV" id="Zmw-kL-xIZ"/>
-                        <segue destination="vJS-Kz-6zi" kind="show" id="hTB-Fo-kB4"/>
+                        <segue destination="vJS-Kz-6zi" kind="show" identifier="toCardGen" id="hTB-Fo-kB4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ldb-k5-Hjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
