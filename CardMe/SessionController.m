@@ -188,8 +188,14 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     Card * card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:self.context];
     myCardDTO = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 
+    NSDictionary * testDict = [NSKeyedUnarchiver unarchiveObjectWithData:myCardDTO.information];
+    // CREATE NEW USER
 
-    //TO-DO--- Create own method for this
+
+
+    
+    // CREATE NEW USER
+
     CardInfo *cardInfo = [NSEntityDescription insertNewObjectForEntityForName:@"CardInfo" inManagedObjectContext:self.context];
 
     cardInfo.email = myCardDTO.email;
@@ -197,6 +203,7 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     cardInfo.contactPhone = myCardDTO.phoneNumber;
     cardInfo.fullName = myCardDTO.fullName;
     cardInfo.headline = myCardDTO.headline;
+
 
     [card setInfo:cardInfo];
     [self save];

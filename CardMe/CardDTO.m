@@ -34,10 +34,7 @@
         self.fullName = [aDecoder decodeObjectForKey:@"fullName"];
         self.email = [aDecoder decodeObjectForKey:@"email"];
         self.headline = [aDecoder decodeObjectForKey:@"headline"];
-        self.jobs = [aDecoder decodeObjectForKey:@"jobs"];
         self.address = [aDecoder decodeObjectForKey:@"address"];
-        self.skills = [aDecoder decodeObjectForKey:@"skills"];
-        self.education = [aDecoder decodeObjectForKey:@"education"];
         self.phoneNumber = [aDecoder decodeObjectForKey:@"phone"];
         self.shouldSendCard = [aDecoder decodeBoolForKey:@"flag"];
         self.information = [aDecoder decodeDataObject];
@@ -54,10 +51,7 @@
     [aCoder encodeObject:self.fullName forKey:@"fullName"];
     [aCoder encodeObject:self.email forKey:@"email"];
     [aCoder encodeObject:self.headline forKey:@"headline"];
-    [aCoder encodeObject:self.jobs forKey:@"jobs"];
-    [aCoder encodeObject:self.skills forKey:@"skills"];
     [aCoder encodeObject:self.address forKey:@"address"];
-    [aCoder encodeObject:self.education forKey:@"education"];
     [aCoder encodeObject:self.phoneNumber forKey:@"phone"];
     [aCoder encodeBool:self.shouldSendCard forKey:@"flag"];
     [aCoder encodeDataObject:self.information];
@@ -79,9 +73,6 @@
         self.email = card.info.email;
         self.headline = card.info.headline;
         self.address = card.info.address;
-        self.jobs = [card.user.info.positions allObjects];
-        self.skills = [card.user.info.skills allObjects];
-        self.education = [card.user.info.education allObjects];
         self.phoneNumber = card.info.contactPhone;
         self.information = card.user.information;
         self.shouldSendCard = false;

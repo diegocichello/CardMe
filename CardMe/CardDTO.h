@@ -25,9 +25,6 @@
 @property NSString *phoneNumber;
 @property NSString *headline;
 @property NSString *address;
-@property NSArray *jobs;
-@property NSArray *skills;
-@property NSArray *education;
 @property Boolean shouldSendCard;
 @property NSData * information;
 
