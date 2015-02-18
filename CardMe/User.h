@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "LinkedinInfo.h"
+#import "Card.h"
 
 
 @interface User : NSManagedObject
 
 @property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) NSString * email;
-@property (nonatomic, retain) NSManagedObject *info;
-@property (nonatomic, retain) NSManagedObject *card;
+@property (nonatomic, retain) LinkedinInfo *info;
+@property (nonatomic, retain) Card *card;
+@property (nonatomic, retain) NSManagedObjectContext *headline;
 
 @end

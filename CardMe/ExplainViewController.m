@@ -10,7 +10,9 @@
 
 #import "LIALinkedInHttpClient.h"
 #import "LIALinkedInApplication.h"
+#import "LinkedinInfo.h"
 #import "MainViewController.h"
+#import "AppDelegate.h"
 #import "AFHTTPRequestOperation.h"
 #import <Parse/Parse.h>
 
@@ -18,6 +20,7 @@
 
 @property(nonatomic) LIALinkedInHttpClient *client;
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
+@property NSManagedObjectContext *moc;
 
 @end
 
@@ -25,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 
     self.connectButton.layer.borderWidth = 2.0f;
     self.connectButton.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -49,9 +53,10 @@
     [self.client getAuthorizationCode:^(NSString *code) {
         [self.client getAccessToken:code success:^(NSDictionary *accessTokenData) {
             NSString *accessToken = [accessTokenData objectForKey:@"access_token"];
-            [self.client GET:[NSString stringWithFormat:@"https://api.linkedin.com/v1/people/~:(first-name,last-name,phone-numbers,email_address,certifications,educations,courses,three-current-positions,three-past-positions,num-recommenders,honors-awards,languages,picture-url,skills)?oauth2_access_token=%@&format=json", accessToken] parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
+            [self.client GET:[NSString stringWithFormat:@"https://api.linkedin.com/v1/people/~:(first-name,last-name,headline,id,phone-numbers,member-url-resources,email_address,certifications,educations,courses,three-current-positions,three-past-positions,num-recommenders,honors-awards,languages,picture-url,skills)?oauth2_access_token=%@&format=json", accessToken] parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
                 NSLog(@"current user %@", result);
-                MainViewController *mvc = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+                [LinkedinInfo saveDictionary:result];
+                MainViewController *mvc = [self.storyboard instantiateViewControllerWithIdentifier:@"CardDetailViewController"];
                 [self.navigationController pushViewController:mvc animated:true];
             }            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 NSLog(@"failed to fetch current user %@", error);

@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString * email;
 @property (nonatomic, retain) NSString * fullName;
 @property (nonatomic, retain) NSString * headline;
-@property (nonatomic, retain) NSString * websites;
+@property (nonatomic, retain) NSString * website;
 @property (nonatomic, retain) Card *card;
 @property (nonatomic, retain) LinkedinInfo *linkedininfo;
 

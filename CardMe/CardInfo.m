@@ -18,7 +18,7 @@
 @dynamic email;
 @dynamic fullName;
 @dynamic headline;
-@dynamic websites;
+@dynamic website;
 @dynamic card;
 @dynamic linkedininfo;
 

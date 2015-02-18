@@ -17,4 +17,7 @@
 @property (nonatomic, retain) NSString * phoneType;
 @property (nonatomic, retain) LinkedinInfo *info;
 
++ (void) appendPhoneNumbersWithArray:(NSArray *)array;
+
+
 @end

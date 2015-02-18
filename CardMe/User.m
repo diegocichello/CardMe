@@ -16,4 +16,6 @@
 @dynamic info;
 @dynamic card;
 
+
+
 @end
