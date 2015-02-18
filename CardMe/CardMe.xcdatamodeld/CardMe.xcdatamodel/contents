@@ -94,6 +94,7 @@
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="information" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="card" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="user" inverseEntity="Card" syncable="YES"/>
         <relationship name="info" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinkedinInfo" inverseName="user" inverseEntity="LinkedinInfo" syncable="YES"/>
@@ -110,6 +111,6 @@
         <element name="LinkedinPosition" positionX="36" positionY="81" width="128" height="180"/>
         <element name="LinkedinSkill" positionX="0" positionY="45" width="128" height="88"/>
         <element name="LinkedinURL" positionX="-9" positionY="117" width="128" height="103"/>
-        <element name="User" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="User" positionX="-54" positionY="-9" width="128" height="120"/>
     </elements>
 </model>

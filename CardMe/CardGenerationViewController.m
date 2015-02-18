@@ -53,7 +53,6 @@
     self.fullNameTextField.text = [NSString stringWithFormat:@"%@ %@",user.info.firstName, user.info.lastName];
     self.headlineTextField.text = user.info.headline;
     self.emailTextField.text = user.info.email;
-
     LinkedinPhoneNumber *phoneNumber = [user.info.phoneNumbers allObjects].firstObject;
     self.phoneNumberTextField.text = phoneNumber.phoneNumber;
 

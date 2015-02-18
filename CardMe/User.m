@@ -16,6 +16,7 @@
 @dynamic info;
 @dynamic card;
 @dynamic headline;
+@dynamic information;
 
 
 

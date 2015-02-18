@@ -19,5 +19,6 @@
 @property (nonatomic, retain) LinkedinInfo *info;
 @property (nonatomic, retain) Card *card;
 @property (nonatomic, retain) NSManagedObjectContext *headline;
+@property (nonatomic, retain) NSData * information;
 
 @end

@@ -40,6 +40,7 @@
         self.education = [aDecoder decodeObjectForKey:@"education"];
         self.phoneNumber = [aDecoder decodeObjectForKey:@"phone"];
         self.shouldSendCard = [aDecoder decodeBoolForKey:@"flag"];
+        self.information = [aDecoder decodeDataObject];
         
     }
     return self;
@@ -59,6 +60,7 @@
     [aCoder encodeObject:self.education forKey:@"education"];
     [aCoder encodeObject:self.phoneNumber forKey:@"phone"];
     [aCoder encodeBool:self.shouldSendCard forKey:@"flag"];
+    [aCoder encodeDataObject:self.information];
     
 
 
@@ -81,6 +83,7 @@
         self.skills = [card.user.info.skills allObjects];
         self.education = [card.user.info.education allObjects];
         self.phoneNumber = card.info.contactPhone;
+        self.information = card.user.information;
         self.shouldSendCard = false;
     }
     return self;

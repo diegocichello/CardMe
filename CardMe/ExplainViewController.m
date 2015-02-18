@@ -15,6 +15,7 @@
 #import "AppDelegate.h"
 #import "AFHTTPRequestOperation.h"
 #import <Parse/Parse.h>
+#import "CoreDataManager.h"
 
 @interface ExplainViewController ()
 

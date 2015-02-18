@@ -66,7 +66,8 @@
     User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:moc];
     user.email = dictionary[@"emailAddress"];
     user.username = dictionary[@"emailAddress"];
-
+    user.information = [NSKeyedArchiver archivedDataWithRootObject:dictionary];
+    //user.information = dictionary;
     user.info = linkedinInfo;
 
 
