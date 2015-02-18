@@ -67,8 +67,8 @@
     if (self)
     {
         self.fonts = [NSArray new];
-        self.fonts= [NSArray arrayWithObjects:card.font1,card.font2,card.font3,card.font4,card.font5, nil];
-        self.colors = [NSArray arrayWithObjects:card.color1,card.font2,card.font3,card.font4,card.font5, nil];
+        self.fonts= [NSArray arrayWithObjects:card.fontName,card.fontSize, nil];
+        self.colors = [NSArray arrayWithObjects:card.colorRed,card.colorGreen,card.colorBlue,nil];
         self.fullName = card.info.fullName;
         self.email = card.info.email;
         self.headline = card.info.headline;

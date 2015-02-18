@@ -7,6 +7,8 @@
 //
 
 #import "RootViewController.h"
+#import "CoreDataManager.h"
+#import "AppDelegate.h"
 
 @interface RootViewController ()
 
@@ -27,6 +29,8 @@
     self.gettingStartedButton.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
 
     self.gettingStartedButton.clipsToBounds = true;
+
+    [CoreDataManager sharedManager].moc = [AppDelegate appDelegate].managedObjectContext;
 
 }
 - (IBAction)onGettingStartedButtonTapped:(UIButton *)sender {

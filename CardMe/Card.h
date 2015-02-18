@@ -2,7 +2,7 @@
 //  Card.h
 //  CardMe
 //
-//  Created by Gustavo Couto on 2015-02-13.
+//  Created by Diego Cichello on 2/17/15.
 //  Copyright (c) 2015 Mobile Makers. All rights reserved.
 //
 
@@ -15,19 +15,17 @@
 
 @property (nonatomic, retain) NSNumber * cardId;
 @property (nonatomic, retain) NSString * cardType;
-@property (nonatomic, retain) NSData * color1;
-@property (nonatomic, retain) NSData * color2;
-@property (nonatomic, retain) NSData * color3;
-@property (nonatomic, retain) NSData * color4;
-@property (nonatomic, retain) NSData * color5;
-@property (nonatomic, retain) NSData * font1;
-@property (nonatomic, retain) NSData * font2;
-@property (nonatomic, retain) NSData * font3;
-@property (nonatomic, retain) NSData * font4;
-@property (nonatomic, retain) NSData * font5;
+@property (nonatomic, retain) NSNumber * colorRed;
+@property (nonatomic, retain) NSNumber * colorBlue;
+@property (nonatomic, retain) NSNumber * colorGreen;
+@property (nonatomic, retain) NSString * fontName;
+@property (nonatomic, retain) NSNumber * fontSize;
 @property (nonatomic, retain) NSNumber * isMainUser;
+@property (nonatomic, retain) NSData *image;
 @property (nonatomic, retain) Group *group;
 @property (nonatomic, retain) CardInfo *info;
 @property (nonatomic, retain) User *user;
+
++ (void) retrieveCardsWithBlock:(void (^)(NSArray * array))complete;
 
 @end

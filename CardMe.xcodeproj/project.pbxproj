@@ -57,12 +57,18 @@
 		291BD79A1A8D8F4300B8FE20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291BD7991A8D8F4300B8FE20 /* Images.xcassets */; };
 		291BD79D1A8D90D600B8FE20 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD79C1A8D90D600B8FE20 /* RootViewController.m */; };
 		291BD7A01A8DA82000B8FE20 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD79F1A8DA82000B8FE20 /* MainViewController.m */; };
+		298B13F51A92B3C5003FA165 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B13F41A92B3C5003FA165 /* CoreDataManager.m */; };
+		298B13FA1A92B66E003FA165 /* CardGenerationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B13F91A92B66E003FA165 /* CardGenerationViewController.m */; };
+		298B13FD1A92D20E003FA165 /* LinkedinURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B13FC1A92D20E003FA165 /* LinkedinURL.m */; };
+		298B14001A93C485003FA165 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B13FF1A93C485003FA165 /* Card.m */; };
+		298B14041A941C59003FA165 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B14031A941C59003FA165 /* iCarousel.m */; };
+		298B14091A941CA0003FA165 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B14061A941CA0003FA165 /* FXImageView.m */; };
+		298B140A1A941CA0003FA165 /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B14081A941CA0003FA165 /* UIImage+FX.m */; };
 		35DA2A3D1A8DBE9C00E6D1F2 /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A3C1A8DBE9C00E6D1F2 /* SessionController.m */; };
 		35DA2A401A8DC0DF00E6D1F2 /* MCPBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A3F1A8DC0DF00E6D1F2 /* MCPBrowerViewController.m */; };
 		35DA2A431A8E76A600E6D1F2 /* CardDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A421A8E76A600E6D1F2 /* CardDTO.m */; };
 		35DA2A461A8E7B6700E6D1F2 /* LinkedinRole.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A451A8E7B6700E6D1F2 /* LinkedinRole.m */; };
 		35DA2A4C1A8E7DBC00E6D1F2 /* CardInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A4B1A8E7DBC00E6D1F2 /* CardInfo.m */; };
-		35DA2A4F1A8E8E9E00E6D1F2 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A4E1A8E8E9E00E6D1F2 /* Card.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +163,20 @@
 		291BD79C1A8D90D600B8FE20 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		291BD79E1A8DA82000B8FE20 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		291BD79F1A8DA82000B8FE20 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		298B13F31A92B3C5003FA165 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		298B13F41A92B3C5003FA165 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		298B13F81A92B66E003FA165 /* CardGenerationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardGenerationViewController.h; sourceTree = "<group>"; };
+		298B13F91A92B66E003FA165 /* CardGenerationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardGenerationViewController.m; sourceTree = "<group>"; };
+		298B13FB1A92D20E003FA165 /* LinkedinURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedinURL.h; sourceTree = "<group>"; };
+		298B13FC1A92D20E003FA165 /* LinkedinURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinURL.m; sourceTree = "<group>"; };
+		298B13FE1A93C485003FA165 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		298B13FF1A93C485003FA165 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		298B14021A941C59003FA165 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		298B14031A941C59003FA165 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		298B14051A941CA0003FA165 /* FXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXImageView.h; sourceTree = "<group>"; };
+		298B14061A941CA0003FA165 /* FXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXImageView.m; sourceTree = "<group>"; };
+		298B14071A941CA0003FA165 /* UIImage+FX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FX.h"; sourceTree = "<group>"; };
+		298B14081A941CA0003FA165 /* UIImage+FX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FX.m"; sourceTree = "<group>"; };
 		35DA2A3B1A8DBE9C00E6D1F2 /* SessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionController.h; sourceTree = "<group>"; };
 		35DA2A3C1A8DBE9C00E6D1F2 /* SessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionController.m; sourceTree = "<group>"; };
 		35DA2A3E1A8DC0DF00E6D1F2 /* MCPBrowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPBrowerViewController.h; sourceTree = "<group>"; };
@@ -167,8 +187,6 @@
 		35DA2A451A8E7B6700E6D1F2 /* LinkedinRole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinRole.m; sourceTree = "<group>"; };
 		35DA2A4A1A8E7DBC00E6D1F2 /* CardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfo.h; sourceTree = "<group>"; };
 		35DA2A4B1A8E7DBC00E6D1F2 /* CardInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardInfo.m; sourceTree = "<group>"; };
-		35DA2A4D1A8E8E9E00E6D1F2 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
-		35DA2A4E1A8E8E9E00E6D1F2 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +342,8 @@
 		291BD7551A8BDFD500B8FE20 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				298B140B1A941CB0003FA165 /* FXImageView */,
+				298B14011A941C3B003FA165 /* iCarousel */,
 				35DA2A3A1A8DBD7400E6D1F2 /* MPCSession */,
 				291BD7561A8D1F6B00B8FE20 /* Bolts.framework */,
 				291BD7571A8D1F6B00B8FE20 /* Parse.framework */,
@@ -357,8 +377,10 @@
 		291BD7981A8D6EE500B8FE20 /* Data Model Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				35DA2A4D1A8E8E9E00E6D1F2 /* Card.h */,
-				35DA2A4E1A8E8E9E00E6D1F2 /* Card.m */,
+				298B13FE1A93C485003FA165 /* Card.h */,
+				298B13FF1A93C485003FA165 /* Card.m */,
+				298B13FB1A92D20E003FA165 /* LinkedinURL.h */,
+				298B13FC1A92D20E003FA165 /* LinkedinURL.m */,
 				35DA2A4A1A8E7DBC00E6D1F2 /* CardInfo.h */,
 				35DA2A4B1A8E7DBC00E6D1F2 /* CardInfo.m */,
 				291BD7951A8D6E8000B8FE20 /* LinkedinPhoneNumber.h */,
@@ -381,6 +403,8 @@
 				291BD7781A8D6E7E00B8FE20 /* User.m */,
 				35DA2A411A8E76A600E6D1F2 /* CardDTO.h */,
 				35DA2A421A8E76A600E6D1F2 /* CardDTO.m */,
+				298B13F31A92B3C5003FA165 /* CoreDataManager.h */,
+				298B13F41A92B3C5003FA165 /* CoreDataManager.m */,
 			);
 			name = "Data Model Core Data";
 			sourceTree = "<group>";
@@ -388,16 +412,46 @@
 		291BD7A21A8DA83500B8FE20 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				298B13F71A92B63B003FA165 /* First Setup Views */,
 				291BD79E1A8DA82000B8FE20 /* MainViewController.h */,
 				291BD79F1A8DA82000B8FE20 /* MainViewController.m */,
-				291BD7071A8BDF6F00B8FE20 /* ExplainViewController.h */,
-				291BD7081A8BDF6F00B8FE20 /* ExplainViewController.m */,
-				291BD79B1A8D90D600B8FE20 /* RootViewController.h */,
-				291BD79C1A8D90D600B8FE20 /* RootViewController.m */,
 				35DA2A3E1A8DC0DF00E6D1F2 /* MCPBrowerViewController.h */,
 				35DA2A3F1A8DC0DF00E6D1F2 /* MCPBrowerViewController.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		298B13F71A92B63B003FA165 /* First Setup Views */ = {
+			isa = PBXGroup;
+			children = (
+				291BD7071A8BDF6F00B8FE20 /* ExplainViewController.h */,
+				291BD7081A8BDF6F00B8FE20 /* ExplainViewController.m */,
+				291BD79B1A8D90D600B8FE20 /* RootViewController.h */,
+				291BD79C1A8D90D600B8FE20 /* RootViewController.m */,
+				298B13F81A92B66E003FA165 /* CardGenerationViewController.h */,
+				298B13F91A92B66E003FA165 /* CardGenerationViewController.m */,
+			);
+			name = "First Setup Views";
+			sourceTree = "<group>";
+		};
+		298B14011A941C3B003FA165 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				298B14021A941C59003FA165 /* iCarousel.h */,
+				298B14031A941C59003FA165 /* iCarousel.m */,
+			);
+			name = iCarousel;
+			sourceTree = "<group>";
+		};
+		298B140B1A941CB0003FA165 /* FXImageView */ = {
+			isa = PBXGroup;
+			children = (
+				298B14051A941CA0003FA165 /* FXImageView.h */,
+				298B14061A941CA0003FA165 /* FXImageView.m */,
+				298B14071A941CA0003FA165 /* UIImage+FX.h */,
+				298B14081A941CA0003FA165 /* UIImage+FX.m */,
+			);
+			name = FXImageView;
 			sourceTree = "<group>";
 		};
 		35DA2A3A1A8DBD7400E6D1F2 /* MPCSession */ = {
@@ -522,6 +576,7 @@
 				291BD7521A8BDFCB00B8FE20 /* NSString+LIAEncode.m in Sources */,
 				291BD73F1A8BDFAB00B8FE20 /* AFURLConnectionOperation.m in Sources */,
 				35DA2A3D1A8DBE9C00E6D1F2 /* SessionController.m in Sources */,
+				298B14041A941C59003FA165 /* iCarousel.m in Sources */,
 				291BD78B1A8D6E7F00B8FE20 /* LinkedinEducation.m in Sources */,
 				291BD77F1A8D6E7F00B8FE20 /* LinkedinInfo.m in Sources */,
 				35DA2A431A8E76A600E6D1F2 /* CardDTO.m in Sources */,
@@ -531,16 +586,21 @@
 				35DA2A4C1A8E7DBC00E6D1F2 /* CardInfo.m in Sources */,
 				291BD7091A8BDF6F00B8FE20 /* ExplainViewController.m in Sources */,
 				291BD7851A8D6E7F00B8FE20 /* Group.m in Sources */,
+				298B13F51A92B3C5003FA165 /* CoreDataManager.m in Sources */,
 				291BD7821A8D6E7F00B8FE20 /* LinkedinPosition.m in Sources */,
-				35DA2A4F1A8E8E9E00E6D1F2 /* Card.m in Sources */,
+				298B13FA1A92B66E003FA165 /* CardGenerationViewController.m in Sources */,
 				291BD7401A8BDFAB00B8FE20 /* AFURLRequestSerialization.m in Sources */,
+				298B140A1A941CA0003FA165 /* UIImage+FX.m in Sources */,
 				291BD73C1A8BDFAB00B8FE20 /* AFHTTPSessionManager.m in Sources */,
+				298B13FD1A92D20E003FA165 /* LinkedinURL.m in Sources */,
 				35DA2A461A8E7B6700E6D1F2 /* LinkedinRole.m in Sources */,
+				298B14091A941CA0003FA165 /* FXImageView.m in Sources */,
 				291BD74F1A8BDFCB00B8FE20 /* LIALinkedInApplication.m in Sources */,
 				291BD73D1A8BDFAB00B8FE20 /* AFNetworkReachabilityManager.m in Sources */,
 				291BD79D1A8D90D600B8FE20 /* RootViewController.m in Sources */,
 				291BD7411A8BDFAB00B8FE20 /* AFURLResponseSerialization.m in Sources */,
 				291BD7911A8D6E7F00B8FE20 /* LinkedinLanguage.m in Sources */,
+				298B14001A93C485003FA165 /* Card.m in Sources */,
 				291BD7941A8D6E8000B8FE20 /* LinkedinSkill.m in Sources */,
 				291BD7421A8BDFAB00B8FE20 /* AFURLSessionManager.m in Sources */,
 				291BD7001A8BDF6F00B8FE20 /* main.m in Sources */,

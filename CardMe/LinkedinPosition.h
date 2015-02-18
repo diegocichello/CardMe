@@ -18,9 +18,12 @@
 @property (nonatomic, retain) NSString * companyName;
 @property (nonatomic, retain) NSNumber * isCurrent;
 @property (nonatomic, retain) NSDate * startDate;
-@property (nonatomic, retain) NSData * endDate;
+@property (nonatomic, retain) NSDate * endDate;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) LinkedinInfo *info;
 
+
++ (void) appendCurrentPositionsWithArray:(NSArray *)array;
++ (void) appendPastPositionsWithArray:(NSArray *)array;
 @end

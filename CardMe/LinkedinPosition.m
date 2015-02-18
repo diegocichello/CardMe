@@ -8,6 +8,7 @@
 
 #import "LinkedinPosition.h"
 #import "LinkedinInfo.h"
+#import "CoreDataManager.h"
 
 
 @implementation LinkedinPosition
@@ -21,5 +22,74 @@
 @dynamic summary;
 @dynamic title;
 @dynamic info;
+
++ (void) appendCurrentPositionsWithArray:(NSArray *)array
+{
+    for (NSDictionary *dic in array)
+    {
+        LinkedinPosition *position = [NSEntityDescription insertNewObjectForEntityForName:@"LinkedinPosition" inManagedObjectContext:[CoreDataManager sharedManager].moc];
+        position.positionId = dic[@"id"];
+        position.companyId = dic[@"company"][@"id"];
+        position.companyName = dic[@"company"][@"name"];
+        position.isCurrent = dic[@"isCurrent"];
+        position.summary = dic[@"summary"];
+        position.title = dic[@"title"];
+
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *components = [NSDateComponents new];
+
+        [components setMonth:dic[@"startDate"][@"month"]];
+        [components setYear:dic[@"startDate"][@"year"]];
+
+        position.startDate = [calendar dateFromComponents:components];
+
+        components = [NSDateComponents new];
+
+        [components setMonth:dic[@"endDate"][@"month"]];
+        [components setYear:dic[@"endDate"][@"year"]];
+
+
+
+
+        [[CoreDataManager sharedManager].linkedinInfo addPositionsObject:position];
+    }
+
+}
+
+
+
++ (void) appendPastPositionsWithArray:(NSArray *)array
+{
+    for (NSDictionary *dic in array)
+    {
+        LinkedinPosition *position = [NSEntityDescription insertNewObjectForEntityForName:@"LinkedinPosition" inManagedObjectContext:[CoreDataManager sharedManager].moc];
+        position.positionId = dic[@"id"];
+        position.companyId = dic[@"company"][@"id"];
+        position.companyName = dic[@"company"][@"name"];
+        position.isCurrent = dic[@"isCurrent"];
+        position.summary = dic[@"summary"];
+        position.title = dic[@"title"];
+
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *components = [NSDateComponents new];
+
+        [components setMonth:dic[@"startDate"][@"month"]];
+        [components setYear:dic[@"startDate"][@"year"]];
+
+        position.startDate = [calendar dateFromComponents:components];
+
+        components = [NSDateComponents new];
+
+        [components setMonth:dic[@"endDate"][@"month"]];
+        [components setYear:dic[@"endDate"][@"year"]];
+
+        position.endDate = [calendar dateFromComponents:components];
+
+
+
+        
+        [[CoreDataManager sharedManager].linkedinInfo addPositionsObject:position];
+    }
+}
 
 @end
