@@ -22,6 +22,7 @@
 @property NSArray *jobs;
 @property NSArray *skills;
 @property NSArray *education;
+@property Boolean shouldSendCard;
 
 - (instancetype)initWithManagedObject: (Card *)card;
 - (void)encodeWithCoder:(NSCoder *)aCoder;

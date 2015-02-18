@@ -4,6 +4,8 @@
 #import "AppDelegate.h"
 #import "CardDTO.h"
 #import "CardInfo.h"
+#import "User.h"
+#import "CoreDataManager.h"
 
 @interface SessionController () // Class extension
 @property (nonatomic, strong) MCPeerID *peerID;
@@ -202,10 +204,27 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     [self.context insertObject:card];
     NSLog(@"didReceiveData %@, %@,from %@", myCardDTO.email, myCardDTO.fullName, peerID.displayName);
 
-    //GET OWN CARD AND SEND IT TO THIS PEERID
-    //TO DO
-    //TO DO
-    //TO DO
+    //Send mine to other user
+    if (myCardDTO.shouldSendCard == YES)
+    {
+        NSLog(@"Sending card back");
+        CoreDataManager *currentUser = [CoreDataManager sharedManager];
+        User *user = currentUser.currentUser;
+        CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:user.card];
+        testDTO.shouldSendCard = NO;
+        NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
+        NSLog(@"Archived testDTO, %@", testDTO);
+        NSArray * peerArray = [[NSArray alloc] initWithObjects:peerID, nil];
+        NSError *error;
+        [self.session sendData:myData
+                                toPeers:peerArray
+                                withMode:MCSessionSendDataReliable
+                                error:&error];
+
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+    }
 }
 
 - (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress

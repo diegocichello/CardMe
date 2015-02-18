@@ -20,7 +20,6 @@
 @property (nonatomic, retain) NSString * linkedinId;
 @property (nonatomic, retain) NSData * pictureSmall;
 @property (nonatomic, retain) User *user;
-@property (nonatomic, retain) NSManagedObject *role;
 @property (nonatomic, retain) NSSet *skills;
 @property (nonatomic, retain) NSSet *urls;
 @property (nonatomic, retain) NSSet *education;

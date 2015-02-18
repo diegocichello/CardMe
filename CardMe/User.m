@@ -15,6 +15,7 @@
 @dynamic email;
 @dynamic info;
 @dynamic card;
+@dynamic headline;
 
 
 

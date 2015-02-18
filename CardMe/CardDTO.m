@@ -9,6 +9,7 @@
 #import "CardDTO.h"
 #import "CardInfo.h"
 #import "LinkedinInfo.h"
+#import "User.h"
 
 @implementation CardDTO
 
@@ -38,6 +39,7 @@
         self.skills = [aDecoder decodeObjectForKey:@"skills"];
         self.education = [aDecoder decodeObjectForKey:@"education"];
         self.phoneNumber = [aDecoder decodeObjectForKey:@"phone"];
+        self.shouldSendCard = [aDecoder decodeBoolForKey:@"flag"];
         
     }
     return self;
@@ -56,6 +58,8 @@
     [aCoder encodeObject:self.address forKey:@"address"];
     [aCoder encodeObject:self.education forKey:@"education"];
     [aCoder encodeObject:self.phoneNumber forKey:@"phone"];
+    [aCoder encodeBool:self.shouldSendCard forKey:@"flag"];
+    
 
 
 }
@@ -73,10 +77,11 @@
         self.email = card.info.email;
         self.headline = card.info.headline;
         self.address = card.info.address;
-        self.jobs = [[NSArray alloc]init];
-        self.skills = [[NSArray alloc]init];
-        self.education = [[NSArray alloc]init];
+        self.jobs = [card.user.info.positions allObjects];
+        self.skills = [card.user.info.skills allObjects];
+        self.education = [card.user.info.education allObjects];
         self.phoneNumber = card.info.contactPhone;
+        self.shouldSendCard = false;
     }
     return self;
 

@@ -15,7 +15,6 @@
 
 @dynamic skillId;
 @dynamic name;
-@dynamic info;
 
 + (void) appendSkillWithArray:(NSArray *)array
 {

@@ -32,6 +32,8 @@
 
     [CoreDataManager sharedManager].moc = [AppDelegate appDelegate].managedObjectContext;
 
+
+
 }
 - (IBAction)onGettingStartedButtonTapped:(UIButton *)sender {
 }

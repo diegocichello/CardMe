@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="13F34" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Card" representedClassName="Card" syncable="YES">
         <attribute name="cardId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="cardType" optional="YES" attributeType="String" syncable="YES"/>
@@ -100,7 +100,7 @@
     </entity>
     <elements>
         <element name="Card" positionX="-63" positionY="-18" width="128" height="223"/>
-        <element name="CardInfo" positionX="-9" positionY="108" width="128" height="163"/>
+        <element name="CardInfo" positionX="-9" positionY="108" width="128" height="165"/>
         <element name="Group" positionX="9" positionY="54" width="128" height="75"/>
         <element name="LinkedinCourse" positionX="18" positionY="81" width="128" height="90"/>
         <element name="LinkedinEducation" positionX="27" positionY="90" width="128" height="178"/>
@@ -109,7 +109,7 @@
         <element name="LinkedinPhoneNumber" positionX="45" positionY="171" width="128" height="88"/>
         <element name="LinkedinPosition" positionX="36" positionY="81" width="128" height="180"/>
         <element name="LinkedinSkill" positionX="0" positionY="45" width="128" height="88"/>
-        <element name="User" positionX="-54" positionY="-9" width="128" height="103"/>
         <element name="LinkedinURL" positionX="-9" positionY="117" width="128" height="103"/>
+        <element name="User" positionX="-54" positionY="-9" width="128" height="103"/>
     </elements>
 </model>

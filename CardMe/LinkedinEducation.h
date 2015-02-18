@@ -21,7 +21,6 @@
 @property (nonatomic, retain) NSString * schoolName;
 @property (nonatomic, retain) NSDate * startDate;
 @property (nonatomic, retain) NSString * activities;
-@property (nonatomic, retain) LinkedinInfo *info;
 
 + (void) appendEducationWithArray:(NSArray *)array;
 

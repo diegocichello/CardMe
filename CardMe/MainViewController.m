@@ -11,7 +11,7 @@
 #import "iCarousel.h"
 #import "FXImageView.h"
 
-@interface MainViewController ()
+@interface MainViewController () <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet iCarousel *cardCarousel;
 @property NSMutableArray *cardArray;
@@ -33,7 +33,12 @@
     self.cardCarousel.bounces = true;
 
 
+
+
+
 }
+
+
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
@@ -72,6 +77,7 @@
 {
     return self.cardArray.count;
 }
+
 
 
 @end

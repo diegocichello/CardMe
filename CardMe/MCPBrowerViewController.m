@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "CardDTO.h"
 #import "CardInfo.h"
+#import "CoreDataManager.h"
 
 
 @interface MCPBrowerViewController () <SessionControllerDelegate>
@@ -156,11 +157,13 @@
 {
 
 
-    //NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:self.testCard];
     NSLog(@"Archived self.testCard, %@", self.testCard);
-    //[self.moc insertObject:<#(NSManagedObject *)#>]
 
-    CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:self.testCard];
+    //CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:self.testCard];
+    CoreDataManager *currentUser = [CoreDataManager sharedManager];
+    User *user = currentUser.currentUser;
+    CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:user.card];
+    testDTO.shouldSendCard = true;
     NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
     NSLog(@"Archived testDTO, %@", testDTO);
 

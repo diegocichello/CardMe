@@ -21,7 +21,6 @@
 @property (nonatomic, retain) NSDate * endDate;
 @property (nonatomic, retain) NSString * summary;
 @property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) LinkedinInfo *info;
 
 
 + (void) appendCurrentPositionsWithArray:(NSArray *)array;

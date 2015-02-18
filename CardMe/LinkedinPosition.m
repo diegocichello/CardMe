@@ -21,7 +21,6 @@
 @dynamic endDate;
 @dynamic summary;
 @dynamic title;
-@dynamic info;
 
 + (void) appendCurrentPositionsWithArray:(NSArray *)array
 {
@@ -38,15 +37,15 @@
         NSCalendar *calendar = [NSCalendar currentCalendar];
         NSDateComponents *components = [NSDateComponents new];
 
-        [components setMonth:dic[@"startDate"][@"month"]];
-        [components setYear:dic[@"startDate"][@"year"]];
+        [components setMonth:(NSInteger)dic[@"startDate"][@"month"]];
+        [components setYear:(NSInteger)dic[@"startDate"][@"year"]];
 
         position.startDate = [calendar dateFromComponents:components];
 
         components = [NSDateComponents new];
 
-        [components setMonth:dic[@"endDate"][@"month"]];
-        [components setYear:dic[@"endDate"][@"year"]];
+        [components setMonth:(NSInteger)dic[@"endDate"][@"month"]];
+        [components setYear:(NSInteger)dic[@"endDate"][@"year"]];
 
 
 
@@ -73,15 +72,15 @@
         NSCalendar *calendar = [NSCalendar currentCalendar];
         NSDateComponents *components = [NSDateComponents new];
 
-        [components setMonth:dic[@"startDate"][@"month"]];
-        [components setYear:dic[@"startDate"][@"year"]];
+        [components setMonth:(NSInteger)dic[@"startDate"][@"month"]];
+        [components setYear:(NSInteger)dic[@"startDate"][@"year"]];
 
         position.startDate = [calendar dateFromComponents:components];
 
         components = [NSDateComponents new];
 
-        [components setMonth:dic[@"endDate"][@"month"]];
-        [components setYear:dic[@"endDate"][@"year"]];
+        [components setMonth:(NSInteger)dic[@"endDate"][@"month"]];
+        [components setYear:(NSInteger)dic[@"endDate"][@"year"]];
 
         position.endDate = [calendar dateFromComponents:components];
 

@@ -11,7 +11,7 @@
 #import "CoreDataManager.h"
 
 
-@implementation LinkedinEducation
+@implementation LinkedinEducation 
 
 @dynamic degree;
 @dynamic endDate;
@@ -21,7 +21,40 @@
 @dynamic schoolName;
 @dynamic startDate;
 @dynamic activities;
-@dynamic info;
+
+
+//- (id)initWithCoder:(NSCoder *)aDecoder
+//{
+//    self = [super init];
+//    if (self) {
+//        self.degree = [aDecoder decodeObjectForKey:@"degree"];
+//        self.endDate = [aDecoder decodeObjectForKey:@"endDate"];
+//        self.fieldOfStudy = [aDecoder decodeObjectForKey:@"fieldOfStudy"];
+//        self.educationId = [aDecoder decodeObjectForKey:@"educationId"];
+//        self.notes = [aDecoder decodeObjectForKey:@"notes"];
+//        self.schoolName = [aDecoder decodeObjectForKey:@"schoolName"];
+//        self.startDate = [aDecoder decodeObjectForKey:@"startDate"];
+//        self.activities = [aDecoder decodeObjectForKey:@"activities"];
+//
+//    }
+//    return self;
+//}
+//
+//
+//- (void)encodeWithCoder:(NSCoder *)aCoder
+//{
+//    [aCoder encodeObject:self.degree forKey:@"degree"];
+//    [aCoder encodeObject:self.endDate forKey:@"endDate"];
+//    [aCoder encodeObject:self.fieldOfStudy forKey:@"fieldOfStudy"];
+//    [aCoder encodeObject:self.educationId forKey:@"educationId"];
+//    [aCoder encodeObject:self.notes forKey:@"notes"];
+//    [aCoder encodeObject:self.schoolName forKey:@"schoolName"];
+//    [aCoder encodeObject:self.startDate forKey:@"startDate"];
+//    [aCoder encodeObject:self.activities forKey:@"activities"];
+//
+//
+//    
+//}
 
 + (void) appendEducationWithArray:(NSArray *)array
 {
@@ -47,8 +80,8 @@
 
         components = [NSDateComponents new];
 
-        [components setMonth:dic[@"endDate"][@"month"]];
-        [components setYear:dic[@"endDate"][@"year"]];
+        [components setMonth:(NSInteger)dic[@"endDate"][@"month"]];
+        [components setYear:(NSInteger)dic[@"endDate"][@"year"]];
 
         education.endDate = [calendar dateFromComponents:components];
 
