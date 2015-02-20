@@ -14,15 +14,19 @@
 #import "CardInfo.h"
 #import "CoreDataManager.h"
 #import "CardReceivedViewController.h"
+#import "CustomCollectionView.h"
 
 
-@interface MCPBrowerViewController () <SessionControllerDelegate>
+@interface MCPBrowerViewController () <SessionControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic, strong) SessionController *sessionController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property int numberOfItems;
+@property (nonatomic, strong) NSMutableArray *itemCounts;
 
 @property NSManagedObjectContext *moc;
 
 @property NSManagedObjectContext * context;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 
 //temporary
@@ -37,13 +41,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    self.numberOfItems = 0;
     self.moc =  [AppDelegate appDelegate].managedObjectContext;
     self.sessionController = [[SessionController alloc] init];
 
-    Card * testCard = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:self.moc];
-    testCard.cardType = @"fuckFace";
-    testCard.isMainUser = @(1);
+
 
     self.sessionController.delegate = self;
     self.context = [AppDelegate appDelegate].managedObjectContext;
@@ -52,6 +54,20 @@
 
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:true];
+
+
+
+}
+
+- (IBAction)buttonPressed:(id)sender
+{
+    self.numberOfItems +=1;
+    [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:self.numberOfItems-1 inSection:0]]];
+
+}
 #pragma mark - Helper methods
 - (void)loadCards
 {
@@ -89,7 +105,30 @@
     });
 }
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CustomCollectionView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.imageView.image = [UIImage imageNamed:@"linkedin"];
+    cell.imageView.layer.cornerRadius = 40;
+    cell.imageView.clipsToBounds= true;
+
+    cell.nameLabel.text = @"Diego";
+    cell.nameLabel.textColor = [UIColor whiteColor];
+
+    return cell;
+}
+
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.numberOfItems;
+}
+
+
 #pragma mark - UITableViewDataSource protocol conformance
+
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

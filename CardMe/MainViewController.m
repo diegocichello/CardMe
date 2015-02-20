@@ -27,12 +27,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Card retrieveCardsWithBlock:^(NSArray *array) {
-        self.cardArray = [array mutableCopy];
-        [self.cardCarousel reloadData];
-    }];
-    self.cardCarousel.type = iCarouselTypeRotary;
-    self.cardCarousel.bounces = true;
+
+    self.navigationController.hidesBarsWhenKeyboardAppears = true;
+    self.navigationItem.hidesBackButton = true;
+
+    self.navigationController.navigationBarHidden = false;
+
+
+
+
+    
+
+
+
+        self.cardCarousel.bounces = true;
 
 
 
@@ -40,11 +48,21 @@
 
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:true];
+    [super viewWillAppear:true]; 
+    self.cardArray = [NSMutableArray new];
     [Card retrieveCardsWithBlock:^(NSArray *array) {
         self.cardArray = [array mutableCopy];
+        if (self.cardArray.count <3)
+        {
+            self.cardCarousel.type = iCarouselTypeCoverFlow2;
+        }
+        else
+        {
+            self.cardCarousel.type = iCarouselTypeRotary;
+        }
+
         [self.cardCarousel reloadData];
     }];
 }
@@ -58,8 +76,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    ProfileViewController *profileVC = segue.destinationViewController;
-    profileVC.card = [self.cardArray objectAtIndex:(NSUInteger)self.index];
+    if ([segue.identifier isEqualToString:@"ProfileSegue"])
+    {
+
+        ProfileViewController *profileVC = segue.destinationViewController;
+        profileVC.card = [self.cardArray objectAtIndex:(NSUInteger)self.index];
+    }
 
 }
 

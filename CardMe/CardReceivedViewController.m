@@ -139,6 +139,7 @@
     card.colorGreen = self.dto.colors[1];
     card.colorBlue = self.dto.colors[2];
     card.image = self.dto.cardImage;
+    card.notes = self.textView.text;
 
     CardInfo *cardInfo = [NSEntityDescription insertNewObjectForEntityForName:@"CardInfo" inManagedObjectContext:[CoreDataManager sharedManager].moc];
 
