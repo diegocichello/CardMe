@@ -16,6 +16,7 @@
 #import "LinkedinPhoneNumber.h"
 #import "CoreDataManager.h"
 #import "User.h"
+#import <UIKit/UIKit.h>
 
 
 
@@ -29,6 +30,7 @@
 @dynamic user;
 @dynamic skills;
 @dynamic education;
+@dynamic linkedinURL;
 @dynamic courses;
 @dynamic languages;
 @dynamic phoneNumbers;
@@ -50,6 +52,10 @@
     linkedinInfo.lastName = dictionary[@"lastName"];
     linkedinInfo.headline = dictionary[@"headline"];
     linkedinInfo.linkedinId = dictionary[@"id"];
+    linkedinInfo.linkedinURL = dictionary[@"publicProfileUrl"];
+    NSArray *array = dictionary[@"pictureUrls"][@"values"];
+    linkedinInfo.pictureSmall = [NSData dataWithContentsOfURL:[NSURL URLWithString:array.firstObject]];
+
 
     [LinkedinCourse appendCoursesWithArray:dictionary[@"courses"][@"values"]];
 
@@ -63,16 +69,21 @@
     [LinkedinLanguage appendLanguageWithArray:dictionary[@"phoneNumbers"][@"values"]];
     [LinkedinURL appendURLWithArray:dictionary[@"memberUrlResources"][@"values"]];
 
-    User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:moc];
-    user.email = dictionary[@"emailAddress"];
-    user.username = dictionary[@"emailAddress"];
-    user.information = [NSKeyedArchiver archivedDataWithRootObject:dictionary];
-    //user.information = dictionary;
-    user.info = linkedinInfo;
+    if(![CoreDataManager sharedManager].currentUser)
+    {
+
+        User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:moc];
+        user.email = dictionary[@"emailAddress"];
+        user.username = dictionary[@"emailAddress"];
+        user.information = [NSKeyedArchiver archivedDataWithRootObject:dictionary];
+                //user.information = dictionary;
+        user.info = linkedinInfo;
 
 
-    CoreDataManager *currentUser = [CoreDataManager sharedManager];
-    currentUser.currentUser = user;
+        [CoreDataManager sharedManager].currentUser = user;
+    }
 }
+
+
 
 @end

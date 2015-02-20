@@ -10,21 +10,21 @@
 
 @implementation CoreDataManager
 
-static CoreDataManager *currentUser = nil;
+static CoreDataManager *coreDataManager = nil;
 
 
 
 + (CoreDataManager *)sharedManager
 {
-    if (!currentUser) {
+    if (!coreDataManager) {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            currentUser = [[CoreDataManager alloc] init];
+            coreDataManager = [[CoreDataManager alloc] init];
         });
 
     }
 
-    return currentUser;
+    return coreDataManager;
 }
 
 

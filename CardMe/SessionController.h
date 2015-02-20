@@ -1,6 +1,7 @@
 
 
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
+#import "CardDTO.h"
 
 @protocol SessionControllerDelegate;
 
@@ -34,5 +35,6 @@ its delegate method should explicitly dispatch or schedule that work
 
 // Session changed state - connecting, connected and disconnected peers changed
 - (void)sessionDidChangeState;
+- (void)receiveCard:(CardDTO *)dto;
 
 @end

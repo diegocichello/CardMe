@@ -23,6 +23,7 @@
 @dynamic image;
 @dynamic fontName;
 @dynamic fontSize;
+@dynamic notes;
 @dynamic isMainUser;
 @dynamic group;
 @dynamic info;

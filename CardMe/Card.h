@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSNumber * colorBlue;
 @property (nonatomic, retain) NSNumber * colorGreen;
 @property (nonatomic, retain) NSString * fontName;
+@property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) NSNumber * fontSize;
 @property (nonatomic, retain) NSNumber * isMainUser;
 @property (nonatomic, retain) NSData *image;

@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) LinkedinInfo *info;
 
-+ (void) appendLanguageWithArray:(NSArray *)array;
++ (void) appendLanguageWithArray:(NSArray *)array ;
 
 
 @end

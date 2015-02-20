@@ -36,6 +36,7 @@
         self.headline = [aDecoder decodeObjectForKey:@"headline"];
         self.address = [aDecoder decodeObjectForKey:@"address"];
         self.phoneNumber = [aDecoder decodeObjectForKey:@"phone"];
+        self.cardImage = [aDecoder decodeObjectForKey:@"cardImage"];
         self.shouldSendCard = [aDecoder decodeBoolForKey:@"flag"];
         self.information = [aDecoder decodeDataObject];
         
@@ -53,6 +54,7 @@
     [aCoder encodeObject:self.headline forKey:@"headline"];
     [aCoder encodeObject:self.address forKey:@"address"];
     [aCoder encodeObject:self.phoneNumber forKey:@"phone"];
+    [aCoder encodeObject:self.cardImage forKey:@"cardImage"];
     [aCoder encodeBool:self.shouldSendCard forKey:@"flag"];
     [aCoder encodeDataObject:self.information];
     
@@ -73,6 +75,7 @@
         self.email = card.info.email;
         self.headline = card.info.headline;
         self.address = card.info.address;
+        self.cardImage = card.image;
         self.phoneNumber = card.info.contactPhone;
         self.information = card.user.information;
         self.shouldSendCard = false;

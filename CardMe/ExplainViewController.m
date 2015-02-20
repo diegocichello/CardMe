@@ -54,7 +54,7 @@
     [self.client getAuthorizationCode:^(NSString *code) {
         [self.client getAccessToken:code success:^(NSDictionary *accessTokenData) {
             NSString *accessToken = [accessTokenData objectForKey:@"access_token"];
-            [self.client GET:[NSString stringWithFormat:@"https://api.linkedin.com/v1/people/~:(first-name,last-name,headline,id,phone-numbers,member-url-resources,email_address,certifications,educations,courses,three-current-positions,three-past-positions,num-recommenders,honors-awards,languages,picture-url,skills)?oauth2_access_token=%@&format=json", accessToken] parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
+            [self.client GET:[NSString stringWithFormat:@"https://api.linkedin.com/v1/people/~:(first-name,last-name,headline,id,phone-numbers,member-url-resources,picture-urls::(original),email_address,certifications,public-profile-url,educations,courses,three-current-positions,three-past-positions,num-recommenders,honors-awards,languages,picture-url,skills)?oauth2_access_token=%@&format=json", accessToken] parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
                 NSLog(@"current user %@", result);
                 [LinkedinInfo saveDictionary:result];
                 MainViewController *mvc = [self.storyboard instantiateViewControllerWithIdentifier:@"CardDetailViewController"];

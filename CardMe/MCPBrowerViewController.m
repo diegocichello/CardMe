@@ -13,6 +13,7 @@
 #import "CardDTO.h"
 #import "CardInfo.h"
 #import "CoreDataManager.h"
+#import "CardReceivedViewController.h"
 
 
 @interface MCPBrowerViewController () <SessionControllerDelegate>
@@ -47,24 +48,7 @@
     self.sessionController.delegate = self;
     self.context = [AppDelegate appDelegate].managedObjectContext;
     [self loadCards];
-    if ( self.cardArray.count == 0)
-    {
-        Card * testCard = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:self.context];
-        testCard.isMainUser = @(1);
-        testCard.cardType = @"Business";
-
-        CardInfo *cardInfo = [NSEntityDescription insertNewObjectForEntityForName:@"CardInfo" inManagedObjectContext:self.context];
-
-        cardInfo.email = @"gustavocoutoeom@gmail.com";
-        cardInfo.address = @"shady lane";
-        cardInfo.contactPhone = @"twotwoonethree";
-        cardInfo.fullName = @"Gustavo Couto";
-        cardInfo.headline = @"Major retard";
-
-        [testCard setInfo:cardInfo];
-        [self save];
-        [self loadCards];
-    }
+    
 
 }
 
@@ -178,6 +162,22 @@
     if (error) {
         NSLog(@"%@", [error localizedDescription]);
     }
+}
+
+- (void) receiveCard:(CardDTO *)dto
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"CardReceivedSegue" sender:dto];
+
+    });
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(CardDTO *)sender
+{
+    CardReceivedViewController *vc = segue.destinationViewController;
+    vc.dto = sender;
+
 }
 
 

@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * firstName;
 @property (nonatomic, retain) NSString * lastName;
 @property (nonatomic, retain) NSString *headline;
+@property (nonatomic, retain) NSString *linkedinURL;
 @property (nonatomic, retain) NSString * linkedinId;
 @property (nonatomic, retain) NSData * pictureSmall;
 @property (nonatomic, retain) User *user;
@@ -67,6 +68,7 @@
 - (void)removeUrls:(NSSet *)values;
 
 + (void)saveDictionary:(NSDictionary *)dictionary;
++ (LinkedinInfo *)saveDictionaryFromAnotherPerson:(NSDictionary *)dictionary;
 
 
 @end

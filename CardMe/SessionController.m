@@ -184,17 +184,27 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
 {
-    CardDTO * myCardDTO = [CardDTO new];
-    Card * card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:self.context];
-    myCardDTO = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 
+
+    
+    CardDTO * myCardDTO = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    //Card * card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:self.context];
+
+
+    [self.delegate receiveCard:myCardDTO];
+/*
     NSDictionary * testDict = [NSKeyedUnarchiver unarchiveObjectWithData:myCardDTO.information];
     // CREATE NEW USER
 
+    [LinkedinInfo saveDictionary:testDict];
 
 
-
-    // CREATE NEW USER
+    card.fontName = myCardDTO.fonts[0];
+    card.fontSize = myCardDTO.fonts[1];
+    card.colorRed = myCardDTO.colors[0];
+    card.colorGreen = myCardDTO.colors[1];
+    card.colorBlue = myCardDTO.colors[2];
+    card.image = myCardDTO.cardImage;
 
     CardInfo *cardInfo = [NSEntityDescription insertNewObjectForEntityForName:@"CardInfo" inManagedObjectContext:self.context];
 
@@ -205,10 +215,12 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     cardInfo.headline = myCardDTO.headline;
 
 
-    [card setInfo:cardInfo];
-    [self save];
 
-    [self.context insertObject:card];
+    [card setInfo:cardInfo];
+    [cardInfo setLinkedininfo:[CoreDataManager sharedManager].linkedinInfo];
+    //[self save];
+
+    [self.context insertObject:card];*/
     NSLog(@"didReceiveData %@, %@,from %@", myCardDTO.email, myCardDTO.fullName, peerID.displayName);
 
     //Send mine to other user

@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSDate * startDate;
 @property (nonatomic, retain) NSString * activities;
 
-+ (void) appendEducationWithArray:(NSArray *)array;
++ (void) appendEducationWithArray:(NSArray *)array ;
 
 
 @end

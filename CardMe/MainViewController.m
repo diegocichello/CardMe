@@ -10,9 +10,11 @@
 #import "Card.h"
 #import "iCarousel.h"
 #import "FXImageView.h"
+#import "ProfileViewController.h"
 
-@interface MainViewController () <UIGestureRecognizerDelegate>
+@interface MainViewController () <UIGestureRecognizerDelegate,iCarouselDataSource,iCarouselDelegate>
 
+@property int index;
 @property (weak, nonatomic) IBOutlet iCarousel *cardCarousel;
 @property NSMutableArray *cardArray;
 
@@ -38,7 +40,28 @@
 
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:true];
+    [Card retrieveCardsWithBlock:^(NSArray *array) {
+        self.cardArray = [array mutableCopy];
+        [self.cardCarousel reloadData];
+    }];
+}
 
+
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
+{
+    self.index = (int)index;
+    [self performSegueWithIdentifier:@"ProfileSegue" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ProfileViewController *profileVC = segue.destinationViewController;
+    profileVC.card = [self.cardArray objectAtIndex:(NSUInteger)self.index];
+
+}
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
@@ -71,6 +94,8 @@
 
 
 }
+
+
 
 
 - (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel

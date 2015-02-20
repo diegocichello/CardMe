@@ -25,6 +25,7 @@
 @property NSString *phoneNumber;
 @property NSString *headline;
 @property NSString *address;
+@property NSData *cardImage;
 @property Boolean shouldSendCard;
 @property NSData * information;
 

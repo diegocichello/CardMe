@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 @property (weak, nonatomic) IBOutlet UILabel *lineBar;
 @property (weak, nonatomic) IBOutlet UIView *cardView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 
 @property CGFloat menuWidth;
@@ -66,6 +67,11 @@
         self.webURLTextField.text =@"";
     }
     self.addressTextField.text = @"";
+
+
+    self.imageView.image = [UIImage imageWithData:user.info.pictureSmall];
+    self.imageView.layer.cornerRadius = 25;
+    self.imageView.clipsToBounds = YES;
 
 }
 - (IBAction)onCollorsButtonTapped:(UIButton *)sender
@@ -174,8 +180,7 @@
     //End the bitmap-based graphics context
     UIGraphicsEndImageContext();
 
-    for (int i=0;i<10;i++)
-    {
+
 
     Card *card  = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[CoreDataManager sharedManager].moc];
 
@@ -203,8 +208,8 @@
     card.info.email = self.emailTextField.text;
     card.info.contactPhone = self.phoneNumberTextField.text;
     card.info.website = self.webURLTextField.text;
-    }
 
+    card.info.linkedininfo = [CoreDataManager sharedManager].linkedinInfo;
 
     [self performSegueWithIdentifier:@"MainFeedSegue" sender:self];
 
