@@ -90,7 +90,7 @@ typedef NS_ENUM(NSInteger, TDBButtonTag) {
                           [UIImage imageNamed:@"first.png"],
                           [UIImage imageNamed:@"second.png"],
                           [UIImage imageNamed:@"third.png"],
-                          [UIImage imageNamed:@"icon.png"], nil];
+                          [UIImage imageNamed:@"icon"], nil];
 
     walkthrough.delegate = self;
 
