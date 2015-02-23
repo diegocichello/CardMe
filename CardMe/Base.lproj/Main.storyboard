@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kvh-9x-Vn0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Kvh-9x-Vn0">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -125,7 +125,7 @@
                         <viewControllerLayoutGuide type="bottom" id="oP6-Bd-o0A"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HiX-dq-Duj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UxG-ZJ-57g">
@@ -180,7 +180,7 @@
                         <viewControllerLayoutGuide type="bottom" id="y7K-ZV-mct"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DFs-Ix-Jtk">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eay-WN-o2E">
@@ -452,7 +452,7 @@
                         <viewControllerLayoutGuide type="bottom" id="3CK-jT-24S"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rNc-mo-Gxd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="pZ4-dw-XIo">
@@ -496,13 +496,13 @@
                                 <exclude reference="FFq-ok-Wrh"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="OxN-J3-eLf"/>
-                                <exclude reference="qwt-um-eV7"/>
-                                <exclude reference="t9r-LU-TO6"/>
+                                <exclude reference="8a6-hm-huL"/>
                                 <exclude reference="4Sa-Tk-fvI"/>
                                 <exclude reference="Kaf-w2-coH"/>
                                 <exclude reference="Tbl-g4-hUS"/>
-                                <exclude reference="8a6-hm-huL"/>
+                                <exclude reference="OxN-J3-eLf"/>
+                                <exclude reference="qwt-um-eV7"/>
+                                <exclude reference="t9r-LU-TO6"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -511,13 +511,13 @@
                                 <include reference="FFq-ok-Wrh"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="OxN-J3-eLf"/>
-                                <include reference="qwt-um-eV7"/>
-                                <include reference="t9r-LU-TO6"/>
+                                <include reference="8a6-hm-huL"/>
                                 <include reference="4Sa-Tk-fvI"/>
                                 <include reference="Kaf-w2-coH"/>
                                 <include reference="Tbl-g4-hUS"/>
-                                <include reference="8a6-hm-huL"/>
+                                <include reference="OxN-J3-eLf"/>
+                                <include reference="qwt-um-eV7"/>
+                                <include reference="t9r-LU-TO6"/>
                             </mask>
                         </variation>
                     </view>
@@ -541,7 +541,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Tfd-54-0gx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7k8-HU-bX2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IaE-jv-Hu4">
@@ -1240,27 +1240,17 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                         <exclude reference="zIC-ta-Fwp"/>
                                         <exclude reference="CTd-Cy-cKY"/>
                                         <exclude reference="DnE-E4-dXx"/>
-                                        <exclude reference="IDJ-Ew-UIK"/>
-                                        <exclude reference="V4n-gs-ksx"/>
-                                        <exclude reference="5eT-a7-wnn"/>
-                                        <exclude reference="pqJ-yy-ELb"/>
-                                        <exclude reference="xf5-XB-ddS"/>
-                                        <exclude reference="VxS-Jp-BgH"/>
-                                        <exclude reference="j54-fR-zoH"/>
-                                        <exclude reference="oB3-Cc-BfO"/>
-                                        <exclude reference="oxq-rk-bRN"/>
-                                        <exclude reference="6tt-6D-l0y"/>
-                                        <exclude reference="AZt-Mj-M3W"/>
-                                        <exclude reference="cUJ-hL-cWK"/>
-                                        <exclude reference="uln-c1-70o"/>
-                                        <exclude reference="3oT-Xe-V2R"/>
-                                        <exclude reference="5fO-zo-bca"/>
-                                        <exclude reference="lrN-jm-txZ"/>
-                                        <exclude reference="23a-X7-xMG"/>
                                         <exclude reference="Age-lz-BBB"/>
                                         <exclude reference="FPr-Dq-S1X"/>
                                         <exclude reference="KVG-Bl-PMR"/>
-                                        <exclude reference="Wif-3b-jF5"/>
+                                        <exclude reference="IDJ-Ew-UIK"/>
+                                        <exclude reference="V4n-gs-ksx"/>
+                                        <exclude reference="6tt-6D-l0y"/>
+                                        <exclude reference="AZt-Mj-M3W"/>
+                                        <exclude reference="cUJ-hL-cWK"/>
+                                        <exclude reference="3oT-Xe-V2R"/>
+                                        <exclude reference="5fO-zo-bca"/>
+                                        <exclude reference="lrN-jm-txZ"/>
                                         <exclude reference="2JM-lI-orR"/>
                                         <exclude reference="NRJ-gn-kAK"/>
                                         <exclude reference="RLu-AG-lnn"/>
@@ -1269,10 +1259,19 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                         <exclude reference="NMr-dd-1qs"/>
                                         <exclude reference="PEs-db-76k"/>
                                         <exclude reference="Xeh-iX-Ozd"/>
+                                        <exclude reference="VxS-Jp-BgH"/>
+                                        <exclude reference="j54-fR-zoH"/>
+                                        <exclude reference="oB3-Cc-BfO"/>
+                                        <exclude reference="oxq-rk-bRN"/>
+                                        <exclude reference="uln-c1-70o"/>
+                                        <exclude reference="Wif-3b-jF5"/>
+                                        <exclude reference="5eT-a7-wnn"/>
+                                        <exclude reference="pqJ-yy-ELb"/>
+                                        <exclude reference="xf5-XB-ddS"/>
+                                        <exclude reference="23a-X7-xMG"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="14" y="169" width="373" height="234"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="43b-X7-4lx"/>
                                         <include reference="9I3-EZ-Yl7"/>
@@ -1291,27 +1290,17 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                         <include reference="zIC-ta-Fwp"/>
                                         <include reference="CTd-Cy-cKY"/>
                                         <include reference="DnE-E4-dXx"/>
-                                        <include reference="IDJ-Ew-UIK"/>
-                                        <include reference="V4n-gs-ksx"/>
-                                        <include reference="5eT-a7-wnn"/>
-                                        <include reference="pqJ-yy-ELb"/>
-                                        <include reference="xf5-XB-ddS"/>
-                                        <include reference="VxS-Jp-BgH"/>
-                                        <include reference="j54-fR-zoH"/>
-                                        <include reference="oB3-Cc-BfO"/>
-                                        <include reference="oxq-rk-bRN"/>
-                                        <include reference="6tt-6D-l0y"/>
-                                        <include reference="AZt-Mj-M3W"/>
-                                        <include reference="cUJ-hL-cWK"/>
-                                        <include reference="uln-c1-70o"/>
-                                        <include reference="3oT-Xe-V2R"/>
-                                        <include reference="5fO-zo-bca"/>
-                                        <include reference="lrN-jm-txZ"/>
-                                        <include reference="23a-X7-xMG"/>
                                         <include reference="Age-lz-BBB"/>
                                         <include reference="FPr-Dq-S1X"/>
                                         <include reference="KVG-Bl-PMR"/>
-                                        <include reference="Wif-3b-jF5"/>
+                                        <include reference="IDJ-Ew-UIK"/>
+                                        <include reference="V4n-gs-ksx"/>
+                                        <include reference="6tt-6D-l0y"/>
+                                        <include reference="AZt-Mj-M3W"/>
+                                        <include reference="cUJ-hL-cWK"/>
+                                        <include reference="3oT-Xe-V2R"/>
+                                        <include reference="5fO-zo-bca"/>
+                                        <include reference="lrN-jm-txZ"/>
                                         <include reference="2JM-lI-orR"/>
                                         <include reference="NRJ-gn-kAK"/>
                                         <include reference="RLu-AG-lnn"/>
@@ -1320,6 +1309,16 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                         <include reference="NMr-dd-1qs"/>
                                         <include reference="PEs-db-76k"/>
                                         <include reference="Xeh-iX-Ozd"/>
+                                        <include reference="VxS-Jp-BgH"/>
+                                        <include reference="j54-fR-zoH"/>
+                                        <include reference="oB3-Cc-BfO"/>
+                                        <include reference="oxq-rk-bRN"/>
+                                        <include reference="uln-c1-70o"/>
+                                        <include reference="Wif-3b-jF5"/>
+                                        <include reference="5eT-a7-wnn"/>
+                                        <include reference="pqJ-yy-ELb"/>
+                                        <include reference="xf5-XB-ddS"/>
+                                        <include reference="23a-X7-xMG"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1400,29 +1399,29 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <exclude reference="Cfs-uZ-Gt9"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="WWH-Qt-X8t"/>
-                                <exclude reference="YxI-gJ-5lj"/>
-                                <exclude reference="sqW-8t-3P4"/>
                                 <exclude reference="Jb4-BG-g9D"/>
                                 <exclude reference="TLf-E1-XcS"/>
                                 <exclude reference="apf-cj-jO6"/>
+                                <exclude reference="nOo-jq-uB2"/>
+                                <exclude reference="sWD-lC-H62"/>
+                                <exclude reference="GA5-sv-WrZ"/>
+                                <exclude reference="ibq-NZ-OXd"/>
+                                <exclude reference="6OK-FW-Y49"/>
+                                <exclude reference="GXJ-lE-8Ds"/>
+                                <exclude reference="OWZ-0f-3Ja"/>
+                                <exclude reference="hAW-HX-fcO"/>
+                                <exclude reference="B4c-5A-tnJ"/>
+                                <exclude reference="dkI-pH-tfX"/>
+                                <exclude reference="rmO-cP-TlU"/>
+                                <exclude reference="WWH-Qt-X8t"/>
+                                <exclude reference="YxI-gJ-5lj"/>
+                                <exclude reference="sqW-8t-3P4"/>
                                 <exclude reference="NTE-gU-lrZ"/>
                                 <exclude reference="hko-gZ-iv4"/>
                                 <exclude reference="MAp-7k-mez"/>
                                 <exclude reference="q09-UA-LVt"/>
                                 <exclude reference="tMU-ud-xB6"/>
                                 <exclude reference="3HR-id-NdB"/>
-                                <exclude reference="GA5-sv-WrZ"/>
-                                <exclude reference="ibq-NZ-OXd"/>
-                                <exclude reference="B4c-5A-tnJ"/>
-                                <exclude reference="dkI-pH-tfX"/>
-                                <exclude reference="rmO-cP-TlU"/>
-                                <exclude reference="6OK-FW-Y49"/>
-                                <exclude reference="GXJ-lE-8Ds"/>
-                                <exclude reference="OWZ-0f-3Ja"/>
-                                <exclude reference="hAW-HX-fcO"/>
-                                <exclude reference="nOo-jq-uB2"/>
-                                <exclude reference="sWD-lC-H62"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1437,29 +1436,29 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <include reference="Cfs-uZ-Gt9"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="WWH-Qt-X8t"/>
-                                <include reference="YxI-gJ-5lj"/>
-                                <include reference="sqW-8t-3P4"/>
                                 <include reference="Jb4-BG-g9D"/>
                                 <include reference="TLf-E1-XcS"/>
                                 <include reference="apf-cj-jO6"/>
+                                <include reference="nOo-jq-uB2"/>
+                                <include reference="sWD-lC-H62"/>
+                                <include reference="GA5-sv-WrZ"/>
+                                <include reference="ibq-NZ-OXd"/>
+                                <include reference="6OK-FW-Y49"/>
+                                <include reference="GXJ-lE-8Ds"/>
+                                <include reference="OWZ-0f-3Ja"/>
+                                <include reference="hAW-HX-fcO"/>
+                                <include reference="B4c-5A-tnJ"/>
+                                <include reference="dkI-pH-tfX"/>
+                                <include reference="rmO-cP-TlU"/>
+                                <include reference="WWH-Qt-X8t"/>
+                                <include reference="YxI-gJ-5lj"/>
+                                <include reference="sqW-8t-3P4"/>
                                 <include reference="NTE-gU-lrZ"/>
                                 <include reference="hko-gZ-iv4"/>
                                 <include reference="MAp-7k-mez"/>
                                 <include reference="q09-UA-LVt"/>
                                 <include reference="tMU-ud-xB6"/>
                                 <include reference="3HR-id-NdB"/>
-                                <include reference="GA5-sv-WrZ"/>
-                                <include reference="ibq-NZ-OXd"/>
-                                <include reference="B4c-5A-tnJ"/>
-                                <include reference="dkI-pH-tfX"/>
-                                <include reference="rmO-cP-TlU"/>
-                                <include reference="6OK-FW-Y49"/>
-                                <include reference="GXJ-lE-8Ds"/>
-                                <include reference="OWZ-0f-3Ja"/>
-                                <include reference="hAW-HX-fcO"/>
-                                <include reference="nOo-jq-uB2"/>
-                                <include reference="sWD-lC-H62"/>
                             </mask>
                         </variation>
                     </view>
@@ -1514,14 +1513,11 @@ To start is really easy, we need you to link our app with your Linkedin account 
                         <viewControllerLayoutGuide type="bottom" id="I0X-Hj-0Kf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wmm-lS-IpO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linkedin" translatesAutoresizingMaskIntoConstraints="NO" id="UgA-Kc-KGt">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="102" width="540" height="174"/>
-                                </variation>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="cVU-Yg-52e">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1530,18 +1526,12 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="327.5" width="540" height="173.5"/>
-                                </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You just received this card!!!!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rv-lI-Yeb">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="30" width="540" height="62.5"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbT-5S-xHd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1551,9 +1541,6 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="526" width="300" height="48"/>
-                                </variation>
                                 <connections>
                                     <action selector="onOutsideOfText:" destination="MuZ-ae-trz" eventType="touchUpOutside" id="unO-xe-mwr"/>
                                     <action selector="onSaveButtonTapped:" destination="MuZ-ae-trz" eventType="touchUpInside" id="24t-FY-pAs"/>
@@ -1567,9 +1554,6 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="300" y="526" width="300" height="48"/>
-                                </variation>
                                 <connections>
                                     <action selector="onCancelButtonTapped:" destination="MuZ-ae-trz" eventType="touchUpInside" id="Fn5-GE-Izb"/>
                                 </connections>
@@ -1579,9 +1563,6 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="290" width="540" height="20.5"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
