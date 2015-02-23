@@ -31,11 +31,10 @@
     [super viewDidLoad];
 
 
-    self.connectButton.layer.borderWidth = 2.0f;
-    self.connectButton.layer.borderColor = [UIColor whiteColor].CGColor;
-    self.connectButton.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
+    
 
-    NSArray *grantedAccess = @[ @"r_fullprofile",@"r_contactinfo",@"r_emailaddress",@"r_network"];
+
+    NSArray *grantedAccess = @[ @"r_fullprofile",@"r_contactinfo",@"r_emailaddress"];
 
     //load the the secret data from an uncommitted LIALinkedInClientExampleCredentials.h file
     NSString *clientId = @"75oo5lyj3615yg" ; //the client secret you get from the registered LinkedIn application

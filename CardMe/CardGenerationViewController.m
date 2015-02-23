@@ -31,9 +31,12 @@
 @property (weak, nonatomic) IBOutlet UIView *cardView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (weak, nonatomic) IBOutlet UIButton *colorsButton;
+@property (weak, nonatomic) IBOutlet UIButton *fontsButton;
 
 @property CGFloat menuWidth;
 @property NSTimeInterval animationTime;
+@property (weak, nonatomic) IBOutlet UIView *lineView;
 
 
 @end
@@ -47,9 +50,14 @@
     [super viewDidLoad];
 
 
+    self.colorsButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.colorsButton.layer.borderWidth = 1.0f;
 
-    CoreDataManager *currentUser = [CoreDataManager sharedManager];
-    User *user = currentUser.currentUser;
+    self.fontsButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.fontsButton.layer.borderWidth = 1.0f;
+
+
+    User *user = [CoreDataManager sharedManager].currentUser;
 
     self.fullNameTextField.text = [NSString stringWithFormat:@"%@ %@",user.info.firstName, user.info.lastName];
     self.headlineTextField.text = user.info.headline;
@@ -250,13 +258,21 @@
 
                                }];
     UIAlertAction *futureAction = [UIAlertAction
-                               actionWithTitle:@"Future"
+                               actionWithTitle:@"Futura"
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction *action)
                                {
-                                   [self setAllFonts:[UIFont fontWithName:@"Future" size:12]];
+                                   [self setAllFonts:[UIFont fontWithName:@"Futura" size:12]];
 
                                }];
+    UIAlertAction *gillAction = [UIAlertAction
+                                   actionWithTitle:@"Gill Sans"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       [self setAllFonts:[UIFont fontWithName:@"Gill Sans" size:12]];
+
+                                   }];
     UIAlertAction *helveticaAction = [UIAlertAction
                                actionWithTitle:@"Helvetica"
                                style:UIAlertActionStyleDefault
@@ -279,6 +295,7 @@
     [alertcontroller addAction:didotAction];
     [alertcontroller addAction:futureAction];
     [alertcontroller addAction:helveticaAction];
+    [alertcontroller addAction:gillAction];
 
 
 
@@ -302,7 +319,7 @@
 - (void) setAllColors:(UIColor *)color
 {
     [self.fullNameTextField setTextColor:color];
-    [self.lineBar setTextColor:color];
+    [self.lineView setBackgroundColor:color];
 
 
 }

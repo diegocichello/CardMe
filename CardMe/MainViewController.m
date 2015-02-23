@@ -31,16 +31,18 @@
     self.navigationController.hidesBarsWhenKeyboardAppears = true;
     self.navigationItem.hidesBackButton = true;
 
-    self.navigationController.navigationBarHidden = false;
+    self.navigationController.navigationBarHidden = true;
 
+    self.cardCarousel.bounces = false;
 
+    self.cardCarousel.type = iCarouselTypeCoverFlow2;
 
 
     
 
 
 
-        self.cardCarousel.bounces = true;
+
 
 
 
@@ -54,9 +56,11 @@
     self.cardArray = [NSMutableArray new];
     [Card retrieveCardsWithBlock:^(NSArray *array) {
         self.cardArray = [array mutableCopy];
+
         if (self.cardArray.count <3)
         {
-            self.cardCarousel.type = iCarouselTypeCoverFlow2;
+            self.cardCarousel.type = iCarouselTypeCoverFlow;
+
         }
         else
         {

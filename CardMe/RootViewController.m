@@ -9,8 +9,16 @@
 #import "RootViewController.h"
 #import "CoreDataManager.h"
 #import "AppDelegate.h"
+#import "TDBInterface.h"
 
-@interface RootViewController ()
+typedef NS_ENUM(NSInteger, TDBButtonTag) {
+    TDBButtonTagGetStarted,
+    TDBButtonTagSignUp,
+    TDBButtonTagSignIn,
+    TDBButtonTagSignInWithFacebook
+};
+
+@interface RootViewController () <TDBWalkthroughDelegate>
 
 
 
@@ -32,9 +40,64 @@
 
     [CoreDataManager sharedManager].moc = [AppDelegate appDelegate].managedObjectContext;
 
+    [self showTDBSimpleWhite];
 
+    [self performSegueWithIdentifier:@"toExplain" sender:self];
 
 }
+#pragma mark - TDBWalkthroughDelegate Methods
+
+- (void)didPressButtonWithTag:(NSInteger)tag
+{
+    switch (tag) {
+        case TDBButtonTagGetStarted:
+            NSLog(@"Get Started");
+            [[TDBWalkthrough sharedInstance] dismiss];
+            break;
+
+        case TDBButtonTagSignUp:
+            NSLog(@"Sign Up");
+            break;
+
+        case TDBButtonTagSignIn:
+            NSLog(@"Sign In");
+            break;
+
+        case TDBButtonTagSignInWithFacebook:
+            NSLog(@"SignInWithFacebook");
+            [[TDBWalkthrough sharedInstance] dismiss];
+            break;
+
+        default:
+            break;
+    }
+}
+
+- (void)showTDBSimpleWhite
+{
+    TDBWalkthrough *walkthrough = [TDBWalkthrough sharedInstance];
+
+    // Setting the text for the different slides of the walkthrough
+    walkthrough.descriptions = [NSArray arrayWithObjects:
+                                @"Create your own personalized card",
+                                @"Import your information from LinkedIn",
+                                @"Exchange cards with nearby users",
+                                @"Browse your collection of cards",
+                                nil];
+
+    // Setting the images for the different slides of the walkthrough
+    walkthrough.images = [NSArray arrayWithObjects:
+                          [UIImage imageNamed:@"first.png"],
+                          [UIImage imageNamed:@"second.png"],
+                          [UIImage imageNamed:@"third.png"],
+                          [UIImage imageNamed:@"icon.png"], nil];
+
+    walkthrough.delegate = self;
+
+    [walkthrough show];
+}
+
+
 - (IBAction)onGettingStartedButtonTapped:(UIButton *)sender {
 }
 

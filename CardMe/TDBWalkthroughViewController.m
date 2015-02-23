@@ -9,6 +9,7 @@
 #import "TDBWalkthrough.h"
 #import "TDBWalkThroughViewController.h"
 #import "TDBInterface.h"
+#import <UIKit/UIKit.h>
 
 @interface TDBWalkthroughViewController ()
 
@@ -37,7 +38,7 @@
     [super viewDidLoad];
     
     
-    
+    self.view.backgroundColor = [UIColor blackColor];
     self.viewControllers = [[NSMutableArray alloc] init];
 }
 
