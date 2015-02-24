@@ -580,10 +580,11 @@
 				TargetAttributes = {
 					291BD6F91A8BDF6F00B8FE20 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = AMBT8Q9YX5;
+						DevelopmentTeam = UL5ZRM2Y7L;
 					};
 					291BD7151A8BDF6F00B8FE20 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = UL5ZRM2Y7L;
 						TestTargetID = 291BD6F91A8BDF6F00B8FE20;
 					};
 				};

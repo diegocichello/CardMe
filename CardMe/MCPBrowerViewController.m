@@ -17,12 +17,13 @@
 #import "CustomCollectionView.h"
 
 
+
 @interface MCPBrowerViewController () <SessionControllerDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic, strong) SessionController *sessionController;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property int numberOfItems;
 @property (nonatomic, strong) NSMutableArray *itemCounts;
-
+@property NSMutableArray * cardDTOArray;
 @property NSManagedObjectContext *moc;
 
 @property NSManagedObjectContext * context;
@@ -40,6 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.cardDTOArray = [[NSMutableArray alloc] init];
     // Do any additional setup after loading the view.
     self.numberOfItems = 0;
     self.moc =  [AppDelegate appDelegate].managedObjectContext;
@@ -108,11 +110,12 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CustomCollectionView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.imageView.image = [UIImage imageNamed:@"linkedin"];
+    CardDTO * dto = self.cardDTOArray[indexPath.row];
+    cell.imageView.image = [UIImage imageWithData:dto.cardImage];
     cell.imageView.layer.cornerRadius = 40;
     cell.imageView.clipsToBounds= true;
 
-    cell.nameLabel.text = @"Diego";
+    cell.nameLabel.text = dto.fullName;
     cell.nameLabel.textColor = [UIColor whiteColor];
 
     return cell;
@@ -205,11 +208,15 @@
 
 - (void) receiveCard:(CardDTO *)dto
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"CardReceivedSegue" sender:dto];
+    [self.cardDTOArray addObject:dto];
 
-    });
-    
+//WHEN SELECT COLLECTION VIEW ITEM DO THIS!
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self performSegueWithIdentifier:@"CardReceivedSegue" sender:dto];
+//
+//    });
+//
+    [self.collectionView reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(CardDTO *)sender

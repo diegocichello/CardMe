@@ -56,7 +56,6 @@
     [aCoder encodeObject:self.phoneNumber forKey:@"phone"];
     [aCoder encodeObject:self.cardImage forKey:@"cardImage"];
     [aCoder encodeBool:self.shouldSendCard forKey:@"flag"];
-    [aCoder encodeDataObject:self.information];
     
 
 

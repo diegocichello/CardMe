@@ -166,6 +166,7 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
             
         case MCSessionStateConnected:
         {
+            [self sendMyCardToPeer:session aPeer:peerID];
             [self.connectingPeersOrderedSet removeObject:peerID];
             [self.disconnectedPeersOrderedSet removeObject:peerID];
             break;
@@ -224,26 +225,26 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     NSLog(@"didReceiveData %@, %@,from %@", myCardDTO.email, myCardDTO.fullName, peerID.displayName);
 
     //Send mine to other user
-    if (myCardDTO.shouldSendCard == YES)
-    {
-        NSLog(@"Sending card back");
-        CoreDataManager *currentUser = [CoreDataManager sharedManager];
-        User *user = currentUser.currentUser;
-        CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:user.card];
-        testDTO.shouldSendCard = NO;
-        NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
-        NSLog(@"Archived testDTO, %@", testDTO);
-        NSArray * peerArray = [[NSArray alloc] initWithObjects:peerID, nil];
-        NSError *error;
-        [self.session sendData:myData
-                                toPeers:peerArray
-                                withMode:MCSessionSendDataReliable
-                                error:&error];
-
-        if (error) {
-            NSLog(@"%@", [error localizedDescription]);
-        }
-    }
+//    if (myCardDTO.shouldSendCard == YES)
+//    {
+//        NSLog(@"Sending card back");
+//        CoreDataManager *currentUser = [CoreDataManager sharedManager];
+//        User *user = currentUser.currentUser;
+//        CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:user.card];
+//        testDTO.shouldSendCard = NO;
+//        NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
+//        NSLog(@"Archived testDTO, %@", testDTO);
+//        NSArray * peerArray = [[NSArray alloc] initWithObjects:peerID, nil];
+//        NSError *error;
+//        [self.session sendData:myData
+//                                toPeers:peerArray
+//                                withMode:MCSessionSendDataReliable
+//                                error:&error];
+//
+//        if (error) {
+//            NSLog(@"%@", [error localizedDescription]);
+//        }
+//    }
 }
 
 - (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress
@@ -353,6 +354,27 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     if (![self.context save:&error]) {
         NSLog(@"failed to save core data %@ %@", error, [error localizedDescription]);
         return;
+    }
+}
+
+-(void)sendMyCardToPeer:(MCSession * )session aPeer:(MCPeerID *)peerID
+{
+    //NSLog(@"Sending card back");
+    CoreDataManager *currentUser = [CoreDataManager sharedManager];
+    User *user = currentUser.currentUser;
+    CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:user.card];
+    testDTO.shouldSendCard = NO;
+    NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
+    NSLog(@"Archived testDTO, %@", testDTO);
+    NSArray * peerArray = [[NSArray alloc] initWithObjects:peerID, nil];
+    NSError *error;
+    [self.session sendData:myData
+                   toPeers:peerArray
+                  withMode:MCSessionSendDataReliable
+                     error:&error];
+
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
     }
 }
 
