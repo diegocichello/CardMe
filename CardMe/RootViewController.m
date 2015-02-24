@@ -40,11 +40,25 @@ typedef NS_ENUM(NSInteger, TDBButtonTag) {
 
     [CoreDataManager sharedManager].moc = [AppDelegate appDelegate].managedObjectContext;
 
-    [self showTDBSimpleWhite];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
 
-    [self performSegueWithIdentifier:@"toExplain" sender:self];
+    User *user = [[CoreDataManager sharedManager].moc executeFetchRequest:request error:nil].firstObject;
+
+    if (user)
+    {
+        [CoreDataManager sharedManager].currentUser = user;
+        [self performSegueWithIdentifier:@"goToMain" sender:self];
+    }
+    else
+    {
+
+        [self showTDBSimpleWhite];
+
+        [self performSegueWithIdentifier:@"toExplain" sender:self];
+    }
 
 }
+
 #pragma mark - TDBWalkthroughDelegate Methods
 
 - (void)didPressButtonWithTag:(NSInteger)tag

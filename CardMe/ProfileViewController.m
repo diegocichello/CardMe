@@ -50,6 +50,8 @@
     self.notesTextView.text = self.card.notes;
     self.nameLabel.text = self.card.info.linkedininfo.firstName;
     self.headlineLabel.text = self.card.info.linkedininfo.headline;
+
+    self.navigationController.navigationBarHidden = false;
 }
 
 - (void) viewWillAppear:(BOOL)animated

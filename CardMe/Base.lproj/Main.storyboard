@@ -110,6 +110,7 @@
                     <navigationItem key="navigationItem" id="ZER-Hz-3dG"/>
                     <connections>
                         <outlet property="gettingStartedButton" destination="0kB-2x-v0w" id="bPc-WP-x9O"/>
+                        <segue destination="bdL-cI-PYf" kind="presentation" identifier="goToMain" id="jvD-zz-W6u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -125,7 +126,7 @@
                         <viewControllerLayoutGuide type="bottom" id="oP6-Bd-o0A"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HiX-dq-Duj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UxG-ZJ-57g">
@@ -180,7 +181,7 @@
                         <viewControllerLayoutGuide type="bottom" id="y7K-ZV-mct"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DFs-Ix-Jtk">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eay-WN-o2E">
@@ -452,9 +453,12 @@
                         <viewControllerLayoutGuide type="bottom" id="3CK-jT-24S"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rNc-mo-Gxd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fundo" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-j9-NJX">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="pZ4-dw-XIo">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
@@ -483,19 +487,28 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="pZ4-dw-XIo" secondAttribute="trailing" constant="106" id="4Sa-Tk-fvI"/>
+                            <constraint firstItem="32Y-j9-NJX" firstAttribute="leading" secondItem="rNc-mo-Gxd" secondAttribute="leadingMargin" constant="-16" id="5BF-v1-qMS"/>
                             <constraint firstItem="3CK-jT-24S" firstAttribute="top" secondItem="FFq-ok-Wrh" secondAttribute="bottom" constant="36" id="8a6-hm-huL"/>
                             <constraint firstItem="pZ4-dw-XIo" firstAttribute="leading" secondItem="rNc-mo-Gxd" secondAttribute="leadingMargin" constant="107" id="Kaf-w2-coH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FFq-ok-Wrh" secondAttribute="trailing" constant="-16" id="OxN-J3-eLf"/>
+                            <constraint firstItem="32Y-j9-NJX" firstAttribute="top" secondItem="rNc-mo-Gxd" secondAttribute="topMargin" constant="-4" id="RgP-CD-EaN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="32Y-j9-NJX" secondAttribute="trailing" constant="-16" id="Ssd-od-4sv"/>
                             <constraint firstItem="pZ4-dw-XIo" firstAttribute="top" secondItem="5uI-KY-2JR" secondAttribute="bottom" constant="20" id="Tbl-g4-hUS"/>
+                            <constraint firstItem="32Y-j9-NJX" firstAttribute="bottom" secondItem="rNc-mo-Gxd" secondAttribute="bottomMargin" id="n1L-1q-zRa"/>
                             <constraint firstItem="FFq-ok-Wrh" firstAttribute="top" secondItem="pZ4-dw-XIo" secondAttribute="bottom" constant="24" id="qwt-um-eV7"/>
                             <constraint firstItem="FFq-ok-Wrh" firstAttribute="leading" secondItem="rNc-mo-Gxd" secondAttribute="leadingMargin" constant="-16" id="t9r-LU-TO6"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="32Y-j9-NJX"/>
                                 <exclude reference="pZ4-dw-XIo"/>
                                 <exclude reference="FFq-ok-Wrh"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="5BF-v1-qMS"/>
+                                <exclude reference="RgP-CD-EaN"/>
+                                <exclude reference="Ssd-od-4sv"/>
+                                <exclude reference="n1L-1q-zRa"/>
                                 <exclude reference="OxN-J3-eLf"/>
                                 <exclude reference="qwt-um-eV7"/>
                                 <exclude reference="t9r-LU-TO6"/>
@@ -507,10 +520,15 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="32Y-j9-NJX"/>
                                 <include reference="pZ4-dw-XIo"/>
                                 <include reference="FFq-ok-Wrh"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="5BF-v1-qMS"/>
+                                <include reference="RgP-CD-EaN"/>
+                                <include reference="Ssd-od-4sv"/>
+                                <include reference="n1L-1q-zRa"/>
                                 <include reference="OxN-J3-eLf"/>
                                 <include reference="qwt-um-eV7"/>
                                 <include reference="t9r-LU-TO6"/>
@@ -532,6 +550,23 @@
             </objects>
             <point key="canvasLocation" x="4632" y="1069"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="yAU-o9-0me">
+            <objects>
+                <viewController id="LRw-VS-0fo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TMt-gg-9mS"/>
+                        <viewControllerLayoutGuide type="bottom" id="vE0-tv-TPn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VZF-Pn-2iN">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jhM-Gd-LuY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1927.5" y="1835"/>
+        </scene>
         <!--Exchange-->
         <scene sceneID="iLL-Bn-2a5">
             <objects>
@@ -541,7 +576,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Tfd-54-0gx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7k8-HU-bX2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IaE-jv-Hu4">
@@ -675,7 +710,7 @@
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Exchange" image="exchangeIcon" id="XsW-zW-2yK"/>
+                    <tabBarItem key="tabBarItem" title="Exchange" image="exchange30x30" id="XsW-zW-2yK"/>
                     <connections>
                         <outlet property="collectionView" destination="IaE-jv-Hu4" id="nhb-9t-3G5"/>
                         <outlet property="tableView" destination="anh-iY-7B2" id="P8t-ra-6sH"/>
@@ -1271,8 +1306,7 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                         <exclude reference="Xeh-iX-Ozd"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="14" y="169" width="373" height="234"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="43b-X7-4lx"/>
                                         <include reference="9I3-EZ-Yl7"/>
@@ -1514,14 +1548,11 @@ To start is really easy, we need you to link our app with your Linkedin account 
                         <viewControllerLayoutGuide type="bottom" id="I0X-Hj-0Kf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wmm-lS-IpO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linkedin" translatesAutoresizingMaskIntoConstraints="NO" id="UgA-Kc-KGt">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="102" width="540" height="174"/>
-                                </variation>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="cVU-Yg-52e">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1531,7 +1562,7 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="327.5" width="540" height="173.5"/>
+                                    <rect key="frame" x="30" y="302" width="340" height="124.5"/>
                                 </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You just received this card!!!!!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Rv-lI-Yeb">
@@ -1539,9 +1570,6 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="30" width="540" height="62.5"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbT-5S-xHd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1551,9 +1579,6 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <state key="normal" title="Save">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="526" width="300" height="48"/>
-                                </variation>
                                 <connections>
                                     <action selector="onOutsideOfText:" destination="MuZ-ae-trz" eventType="touchUpOutside" id="unO-xe-mwr"/>
                                     <action selector="onSaveButtonTapped:" destination="MuZ-ae-trz" eventType="touchUpInside" id="24t-FY-pAs"/>
@@ -1567,9 +1592,6 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="300" y="526" width="300" height="48"/>
-                                </variation>
                                 <connections>
                                     <action selector="onCancelButtonTapped:" destination="MuZ-ae-trz" eventType="touchUpInside" id="Fn5-GE-Izb"/>
                                 </connections>
@@ -1580,7 +1602,7 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="30" y="290" width="540" height="20.5"/>
+                                    <rect key="frame" x="30" y="264" width="340" height="20.5"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -1711,15 +1733,15 @@ To start is really easy, we need you to link our app with your Linkedin account 
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="600"/>
-                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" id="K8j-1X-OGb">
+                    <tabBar key="tabBar" opaque="NO" alpha="0.59999999999999964" contentMode="scaleToFill" itemPositioning="centered" id="K8j-1X-OGb">
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="cad-z3-9p9" kind="relationship" relationship="viewControllers" id="Oj6-e7-36I"/>
                         <segue destination="yye-i8-cxS" kind="relationship" relationship="viewControllers" id="lC1-Vd-kVa"/>
+                        <segue destination="OQX-lg-wCs" kind="relationship" relationship="viewControllers" id="wvU-Kf-RLf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Btz-b9-aS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1730,7 +1752,7 @@ To start is really easy, we need you to link our app with your Linkedin account 
         <scene sceneID="fdh-v2-UAt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cad-z3-9p9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="mycardicon" id="Mur-Q8-KIf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-7" id="Mur-Q8-KIf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NaS-Nr-zrB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1745,16 +1767,35 @@ To start is really easy, we need you to link our app with your Linkedin account 
             </objects>
             <point key="canvasLocation" x="3714" y="1069"/>
         </scene>
+        <!--My Card-->
+        <scene sceneID="BUv-hi-xyY">
+            <objects>
+                <viewController id="OQX-lg-wCs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v2R-JC-UqK"/>
+                        <viewControllerLayoutGuide type="bottom" id="t4J-K2-CfV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r9j-HN-Dnn">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My Card" image="myCard30x30" id="nhT-dg-uB4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="trl-l7-9K0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1927.5" y="1069"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background" width="414" height="687"/>
-        <image name="exchangeIcon" width="83" height="40"/>
+        <image name="exchange30x30" width="62" height="30"/>
         <image name="fundo" width="267" height="400"/>
+        <image name="home-7" width="30" height="30"/>
         <image name="icon" width="393" height="299"/>
         <image name="linkedin" width="400" height="400"/>
-        <image name="mycardicon" width="60" height="40"/>
+        <image name="myCard30x30" width="45" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Aw2-aQ-rNc"/>
+        <segue reference="jvD-zz-W6u"/>
     </inferredMetricsTieBreakers>
 </document>

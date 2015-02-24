@@ -219,6 +219,8 @@
 
     card.info.linkedininfo = [CoreDataManager sharedManager].linkedinInfo;
 
+    [[CoreDataManager sharedManager].moc save:nil];
+
     [self performSegueWithIdentifier:@"MainFeedSegue" sender:self];
 
 

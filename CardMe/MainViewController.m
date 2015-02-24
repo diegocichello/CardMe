@@ -37,6 +37,12 @@
 
     self.cardCarousel.type = iCarouselTypeCoverFlow2;
 
+    UITabBarItem *item0 = [self.tabBarController.tabBar.items objectAtIndex:0];
+    //unselected icon
+    //item0.image = [[UIImage imageNamed:@"white30x30"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //selected icon
+    //item0.selectedImage = [UIImage imageNamed:@"white30x30"];
+
 
     
 
@@ -97,11 +103,11 @@
     //create new view if no view is available for recycling
     if (view == nil)
     {
-        FXImageView *imageView = [[FXImageView alloc] initWithFrame:CGRectMake(0, 0, 300.0f, 300.0f)];
+        FXImageView *imageView = [[FXImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width -20, self.view.frame.size.width-20)];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         imageView.asynchronous = YES;
-        imageView.reflectionScale = 0.5f;
-        imageView.reflectionAlpha = 0.25f;
+        imageView.reflectionScale = 0.4f;
+        imageView.reflectionAlpha = 0.1f;
         imageView.reflectionGap = 10.0f;
         imageView.shadowOffset = CGSizeMake(0.0f, 2.0f);
         imageView.shadowBlur = 5.0f;
