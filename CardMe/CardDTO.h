@@ -26,6 +26,7 @@
 @property NSString *headline;
 @property NSString *address;
 @property NSData *cardImage;
+@property NSData *linkedInSmallPicture;
 @property Boolean shouldSendCard;
 @property NSData * information;
 
