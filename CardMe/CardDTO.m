@@ -39,6 +39,7 @@
         self.cardImage = [aDecoder decodeObjectForKey:@"cardImage"];
         self.shouldSendCard = [aDecoder decodeBoolForKey:@"flag"];
         self.information = [aDecoder decodeDataObject];
+        self.linkedInSmallPicture = [aDecoder decodeDataObject];
         
     }
     return self;
@@ -56,6 +57,8 @@
     [aCoder encodeObject:self.phoneNumber forKey:@"phone"];
     [aCoder encodeObject:self.cardImage forKey:@"cardImage"];
     [aCoder encodeBool:self.shouldSendCard forKey:@"flag"];
+    [aCoder encodeDataObject:self.information];
+    [aCoder encodeDataObject:self.linkedInSmallPicture];
     
 
 
@@ -77,6 +80,7 @@
         self.cardImage = card.image;
         self.phoneNumber = card.info.contactPhone;
         self.information = card.user.information;
+        self.linkedInSmallPicture = card.info.linkedininfo.pictureSmall;
         self.shouldSendCard = false;
     }
     return self;

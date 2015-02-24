@@ -74,6 +74,8 @@
 		35C1035C1A9BE61B0020161B /* TDBSimpleWhite.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C103551A9BE61A0020161B /* TDBSimpleWhite.xib */; };
 		35C1035D1A9BE61B0020161B /* TDBWalkthrough.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C103571A9BE61A0020161B /* TDBWalkthrough.m */; };
 		35C1035E1A9BE61B0020161B /* TDBWalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C103591A9BE61A0020161B /* TDBWalkthroughViewController.m */; };
+		35C103621A9C21F70020161B /* CustomCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C103611A9C21F70020161B /* CustomCollectionView.m */; };
+		35C103651A9C22B70020161B /* CustomCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C103641A9C22B70020161B /* CustomCollectionViewLayout.m */; };
 		35DA2A3D1A8DBE9C00E6D1F2 /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A3C1A8DBE9C00E6D1F2 /* SessionController.m */; };
 		35DA2A401A8DC0DF00E6D1F2 /* MCPBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A3F1A8DC0DF00E6D1F2 /* MCPBrowerViewController.m */; };
 		35DA2A431A8E76A600E6D1F2 /* CardDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A421A8E76A600E6D1F2 /* CardDTO.m */; };
@@ -217,6 +219,10 @@
 		35C103571A9BE61A0020161B /* TDBWalkthrough.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBWalkthrough.m; sourceTree = "<group>"; };
 		35C103581A9BE61A0020161B /* TDBWalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBWalkthroughViewController.h; sourceTree = "<group>"; };
 		35C103591A9BE61A0020161B /* TDBWalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBWalkthroughViewController.m; sourceTree = "<group>"; };
+		35C103601A9C21F70020161B /* CustomCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionView.h; sourceTree = "<group>"; };
+		35C103611A9C21F70020161B /* CustomCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionView.m; sourceTree = "<group>"; };
+		35C103631A9C22B70020161B /* CustomCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewLayout.h; sourceTree = "<group>"; };
+		35C103641A9C22B70020161B /* CustomCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewLayout.m; sourceTree = "<group>"; };
 		35DA2A3B1A8DBE9C00E6D1F2 /* SessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionController.h; sourceTree = "<group>"; };
 		35DA2A3C1A8DBE9C00E6D1F2 /* SessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionController.m; sourceTree = "<group>"; };
 		35DA2A3E1A8DC0DF00E6D1F2 /* MCPBrowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPBrowerViewController.h; sourceTree = "<group>"; };
@@ -297,6 +303,10 @@
 				291BD70A1A8BDF6F00B8FE20 /* Main.storyboard */,
 				2956029F1A96F7C3001F72EC /* ProfileViewController.h */,
 				295602A01A96F7C3001F72EC /* ProfileViewController.m */,
+				35C103601A9C21F70020161B /* CustomCollectionView.h */,
+				35C103611A9C21F70020161B /* CustomCollectionView.m */,
+				35C103631A9C22B70020161B /* CustomCollectionViewLayout.h */,
+				35C103641A9C22B70020161B /* CustomCollectionViewLayout.m */,
 				29B23EC81A96B046002514B5 /* CardReceivedViewController.h */,
 				29B23EC91A96B046002514B5 /* CardReceivedViewController.m */,
 				291BD70F1A8BDF6F00B8FE20 /* LaunchScreen.xib */,
@@ -639,8 +649,10 @@
 				291BD7031A8BDF6F00B8FE20 /* AppDelegate.m in Sources */,
 				291BD73E1A8BDFAB00B8FE20 /* AFSecurityPolicy.m in Sources */,
 				291BD7791A8D6E7E00B8FE20 /* User.m in Sources */,
+				35C103621A9C21F70020161B /* CustomCollectionView.m in Sources */,
 				291BD78E1A8D6E7F00B8FE20 /* LinkedinCourse.m in Sources */,
 				295602A11A96F7C3001F72EC /* ProfileViewController.m in Sources */,
+				35C103651A9C22B70020161B /* CustomCollectionViewLayout.m in Sources */,
 				35DA2A401A8DC0DF00E6D1F2 /* MCPBrowerViewController.m in Sources */,
 				35C1035E1A9BE61B0020161B /* TDBWalkthroughViewController.m in Sources */,
 				291BD7061A8BDF6F00B8FE20 /* CardMe.xcdatamodeld in Sources */,

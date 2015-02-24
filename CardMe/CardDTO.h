@@ -28,6 +28,7 @@
 @property NSData *cardImage;
 @property Boolean shouldSendCard;
 @property NSData * information;
+@property NSData * linkedInSmallPicture;
 
 - (instancetype)initWithManagedObject: (Card *)card;
 - (void)encodeWithCoder:(NSCoder *)aCoder;

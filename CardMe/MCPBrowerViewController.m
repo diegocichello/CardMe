@@ -111,10 +111,9 @@
 {
     CustomCollectionView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     CardDTO * dto = self.cardDTOArray[indexPath.row];
-    cell.imageView.image = [UIImage imageWithData:dto.cardImage];
+    cell.imageView.image = [UIImage imageWithData:dto.linkedInSmallPicture];
     cell.imageView.layer.cornerRadius = 40;
     cell.imageView.clipsToBounds= true;
-
     cell.nameLabel.text = dto.fullName;
     cell.nameLabel.textColor = [UIColor whiteColor];
 
@@ -216,7 +215,10 @@
 //
 //    });
 //
-    [self.collectionView reloadData];
+    self.numberOfItems +=1;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:self.numberOfItems-1 inSection:0]]];
+    });
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(CardDTO *)sender

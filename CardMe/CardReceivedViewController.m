@@ -153,7 +153,7 @@
 
     [card setInfo:cardInfo];
     [cardInfo setLinkedininfo:[CoreDataManager sharedManager].linkedinInfo];
-
+    
     [self performSegueWithIdentifier:@"MainSegue" sender:self];
 }
 
