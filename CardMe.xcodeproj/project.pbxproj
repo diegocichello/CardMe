@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		291B48791A9716CD008F3AFF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291B48781A9716CD008F3AFF /* AddressBook.framework */; };
-		291B487B1A9716D4008F3AFF /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291B487A1A9716D4008F3AFF /* AddressBookUI.framework */; };
+		291B487D1A9719CD008F3AFF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291B487C1A9719CD008F3AFF /* AddressBook.framework */; };
+		291B487F1A9719D5008F3AFF /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 291B487E1A9719D5008F3AFF /* AddressBookUI.framework */; };
 		291BD7001A8BDF6F00B8FE20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD6FF1A8BDF6F00B8FE20 /* main.m */; };
 		291BD7031A8BDF6F00B8FE20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7021A8BDF6F00B8FE20 /* AppDelegate.m */; };
 		291BD7061A8BDF6F00B8FE20 /* CardMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 291BD7041A8BDF6F00B8FE20 /* CardMe.xcdatamodeld */; };
@@ -61,6 +61,8 @@
 		291BD7A01A8DA82000B8FE20 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 291BD79F1A8DA82000B8FE20 /* MainViewController.m */; };
 		2946C45D1A97128E00BB2AD4 /* LinkedinPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2946C45C1A97128E00BB2AD4 /* LinkedinPageViewController.m */; };
 		295602A11A96F7C3001F72EC /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 295602A01A96F7C3001F72EC /* ProfileViewController.m */; };
+		2962107D1A97CACB00698759 /* CustomCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2962107C1A97CACB00698759 /* CustomCollectionView.m */; };
+		296210801A97CE8B00698759 /* CustomCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2962107F1A97CE8B00698759 /* CustomCollectionViewLayout.m */; };
 		298B13F51A92B3C5003FA165 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B13F41A92B3C5003FA165 /* CoreDataManager.m */; };
 		298B13FA1A92B66E003FA165 /* CardGenerationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B13F91A92B66E003FA165 /* CardGenerationViewController.m */; };
 		298B13FD1A92D20E003FA165 /* LinkedinURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B13FC1A92D20E003FA165 /* LinkedinURL.m */; };
@@ -69,6 +71,16 @@
 		298B14091A941CA0003FA165 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B14061A941CA0003FA165 /* FXImageView.m */; };
 		298B140A1A941CA0003FA165 /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B14081A941CA0003FA165 /* UIImage+FX.m */; };
 		29B23ECA1A96B046002514B5 /* CardReceivedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B23EC91A96B046002514B5 /* CardReceivedViewController.m */; };
+		29C5276D1A97E980005F610B /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C5275F1A97E980005F610B /* first.png */; };
+		29C5276E1A97E980005F610B /* fourth.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C527601A97E980005F610B /* fourth.png */; };
+		29C5276F1A97E980005F610B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C527611A97E980005F610B /* logo.png */; };
+		29C527701A97E980005F610B /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C527621A97E980005F610B /* second.png */; };
+		29C527711A97E980005F610B /* TDBInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C527641A97E980005F610B /* TDBInterface.m */; };
+		29C527721A97E980005F610B /* TDBSimpleWhite.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C527661A97E980005F610B /* TDBSimpleWhite.m */; };
+		29C527731A97E980005F610B /* TDBSimpleWhite.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C527671A97E980005F610B /* TDBSimpleWhite.xib */; };
+		29C527741A97E980005F610B /* TDBWalkthrough.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C527691A97E980005F610B /* TDBWalkthrough.m */; };
+		29C527751A97E980005F610B /* TDBWalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C5276B1A97E980005F610B /* TDBWalkthroughViewController.m */; };
+		29C527761A97E980005F610B /* third.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C5276C1A97E980005F610B /* third.png */; };
 		35DA2A3D1A8DBE9C00E6D1F2 /* SessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A3C1A8DBE9C00E6D1F2 /* SessionController.m */; };
 		35DA2A401A8DC0DF00E6D1F2 /* MCPBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A3F1A8DC0DF00E6D1F2 /* MCPBrowerViewController.m */; };
 		35DA2A431A8E76A600E6D1F2 /* CardDTO.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA2A421A8E76A600E6D1F2 /* CardDTO.m */; };
@@ -100,8 +112,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		291B48781A9716CD008F3AFF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		291B487A1A9716D4008F3AFF /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		291B487C1A9719CD008F3AFF /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		291B487E1A9719D5008F3AFF /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		291BD6FA1A8BDF6F00B8FE20 /* CardMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		291BD6FE1A8BDF6F00B8FE20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		291BD6FF1A8BDF6F00B8FE20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -187,6 +199,10 @@
 		2946C45C1A97128E00BB2AD4 /* LinkedinPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedinPageViewController.m; sourceTree = "<group>"; };
 		2956029F1A96F7C3001F72EC /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		295602A01A96F7C3001F72EC /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		2962107B1A97CACB00698759 /* CustomCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionView.h; sourceTree = "<group>"; };
+		2962107C1A97CACB00698759 /* CustomCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionView.m; sourceTree = "<group>"; };
+		2962107E1A97CE8B00698759 /* CustomCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewLayout.h; sourceTree = "<group>"; };
+		2962107F1A97CE8B00698759 /* CustomCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewLayout.m; sourceTree = "<group>"; };
 		298B13F31A92B3C5003FA165 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		298B13F41A92B3C5003FA165 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		298B13F81A92B66E003FA165 /* CardGenerationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardGenerationViewController.h; sourceTree = "<group>"; };
@@ -203,6 +219,20 @@
 		298B14081A941CA0003FA165 /* UIImage+FX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FX.m"; sourceTree = "<group>"; };
 		29B23EC81A96B046002514B5 /* CardReceivedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardReceivedViewController.h; sourceTree = "<group>"; };
 		29B23EC91A96B046002514B5 /* CardReceivedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardReceivedViewController.m; sourceTree = "<group>"; };
+		29C5275F1A97E980005F610B /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		29C527601A97E980005F610B /* fourth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fourth.png; sourceTree = "<group>"; };
+		29C527611A97E980005F610B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		29C527621A97E980005F610B /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		29C527631A97E980005F610B /* TDBInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBInterface.h; sourceTree = "<group>"; };
+		29C527641A97E980005F610B /* TDBInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBInterface.m; sourceTree = "<group>"; };
+		29C527651A97E980005F610B /* TDBSimpleWhite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBSimpleWhite.h; sourceTree = "<group>"; };
+		29C527661A97E980005F610B /* TDBSimpleWhite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBSimpleWhite.m; sourceTree = "<group>"; };
+		29C527671A97E980005F610B /* TDBSimpleWhite.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TDBSimpleWhite.xib; sourceTree = "<group>"; };
+		29C527681A97E980005F610B /* TDBWalkthrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBWalkthrough.h; sourceTree = "<group>"; };
+		29C527691A97E980005F610B /* TDBWalkthrough.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBWalkthrough.m; sourceTree = "<group>"; };
+		29C5276A1A97E980005F610B /* TDBWalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBWalkthroughViewController.h; sourceTree = "<group>"; };
+		29C5276B1A97E980005F610B /* TDBWalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBWalkthroughViewController.m; sourceTree = "<group>"; };
+		29C5276C1A97E980005F610B /* third.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = third.png; sourceTree = "<group>"; };
 		35DA2A3B1A8DBE9C00E6D1F2 /* SessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionController.h; sourceTree = "<group>"; };
 		35DA2A3C1A8DBE9C00E6D1F2 /* SessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionController.m; sourceTree = "<group>"; };
 		35DA2A3E1A8DC0DF00E6D1F2 /* MCPBrowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPBrowerViewController.h; sourceTree = "<group>"; };
@@ -220,8 +250,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				291B487B1A9716D4008F3AFF /* AddressBookUI.framework in Frameworks */,
-				291B48791A9716CD008F3AFF /* AddressBook.framework in Frameworks */,
+				291B487F1A9719D5008F3AFF /* AddressBookUI.framework in Frameworks */,
+				291B487D1A9719CD008F3AFF /* AddressBook.framework in Frameworks */,
 				291BD7751A8D209E00B8FE20 /* libsqlite3.dylib in Frameworks */,
 				291BD7731A8D209100B8FE20 /* libz.dylib in Frameworks */,
 				291BD7711A8D208600B8FE20 /* SystemConfiguration.framework in Frameworks */,
@@ -254,8 +284,8 @@
 		291BD6F11A8BDF6F00B8FE20 = {
 			isa = PBXGroup;
 			children = (
-				291B487A1A9716D4008F3AFF /* AddressBookUI.framework */,
-				291B48781A9716CD008F3AFF /* AddressBook.framework */,
+				291B487E1A9719D5008F3AFF /* AddressBookUI.framework */,
+				291B487C1A9719CD008F3AFF /* AddressBook.framework */,
 				291BD7761A8D20A800B8FE20 /* Framework */,
 				291BD6FC1A8BDF6F00B8FE20 /* CardMe */,
 				291BD7191A8BDF6F00B8FE20 /* CardMeTests */,
@@ -281,6 +311,10 @@
 				291BD7011A8BDF6F00B8FE20 /* AppDelegate.h */,
 				291BD7021A8BDF6F00B8FE20 /* AppDelegate.m */,
 				291BD70A1A8BDF6F00B8FE20 /* Main.storyboard */,
+				2962107E1A97CE8B00698759 /* CustomCollectionViewLayout.h */,
+				2962107F1A97CE8B00698759 /* CustomCollectionViewLayout.m */,
+				2962107B1A97CACB00698759 /* CustomCollectionView.h */,
+				2962107C1A97CACB00698759 /* CustomCollectionView.m */,
 				2956029F1A96F7C3001F72EC /* ProfileViewController.h */,
 				295602A01A96F7C3001F72EC /* ProfileViewController.m */,
 				29B23EC81A96B046002514B5 /* CardReceivedViewController.h */,
@@ -376,6 +410,7 @@
 		291BD7551A8BDFD500B8FE20 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				29C5275E1A97E96B005F610B /* Onboarding */,
 				298B140B1A941CB0003FA165 /* FXImageView */,
 				298B14011A941C3B003FA165 /* iCarousel */,
 				35DA2A3A1A8DBD7400E6D1F2 /* MPCSession */,
@@ -490,6 +525,27 @@
 			name = FXImageView;
 			sourceTree = "<group>";
 		};
+		29C5275E1A97E96B005F610B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				29C5275F1A97E980005F610B /* first.png */,
+				29C527601A97E980005F610B /* fourth.png */,
+				29C527611A97E980005F610B /* logo.png */,
+				29C527621A97E980005F610B /* second.png */,
+				29C527631A97E980005F610B /* TDBInterface.h */,
+				29C527641A97E980005F610B /* TDBInterface.m */,
+				29C527651A97E980005F610B /* TDBSimpleWhite.h */,
+				29C527661A97E980005F610B /* TDBSimpleWhite.m */,
+				29C527671A97E980005F610B /* TDBSimpleWhite.xib */,
+				29C527681A97E980005F610B /* TDBWalkthrough.h */,
+				29C527691A97E980005F610B /* TDBWalkthrough.m */,
+				29C5276A1A97E980005F610B /* TDBWalkthroughViewController.h */,
+				29C5276B1A97E980005F610B /* TDBWalkthroughViewController.m */,
+				29C5276C1A97E980005F610B /* third.png */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
 		35DA2A3A1A8DBD7400E6D1F2 /* MPCSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -581,9 +637,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C5276E1A97E980005F610B /* fourth.png in Resources */,
+				29C5276D1A97E980005F610B /* first.png in Resources */,
 				291BD70C1A8BDF6F00B8FE20 /* Main.storyboard in Resources */,
 				291BD79A1A8D8F4300B8FE20 /* Images.xcassets in Resources */,
+				29C527731A97E980005F610B /* TDBSimpleWhite.xib in Resources */,
+				29C527761A97E980005F610B /* third.png in Resources */,
+				29C5276F1A97E980005F610B /* logo.png in Resources */,
 				291BD7111A8BDF6F00B8FE20 /* LaunchScreen.xib in Resources */,
+				29C527701A97E980005F610B /* second.png in Resources */,
 				291BD7531A8BDFCB00B8FE20 /* 01-refresh.png in Resources */,
 				291BD7541A8BDFCB00B8FE20 /* 01-refresh@2x.png in Resources */,
 			);
@@ -610,10 +672,13 @@
 				295602A11A96F7C3001F72EC /* ProfileViewController.m in Sources */,
 				35DA2A401A8DC0DF00E6D1F2 /* MCPBrowerViewController.m in Sources */,
 				291BD7061A8BDF6F00B8FE20 /* CardMe.xcdatamodeld in Sources */,
+				29C527721A97E980005F610B /* TDBSimpleWhite.m in Sources */,
+				2962107D1A97CACB00698759 /* CustomCollectionView.m in Sources */,
 				291BD7971A8D6E8000B8FE20 /* LinkedinPhoneNumber.m in Sources */,
 				291BD73B1A8BDFAB00B8FE20 /* AFHTTPRequestOperationManager.m in Sources */,
 				291BD7521A8BDFCB00B8FE20 /* NSString+LIAEncode.m in Sources */,
 				291BD73F1A8BDFAB00B8FE20 /* AFURLConnectionOperation.m in Sources */,
+				296210801A97CE8B00698759 /* CustomCollectionViewLayout.m in Sources */,
 				35DA2A3D1A8DBE9C00E6D1F2 /* SessionController.m in Sources */,
 				298B14041A941C59003FA165 /* iCarousel.m in Sources */,
 				291BD78B1A8D6E7F00B8FE20 /* LinkedinEducation.m in Sources */,
@@ -623,12 +688,14 @@
 				291BD7A01A8DA82000B8FE20 /* MainViewController.m in Sources */,
 				291BD73A1A8BDFAB00B8FE20 /* AFHTTPRequestOperation.m in Sources */,
 				35DA2A4C1A8E7DBC00E6D1F2 /* CardInfo.m in Sources */,
+				29C527751A97E980005F610B /* TDBWalkthroughViewController.m in Sources */,
 				291BD7091A8BDF6F00B8FE20 /* ExplainViewController.m in Sources */,
 				291BD7851A8D6E7F00B8FE20 /* Group.m in Sources */,
 				2946C45D1A97128E00BB2AD4 /* LinkedinPageViewController.m in Sources */,
 				298B13F51A92B3C5003FA165 /* CoreDataManager.m in Sources */,
 				291BD7821A8D6E7F00B8FE20 /* LinkedinPosition.m in Sources */,
 				298B13FA1A92B66E003FA165 /* CardGenerationViewController.m in Sources */,
+				29C527711A97E980005F610B /* TDBInterface.m in Sources */,
 				291BD7401A8BDFAB00B8FE20 /* AFURLRequestSerialization.m in Sources */,
 				298B140A1A941CA0003FA165 /* UIImage+FX.m in Sources */,
 				291BD73C1A8BDFAB00B8FE20 /* AFHTTPSessionManager.m in Sources */,
@@ -636,6 +703,7 @@
 				35DA2A461A8E7B6700E6D1F2 /* LinkedinRole.m in Sources */,
 				298B14091A941CA0003FA165 /* FXImageView.m in Sources */,
 				291BD74F1A8BDFCB00B8FE20 /* LIALinkedInApplication.m in Sources */,
+				29C527741A97E980005F610B /* TDBWalkthrough.m in Sources */,
 				291BD73D1A8BDFAB00B8FE20 /* AFNetworkReachabilityManager.m in Sources */,
 				291BD79D1A8D90D600B8FE20 /* RootViewController.m in Sources */,
 				291BD7411A8BDFAB00B8FE20 /* AFURLResponseSerialization.m in Sources */,
@@ -775,6 +843,7 @@
 				);
 				INFOPLIST_FILE = CardMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -785,13 +854,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Diego Francisco Cichello (829GPUAAPL)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CardMe",
 				);
 				INFOPLIST_FILE = CardMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
