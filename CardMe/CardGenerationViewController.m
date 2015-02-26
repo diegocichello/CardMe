@@ -1,4 +1,4 @@
-//
+ //
 //  CardGenerationViewController.m
 //  CardMe
 //
@@ -165,9 +165,34 @@
         }
     }];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return true;
+}
+
+- (IBAction)onTapGesture:(id)sender {
+
+    [self.fullNameTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
+    [self.headlineTextField resignFirstResponder];
+    [self.addressTextField resignFirstResponder];
+    [self.webURLTextField resignFirstResponder];
+    [self.phoneNumberTextField resignFirstResponder];
+
+}
 - (IBAction)continueButtonTapped:(UIButton *)sender
 {
     //Get the size of the screen
+    [self.fullNameTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
+    [self.headlineTextField resignFirstResponder];
+    [self.addressTextField resignFirstResponder];
+    [self.phoneNumberTextField resignFirstResponder];
+    [self.webURLTextField resignFirstResponder];
+
+
     CGRect screenRect = [self.cardView bounds];
 
     //Create a bitmap-based graphics context and make

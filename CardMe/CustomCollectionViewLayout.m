@@ -12,6 +12,7 @@
 
 @property (nonatomic) CGSize previousSize;
 @property (nonatomic, strong) NSMutableArray *indexPathsToAnimate;
+@property UICollectionViewLayoutAttributes *zeroZeroAttributes;
 
 @property (nonatomic, strong) NSIndexPath *pinchedItem;
 @property (nonatomic) CGSize pinchedItemSize;
@@ -68,7 +69,21 @@
 
 - (UICollectionViewLayoutAttributes*)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewLayoutAttributes *attr = [super layoutAttributesForItemAtIndexPath:indexPath];
+    UICollectionViewLayoutAttributes *attr;
+    if (!self.zeroZeroAttributes && indexPath.row == 0 && indexPath.section == 0)
+    {
+        attr = [super layoutAttributesForItemAtIndexPath:indexPath];
+        self.zeroZeroAttributes = attr;
+    }
+    else if(self.zeroZeroAttributes && indexPath.row ==0 && indexPath.section ==0)
+    {
+        attr = self.zeroZeroAttributes;
+    }
+    else
+    {
+        attr = [super layoutAttributesForItemAtIndexPath:indexPath];
+
+    }
 
     if ([indexPath isEqual:_pinchedItem]) {
         attr.size = _pinchedItemSize;

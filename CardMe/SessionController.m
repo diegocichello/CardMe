@@ -29,33 +29,33 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 - (instancetype)init
 {
     self = [super init];
-    
+
     if (self)
     {
         _peerID = [[MCPeerID alloc] initWithDisplayName:[[UIDevice currentDevice] name]];
-        
+
         _connectingPeersOrderedSet = [[NSMutableOrderedSet alloc] init];
         _disconnectedPeersOrderedSet = [[NSMutableOrderedSet alloc] init];
-        
+
         NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
-        
+
         // Register for notifications
         [defaultCenter addObserver:self
                           selector:@selector(startServices)
                               name:UIApplicationWillEnterForegroundNotification
                             object:nil];
-        
+
         [defaultCenter addObserver:self
                           selector:@selector(stopServices)
                               name:UIApplicationDidEnterBackgroundNotification
                             object:nil];
-        
+
         [self startServices];
 
         _displayName = self.session.myPeerID.displayName;
         self.context = [AppDelegate appDelegate].managedObjectContext;
     }
-    
+
     return self;
 }
 
@@ -65,7 +65,7 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 {
     // Unregister for notifications on deallocation.
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    
+
     // Nil out delegates
     _session.delegate = nil;
     _serviceAdvertiser.delegate = nil;
@@ -96,13 +96,13 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     // Create the session that peers will be invited/join into.
     _session = [[MCSession alloc] initWithPeer:self.peerID];
     self.session.delegate = self;
-    
+
     // Create the service advertiser
     _serviceAdvertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:self.peerID
                                                            discoveryInfo:nil
                                                              serviceType:kMCSessionServiceType];
     self.serviceAdvertiser.delegate = self;
-    
+
     // Create the service browser
     _serviceBrowser = [[MCNearbyServiceBrowser alloc] initWithPeer:self.peerID
                                                        serviceType:kMCSessionServiceType];
@@ -131,7 +131,7 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 }
 
 - (void)updateDelegate
-{    
+{
     [self.delegate sessionDidChangeState];
 }
 
@@ -140,10 +140,10 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     switch (state) {
         case MCSessionStateConnected:
             return @"Connected";
-            
+
         case MCSessionStateConnecting:
             return @"Connecting";
-            
+
         case MCSessionStateNotConnected:
             return @"Not Connected";
     }
@@ -154,7 +154,7 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 - (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state
 {
     NSLog(@"Peer [%@] changed state to %@", peerID.displayName, [self stringForPeerConnectionState:state]);
-    
+
     switch (state)
     {
         case MCSessionStateConnecting:
@@ -163,22 +163,25 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
             [self.disconnectedPeersOrderedSet removeObject:peerID];
             break;
         }
-            
+
         case MCSessionStateConnected:
         {
+            [self sendMyCardToPeer:session aPeer:peerID];
             [self.connectingPeersOrderedSet removeObject:peerID];
             [self.disconnectedPeersOrderedSet removeObject:peerID];
             break;
         }
-            
+
         case MCSessionStateNotConnected:
         {
             [self.connectingPeersOrderedSet removeObject:peerID];
             [self.disconnectedPeersOrderedSet addObject:peerID];
+            [self.delegate removeCard:peerID];
+            
             break;
         }
     }
-    
+
     [self updateDelegate];
 }
 
@@ -186,62 +189,45 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 {
 
 
-    
+
     CardDTO * myCardDTO = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    //Card * card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:self.context];
-
-
-    [self.delegate receiveCard:myCardDTO];
-/*
-    NSDictionary * testDict = [NSKeyedUnarchiver unarchiveObjectWithData:myCardDTO.information];
-    // CREATE NEW USER
-
-    [LinkedinInfo saveDictionary:testDict];
-
-
-    card.fontName = myCardDTO.fonts[0];
-    card.fontSize = myCardDTO.fonts[1];
-    card.colorRed = myCardDTO.colors[0];
-    card.colorGreen = myCardDTO.colors[1];
-    card.colorBlue = myCardDTO.colors[2];
-    card.image = myCardDTO.cardImage;
-
-    CardInfo *cardInfo = [NSEntityDescription insertNewObjectForEntityForName:@"CardInfo" inManagedObjectContext:self.context];
-
-    cardInfo.email = myCardDTO.email;
-    cardInfo.address = myCardDTO.address;
-    cardInfo.contactPhone = myCardDTO.phoneNumber;
-    cardInfo.fullName = myCardDTO.fullName;
-    cardInfo.headline = myCardDTO.headline;
+    if (!myCardDTO.shouldReceiveCard)
+    {
+        myCardDTO.peerId = peerID.displayName;
+        [self.delegate receiveCard:myCardDTO];
+    }
+    else
+    {
 
 
 
-    [card setInfo:cardInfo];
-    [cardInfo setLinkedininfo:[CoreDataManager sharedManager].linkedinInfo];
-    //[self save];
 
-    [self.context insertObject:card];*/
+
+
     NSLog(@"didReceiveData %@, %@,from %@", myCardDTO.email, myCardDTO.fullName, peerID.displayName);
 
-    //Send mine to other user
-    if (myCardDTO.shouldSendCard == YES)
-    {
-        NSLog(@"Sending card back");
-        CoreDataManager *currentUser = [CoreDataManager sharedManager];
-        User *user = currentUser.currentUser;
-        CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:user.card];
-        testDTO.shouldSendCard = NO;
-        NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
-        NSLog(@"Archived testDTO, %@", testDTO);
-        NSArray * peerArray = [[NSArray alloc] initWithObjects:peerID, nil];
-        NSError *error;
-        [self.session sendData:myData
-                                toPeers:peerArray
-                                withMode:MCSessionSendDataReliable
-                                error:&error];
 
-        if (error) {
-            NSLog(@"%@", [error localizedDescription]);
+        [self.delegate getCard:myCardDTO];
+        if (myCardDTO.shouldSendCard)
+        {
+            NSLog(@"Sending card back");
+            CoreDataManager *currentUser = [CoreDataManager sharedManager];
+            User *user = currentUser.currentUser;
+            CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:user.card];
+            testDTO.shouldSendCard = NO;
+            testDTO.shouldReceiveCard = YES;
+            NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
+            NSLog(@"Archived testDTO, %@", testDTO);
+            NSArray * peerArray = [[NSArray alloc] initWithObjects:peerID, nil];
+            NSError *error;
+            [self.session sendData:myData
+                                    toPeers:peerArray
+                                    withMode:MCSessionSendDataReliable
+                                    error:&error];
+    
+            if (error) {
+                NSLog(@"%@", [error localizedDescription]);
+            }
         }
     }
 }
@@ -254,7 +240,7 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 - (void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error
 {
     NSLog(@"didFinishReceivingResourceWithName [%@] from %@", resourceName, peerID.displayName);
-    
+
     // If error is not nil something went wrong
     if (error)
     {
@@ -291,13 +277,13 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 - (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info
 {
     NSString *remotePeerName = peerID.displayName;
-    
+
     NSLog(@"Browser found %@", remotePeerName);
-    
+
     MCPeerID *myPeerID = self.session.myPeerID;
-    
+
     BOOL shouldInvite = ([myPeerID.displayName compare:remotePeerName] == NSOrderedDescending);
-    
+
     if (shouldInvite)
     {
         NSLog(@"Inviting %@", remotePeerName);
@@ -307,17 +293,17 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     {
         NSLog(@"Not inviting %@", remotePeerName);
     }
-    
+
     [self updateDelegate];
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID
 {
     NSLog(@"lostPeer %@", peerID.displayName);
-    
+
     [self.connectingPeersOrderedSet removeObject:peerID];
     [self.disconnectedPeersOrderedSet addObject:peerID];
-    
+
     [self updateDelegate];
 }
 
@@ -331,12 +317,12 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
 - (void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID withContext:(NSData *)context invitationHandler:(void(^)(BOOL accept, MCSession *session))invitationHandler
 {
     NSLog(@"didReceiveInvitationFromPeer %@", peerID.displayName);
-    
+
     invitationHandler(YES, self.session);
-    
+
     [self.connectingPeersOrderedSet addObject:peerID];
     [self.disconnectedPeersOrderedSet removeObject:peerID];
-    
+
     [self updateDelegate];
 }
 
@@ -353,6 +339,28 @@ static NSString * const kMCSessionServiceType = @"mcsessionp2p";
     if (![self.context save:&error]) {
         NSLog(@"failed to save core data %@ %@", error, [error localizedDescription]);
         return;
+    }
+}
+
+-(void)sendMyCardToPeer:(MCSession * )session aPeer:(MCPeerID *)peerID
+{
+    //NSLog(@"Sending card back");
+    CoreDataManager *currentUser = [CoreDataManager sharedManager];
+    User *user = currentUser.currentUser;
+    CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:user.card];
+    testDTO.shouldSendCard = NO;
+    testDTO.shouldReceiveCard = NO;
+    NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
+    NSLog(@"Archived testDTO, %@", testDTO);
+    NSArray * peerArray = [[NSArray alloc] initWithObjects:peerID, nil];
+    NSError *error;
+    [self.session sendData:myData
+                   toPeers:peerArray
+                  withMode:MCSessionSendDataReliable
+                     error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
     }
 }
 

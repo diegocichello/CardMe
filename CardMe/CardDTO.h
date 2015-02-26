@@ -16,6 +16,7 @@
 #import "Card.h"
 
 
+
 @interface CardDTO : NSObject <NSCoding>
 
 @property NSArray *fonts;
@@ -29,6 +30,8 @@
 @property NSData *linkedInSmallPicture;
 @property Boolean shouldSendCard;
 @property NSData * information;
+@property BOOL shouldReceiveCard;
+@property NSString *peerId;
 
 - (instancetype)initWithManagedObject: (Card *)card;
 - (void)encodeWithCoder:(NSCoder *)aCoder;

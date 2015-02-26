@@ -11,15 +11,17 @@
 #import "CardInfo.h"
 #import "LinkedinInfo.h"
 #import "CoreDataManager.h"
+#import "FXImageView.h"
 
-@interface CardReceivedViewController ()
+@interface CardReceivedViewController () <UITextViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *cardImageView;
+
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet UILabel *receiveLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addSomeNotesLabel;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet FXImageView *cardImageView;
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *addNotesLC;
@@ -42,8 +44,11 @@
 {
     [super viewDidLoad];
     self.cardImageView.image = [UIImage imageWithData:self.dto.cardImage];
+    self.cardImageView.shadowOffset = CGSizeMake(0.0f, 2.0f);
+    self.cardImageView.shadowBlur = 5.0f;
+    self.cardImageView.cornerRadius = 10.0f;
 
-
+    self.textView.delegate = self;
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -117,9 +122,13 @@
 
     
 }
-- (IBAction)onOutsideOfText:(UIButton *)sender
+- (IBAction)onTapGesture:(id)sender {
+    [self.textView resignFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
 {
-    [self resignFirstResponder];
+    [self.textView resignFirstResponder];
 }
 
 - (IBAction)onSaveButtonTapped:(UIButton *)sender {
@@ -154,10 +163,14 @@
     [card setInfo:cardInfo];
     [cardInfo setLinkedininfo:[CoreDataManager sharedManager].linkedinInfo];
 
-    [self performSegueWithIdentifier:@"MainSegue" sender:self];
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (IBAction)onCancelButtonTapped:(id)sender {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 @end

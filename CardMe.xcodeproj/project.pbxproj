@@ -70,6 +70,8 @@
 		298B14041A941C59003FA165 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B14031A941C59003FA165 /* iCarousel.m */; };
 		298B14091A941CA0003FA165 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B14061A941CA0003FA165 /* FXImageView.m */; };
 		298B140A1A941CA0003FA165 /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B14081A941CA0003FA165 /* UIImage+FX.m */; };
+		29969C6A1A9D9C2B005A1318 /* MyCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29969C691A9D9C2B005A1318 /* MyCardViewController.m */; };
+		29969C6D1A9DAB55005A1318 /* FontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29969C6C1A9DAB55005A1318 /* FontsViewController.m */; };
 		29B23ECA1A96B046002514B5 /* CardReceivedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B23EC91A96B046002514B5 /* CardReceivedViewController.m */; };
 		29C5276D1A97E980005F610B /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C5275F1A97E980005F610B /* first.png */; };
 		29C5276E1A97E980005F610B /* fourth.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C527601A97E980005F610B /* fourth.png */; };
@@ -217,6 +219,10 @@
 		298B14061A941CA0003FA165 /* FXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXImageView.m; sourceTree = "<group>"; };
 		298B14071A941CA0003FA165 /* UIImage+FX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FX.h"; sourceTree = "<group>"; };
 		298B14081A941CA0003FA165 /* UIImage+FX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FX.m"; sourceTree = "<group>"; };
+		29969C681A9D9C2B005A1318 /* MyCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCardViewController.h; sourceTree = "<group>"; };
+		29969C691A9D9C2B005A1318 /* MyCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCardViewController.m; sourceTree = "<group>"; };
+		29969C6B1A9DAB55005A1318 /* FontsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontsViewController.h; sourceTree = "<group>"; };
+		29969C6C1A9DAB55005A1318 /* FontsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontsViewController.m; sourceTree = "<group>"; };
 		29B23EC81A96B046002514B5 /* CardReceivedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardReceivedViewController.h; sourceTree = "<group>"; };
 		29B23EC91A96B046002514B5 /* CardReceivedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardReceivedViewController.m; sourceTree = "<group>"; };
 		29C5275F1A97E980005F610B /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
@@ -311,6 +317,10 @@
 				291BD7011A8BDF6F00B8FE20 /* AppDelegate.h */,
 				291BD7021A8BDF6F00B8FE20 /* AppDelegate.m */,
 				291BD70A1A8BDF6F00B8FE20 /* Main.storyboard */,
+				29969C6B1A9DAB55005A1318 /* FontsViewController.h */,
+				29969C6C1A9DAB55005A1318 /* FontsViewController.m */,
+				29969C681A9D9C2B005A1318 /* MyCardViewController.h */,
+				29969C691A9D9C2B005A1318 /* MyCardViewController.m */,
 				2962107E1A97CE8B00698759 /* CustomCollectionViewLayout.h */,
 				2962107F1A97CE8B00698759 /* CustomCollectionViewLayout.m */,
 				2962107B1A97CACB00698759 /* CustomCollectionView.h */,
@@ -668,6 +678,7 @@
 				291BD7031A8BDF6F00B8FE20 /* AppDelegate.m in Sources */,
 				291BD73E1A8BDFAB00B8FE20 /* AFSecurityPolicy.m in Sources */,
 				291BD7791A8D6E7E00B8FE20 /* User.m in Sources */,
+				29969C6D1A9DAB55005A1318 /* FontsViewController.m in Sources */,
 				291BD78E1A8D6E7F00B8FE20 /* LinkedinCourse.m in Sources */,
 				295602A11A96F7C3001F72EC /* ProfileViewController.m in Sources */,
 				35DA2A401A8DC0DF00E6D1F2 /* MCPBrowerViewController.m in Sources */,
@@ -695,6 +706,7 @@
 				298B13F51A92B3C5003FA165 /* CoreDataManager.m in Sources */,
 				291BD7821A8D6E7F00B8FE20 /* LinkedinPosition.m in Sources */,
 				298B13FA1A92B66E003FA165 /* CardGenerationViewController.m in Sources */,
+				29969C6A1A9D9C2B005A1318 /* MyCardViewController.m in Sources */,
 				29C527711A97E980005F610B /* TDBInterface.m in Sources */,
 				291BD7401A8BDFAB00B8FE20 /* AFURLRequestSerialization.m in Sources */,
 				298B140A1A941CA0003FA165 /* UIImage+FX.m in Sources */,
@@ -835,7 +847,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Diego Francisco Cichello (829GPUAAPL)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -853,8 +865,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Diego Francisco Cichello (829GPUAAPL)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Diego Francisco Cichello (829GPUAAPL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CardMe",

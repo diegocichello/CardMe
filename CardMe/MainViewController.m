@@ -14,6 +14,7 @@
 
 @interface MainViewController () <UIGestureRecognizerDelegate,iCarouselDataSource,iCarouselDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *tabView;
 @property int index;
 @property (weak, nonatomic) IBOutlet iCarousel *cardCarousel;
 @property NSMutableArray *cardArray;
@@ -36,8 +37,13 @@
     self.cardCarousel.bounces = false;
 
     self.cardCarousel.type = iCarouselTypeCoverFlow2;
+    self.tabView.layer.borderWidth = 2.0f;
+    self.tabView.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.tabView.layer.cornerRadius = 10.0f;
+    self.tabView.clipsToBounds = true;
 
-    UITabBarItem *item0 = [self.tabBarController.tabBar.items objectAtIndex:0];
+
+
     //unselected icon
     //item0.image = [[UIImage imageNamed:@"white30x30"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //selected icon

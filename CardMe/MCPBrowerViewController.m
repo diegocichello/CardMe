@@ -24,6 +24,7 @@
 @property int numberOfItems;
 @property (nonatomic, strong) NSMutableArray *itemCounts;
 @property NSMutableArray * cardDTOArray;
+@property NSMutableArray * cardsSelected;
 @property NSManagedObjectContext *moc;
 
 @property NSManagedObjectContext * context;
@@ -42,6 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.cardDTOArray = [[NSMutableArray alloc] init];
+    self.cardsSelected = [NSMutableArray new];
     // Do any additional setup after loading the view.
     self.numberOfItems = 0;
     self.moc =  [AppDelegate appDelegate].managedObjectContext;
@@ -112,12 +114,34 @@
     CustomCollectionView *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     CardDTO * dto = self.cardDTOArray[indexPath.row];
     cell.imageView.image = [UIImage imageWithData:dto.linkedInSmallPicture];
+    cell.imageView.layer.borderWidth = 2.0f;
+    cell.imageView.layer.borderColor = [UIColor whiteColor].CGColor;
     cell.imageView.layer.cornerRadius = 40;
     cell.imageView.clipsToBounds= true;
-    cell.nameLabel.text = dto.fullName;
+    cell.nameLabel.text = [dto.fullName componentsSeparatedByString:@" "].firstObject;
     cell.nameLabel.textColor = [UIColor whiteColor];
 
+
     return cell;
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CustomCollectionView *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    CardDTO *dto = [self.cardDTOArray objectAtIndex:indexPath.row];
+    if ([self.cardsSelected containsObject:dto])
+    {
+        [self.cardsSelected removeObject:dto];
+    }
+    else
+    {
+        [self.cardsSelected addObject:dto];
+    }
+    [cell tapToChangeBackGround];
+    cell.greenCell.layer.cornerRadius = 40.0f;
+    cell.greenCell.clipsToBounds = true;
+
 }
 
 
@@ -189,10 +213,53 @@
     User *user = currentUser.currentUser;
     CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:user.card];
     testDTO.shouldSendCard = true;
+    testDTO.shouldReceiveCard = true;
     NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
     NSLog(@"Archived testDTO, %@", testDTO);
 
     NSArray * peerArray = [NSArray arrayWithObject:[self.sessionController.connectedPeers objectAtIndex:indexPath.row]];
+    NSError *error;
+    [self.sessionController.session sendData:myData
+                                     toPeers:peerArray
+                                    withMode:MCSessionSendDataReliable
+                                       error:&error];
+    NSLog(@"sent self.testCard, %@", self.testCard);
+
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+}
+
+- (void) sendCardsToAllSelected
+{
+    for (CardDTO *dto in self.cardsSelected)
+    {
+        [self sendCardToPeer:dto];
+    }
+
+}
+
+- (void) sendCardToPeer:(CardDTO *)dto
+{
+
+    CoreDataManager *currentUser = [CoreDataManager sharedManager];
+    User *user = currentUser.currentUser;
+    CardDTO * testDTO = [[CardDTO alloc] initWithManagedObject:user.card];
+    testDTO.shouldSendCard = true;
+    testDTO.shouldReceiveCard = true;
+    NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:testDTO];
+    NSLog(@"Archived testDTO, %@", testDTO);
+
+    NSMutableArray *peerArray  =[NSMutableArray new];
+    for (MCPeerID *peer in self.sessionController.connectedPeers)
+    {
+        if([peer.displayName isEqualToString:dto.peerId])
+        {
+            [peerArray addObject:peer];
+        }
+    }
+
+
     NSError *error;
     [self.sessionController.session sendData:myData
                                      toPeers:peerArray
@@ -219,6 +286,44 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.collectionView insertItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:self.numberOfItems-1 inSection:0]]];
     });
+}
+
+- (void) getCard:(CardDTO *)dto
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+                [self performSegueWithIdentifier:@"CardReceivedSegue" sender:dto];
+        
+            });
+}
+
+- (void) removeCard:(MCPeerID *)peerId
+{
+    int indexPathRemoved = -1;
+    for (int i =0; i< self.cardDTOArray.count; i++)
+    {
+        CardDTO *dto = [self.cardDTOArray objectAtIndex:i];
+        if ([dto.peerId isEqualToString:peerId.displayName])
+        {
+
+
+            indexPathRemoved = i;
+
+
+
+
+        }
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.numberOfItems -=1 ;
+    [self.collectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:indexPathRemoved inSection:0]]];
+    //[self.collectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:i+1 inSection:0]]];
+    [self.cardDTOArray removeObjectAtIndex:indexPathRemoved];
+    });
+
+}
+- (IBAction)onSendButtonTapped:(id)sender
+{
+    [self sendCardsToAllSelected];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(CardDTO *)sender

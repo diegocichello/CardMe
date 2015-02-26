@@ -36,5 +36,7 @@ its delegate method should explicitly dispatch or schedule that work
 // Session changed state - connecting, connected and disconnected peers changed
 - (void)sessionDidChangeState;
 - (void)receiveCard:(CardDTO *)dto;
+- (void)removeCard:(MCPeerID *)peerId;
+- (void)getCard:(CardDTO *)dto;
 
 @end

@@ -38,8 +38,10 @@
         self.phoneNumber = [aDecoder decodeObjectForKey:@"phone"];
         self.cardImage = [aDecoder decodeObjectForKey:@"cardImage"];
         self.shouldSendCard = [aDecoder decodeBoolForKey:@"flag"];
+        self.shouldReceiveCard = [aDecoder decodeBoolForKey:@"receiveCard"];
         self.information = [aDecoder decodeDataObject];
         self.linkedInSmallPicture = [aDecoder decodeDataObject];
+        self.peerId = [aDecoder decodeObjectForKey:@"peerId"];
 
     }
     return self;
@@ -57,8 +59,10 @@
     [aCoder encodeObject:self.phoneNumber forKey:@"phone"];
     [aCoder encodeObject:self.cardImage forKey:@"cardImage"];
     [aCoder encodeBool:self.shouldSendCard forKey:@"flag"];
+    [aCoder encodeBool:self.shouldReceiveCard forKey:@"receiveCard"];
     [aCoder encodeDataObject:self.information];
     [aCoder encodeDataObject:self.linkedInSmallPicture];
+    [aCoder encodeObject:self.peerId forKey:@"peerId"];
 
 
 

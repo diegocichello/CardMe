@@ -37,6 +37,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *linkedinProfileLC;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *linkedinProfileRC;
 
+@property bool animationHappened;
+
 @end
 
 
@@ -52,11 +54,15 @@
     self.headlineLabel.text = self.card.info.linkedininfo.headline;
 
     self.navigationController.navigationBarHidden = false;
+    self.animationHappened = false;
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:true];
+
+    if (self.animationHappened)
+    {
 
     self.topViewLC.constant += self.view.bounds.size.width;
 
@@ -76,7 +82,7 @@
     self.linkedinProfileLC.constant += self.view.bounds.size.width;
     self.linkedinProfileRC.constant -= self.view.bounds.size.width;
 
-
+    }
 
 
 }
@@ -85,6 +91,8 @@
 {
     [super viewDidAppear:true];
 
+    if (self.animationHappened)
+    {
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.topViewLC.constant -= self.view.bounds.size.width;
         self.topViewRC.constant -= self.view.bounds.size.width;
@@ -127,6 +135,11 @@
     [UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:self.cardImage cache:YES];
 
     [UIView commitAnimations];
+    }
+    else
+    {
+        self.animationHappened = true;
+    }
 }
 
 - (IBAction)addInContactsButton:(id)sender
