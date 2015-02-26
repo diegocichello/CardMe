@@ -17,6 +17,7 @@
 
 @dynamic cardId;
 @dynamic cardType;
+@dynamic fullName;
 @dynamic colorRed;
 @dynamic colorBlue;
 @dynamic colorGreen;
@@ -34,11 +35,44 @@
 {
     NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Card"];
 
+
+
     NSArray *result = [[CoreDataManager sharedManager].moc executeFetchRequest:fetch error:nil];
 
-    complete(result);
+    NSArray *sortedArray;
+    sortedArray = [result sortedArrayUsingComparator:^NSComparisonResult(Card *a, Card *b) {
+
+        return [a.info.fullName compare:b.info.fullName];
+    }];
+
+    complete(sortedArray);
 
 }
+
++ (void) retrieveCardsThatContain:(NSString *)string withBlock:(void (^)(NSArray * array))complete
+{
+    NSFetchRequest *fetch = [NSFetchRequest fetchRequestWithEntityName:@"Card"];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"fullName beginswith[c] %@",string];
+
+    fetch.predicate = predicate;
+
+
+    NSArray *result = [[CoreDataManager sharedManager].moc executeFetchRequest:fetch error:nil];
+
+    NSArray *sortedArray;
+    sortedArray = [result sortedArrayUsingComparator:^NSComparisonResult(Card *a, Card *b) {
+
+        return [a.info.fullName compare:b.info.fullName];
+    }];
+
+
+
+
+    complete(sortedArray);
+}
+
 
 
 @end

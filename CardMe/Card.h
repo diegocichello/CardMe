@@ -14,6 +14,7 @@
 @interface Card : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * cardId;
+@property (nonatomic, retain) NSString * fullName;
 @property (nonatomic, retain) NSString * cardType;
 @property (nonatomic, retain) NSNumber * colorRed;
 @property (nonatomic, retain) NSNumber * colorBlue;
@@ -28,5 +29,6 @@
 @property (nonatomic, retain) User *user;
 
 + (void) retrieveCardsWithBlock:(void (^)(NSArray * array))complete;
++ (void) retrieveCardsThatContain:(NSString *)string withBlock:(void (^)(NSArray * array))complete;
 
 @end

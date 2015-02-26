@@ -13,6 +13,8 @@
 #import "CardInfo.h"
 #import "LinkedinInfo.h"
 
+#define kHeightForScrollView 600
+
 @interface ProfileViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
@@ -36,6 +38,11 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *linkedinProfileLC;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *linkedinProfileRC;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *gusBackgroundConstraintWidth;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *gusBackgroundConstraintHeight;
 
 @property bool animationHappened;
 
@@ -61,7 +68,7 @@
 {
     [super viewWillAppear:true];
 
-    if (self.animationHappened)
+    if (!self.animationHappened)
     {
 
     self.topViewLC.constant += self.view.bounds.size.width;
@@ -84,6 +91,9 @@
 
     }
 
+    self.gusBackgroundConstraintWidth.constant = self.view.frame.size.width;
+    self.gusBackgroundConstraintHeight.constant = kHeightForScrollView;
+
 
 }
 
@@ -91,7 +101,7 @@
 {
     [super viewDidAppear:true];
 
-    if (self.animationHappened)
+    if (!self.animationHappened)
     {
     [UIView animateWithDuration:0.3 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.topViewLC.constant -= self.view.bounds.size.width;

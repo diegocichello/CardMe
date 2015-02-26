@@ -78,11 +78,21 @@
     
     
     // Adding Page Control
-    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(130, 518, 120, 30)];
+    //self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(130, 518, 120, 30)];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(screenWidth * 0.35, screenHeight * 0.75, 120, 30)];
+    [self.pageControl setCenter:CGPointMake(self.view.frame.size.width/2, screenHeight * 0.75)];
     self.pageControl.numberOfPages = nbSlides;
     self.pageControl.currentPage = 0;
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     self.pageControl.currentPageIndicatorTintColor = [UIColor darkGrayColor];
+
+
+    //NSLog(@"%f , %f", screenWidth / 0.5,screenHeight * 0.75);
+    // Adding Page Control
+
     
     [self.view addSubview:self.pageControl];
 }

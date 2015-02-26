@@ -8,16 +8,25 @@
 
 #import "MainViewController.h"
 #import "Card.h"
+#import "CardInfo.h"
 #import "iCarousel.h"
 #import "FXImageView.h"
 #import "ProfileViewController.h"
+#import "MainViewCollectionCell.h"
+#import "MainViewTableCell.h"
+#import "LinkedinInfo.h"
 
-@interface MainViewController () <UIGestureRecognizerDelegate,iCarouselDataSource,iCarouselDelegate>
+@interface MainViewController () <UIGestureRecognizerDelegate,iCarouselDataSource,iCarouselDelegate, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate,UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *tabView;
 @property int index;
 @property (weak, nonatomic) IBOutlet iCarousel *cardCarousel;
 @property NSMutableArray *cardArray;
+@property NSMutableArray *searchedArray;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 
 
 @end
@@ -44,6 +53,8 @@
 
 
 
+
+
     //unselected icon
     //item0.image = [[UIImage imageNamed:@"white30x30"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //selected icon
@@ -61,13 +72,19 @@
 
 
 }
+- (IBAction)onTapGesture:(id)sender
+{
+    [self.searchBar resignFirstResponder];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:true]; 
     self.cardArray = [NSMutableArray new];
+    self.searchedArray = [NSMutableArray new];
     [Card retrieveCardsWithBlock:^(NSArray *array) {
         self.cardArray = [array mutableCopy];
+        self.searchedArray = [array mutableCopy];
 
         if (self.cardArray.count <3)
         {
@@ -81,13 +98,92 @@
 
         [self.cardCarousel reloadData];
     }];
+
+   
+
+
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+
+    if ([searchText isEqualToString:@""])
+    {
+        self.searchedArray = self.cardArray;
+
+    }
+    else
+    {
+    [Card retrieveCardsThatContain:searchText withBlock:^(NSArray *array) {
+
+
+        self.searchedArray = [array mutableCopy];
+
+        if (self.searchedArray.count <3)
+        {
+            self.cardCarousel.type = iCarouselTypeCoverFlow;
+
+        }
+        else
+        {
+            self.cardCarousel.type = iCarouselTypeRotary;
+        }
+
+
+    }];
+    }
+
+    [self.collectionView reloadData];
+    [self.tableView reloadData];
+
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+}
 
 - (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
 {
     self.index = (int)index;
     [self performSegueWithIdentifier:@"ProfileSegue" sender:self];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.index = (int)indexPath.row;
+    [self performSegueWithIdentifier:@"ProfileSegue" sender:self];
+
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.index = (int)indexPath.row;
+    [self performSegueWithIdentifier:@"ProfileSegue" sender:self];
+}
+- (IBAction)segmentChanged:(UISegmentedControl *)segment
+{
+    if (segment.selectedSegmentIndex == 0)
+    {
+        self.collectionView.hidden = true;
+        self.tableView.hidden = true;
+        self.cardCarousel.hidden = false;
+        self.searchBar.hidden = true;
+    }
+    else if (segment.selectedSegmentIndex ==1)
+    {
+        self.collectionView.hidden = false;
+        self.tableView.hidden = true;
+        self.cardCarousel.hidden = true;
+        self.searchBar.hidden = false;
+    }
+    else if (segment.selectedSegmentIndex ==2)
+    {
+        self.collectionView.hidden = true;
+        self.tableView.hidden = false;
+        self.cardCarousel.hidden= true;
+        self.searchBar.hidden = false;
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -100,6 +196,9 @@
     }
 
 }
+
+
+#pragma mark Carousel Methods
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
@@ -140,6 +239,52 @@
 {
     return self.cardArray.count;
 }
+
+
+#pragma mark Table View Methods
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MainViewTableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableCell"];
+    Card *card = [self.searchedArray objectAtIndex:indexPath.row];
+    cell.headlineLabel.text = card.info.headline;
+    cell.fullNameLabel.text = card.info.fullName;
+    cell.profilePicture.image = [UIImage imageWithData:card.info.linkedininfo.pictureSmall];
+    cell.profilePicture.layer.cornerRadius = 30;
+    cell.profilePicture.clipsToBounds = true;
+
+
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.searchedArray.count;
+}
+
+#pragma mark Collection View Methods
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    MainViewCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    Card *card = [self.searchedArray objectAtIndex:indexPath.row];
+
+    cell.profilePicture.image = [UIImage imageWithData:card.info.linkedininfo.pictureSmall];
+    cell.profilePicture.layer.cornerRadius = 40;
+    cell.profilePicture.clipsToBounds = true;
+    cell.firstName.text = card.info.linkedininfo.firstName;
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.searchedArray.count;
+
+}
+
+
+
+
 
 
 

@@ -128,7 +128,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CustomCollectionView *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    CustomCollectionView *cell = (CustomCollectionView *)[collectionView cellForItemAtIndexPath:indexPath];
     CardDTO *dto = [self.cardDTOArray objectAtIndex:indexPath.row];
     if ([self.cardsSelected containsObject:dto])
     {

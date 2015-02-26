@@ -192,6 +192,31 @@
     [self.phoneNumberTextField resignFirstResponder];
     [self.webURLTextField resignFirstResponder];
 
+    if ([self.fullNameTextField.text isEqualToString:@""])
+    {
+        self.fullNameTextField.placeholder = @"";
+    }
+    if ([self.emailTextField.text isEqualToString:@""])
+    {
+        self.emailTextField.placeholder = @"";
+    }
+    if ([self.headlineTextField.text isEqualToString:@""])
+    {
+        self.headlineTextField.placeholder = @"";
+    }
+    if ([self.addressTextField.text isEqualToString:@""])
+    {
+        self.addressTextField.placeholder = @"";
+    }
+    if ([self.phoneNumberTextField.text isEqualToString:@""])
+    {
+        self.phoneNumberTextField.placeholder = @"";
+    }
+    if ([self.webURLTextField.text isEqualToString:@""])
+    {
+        self.webURLTextField.placeholder = @"";
+    }
+
 
     CGRect screenRect = [self.cardView bounds];
 
@@ -234,7 +259,7 @@
     CardInfo *cardInfo = [NSEntityDescription insertNewObjectForEntityForName:@"CardInfo" inManagedObjectContext:[CoreDataManager sharedManager].moc];
 
     card.info = cardInfo;
-
+    card.fullName = self.fullNameTextField.text;
     card.info.address = self.addressTextField.text;
     card.info.fullName = self.fullNameTextField.text;
     card.info.headline = self.headlineTextField.text;

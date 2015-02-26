@@ -49,13 +49,13 @@
                                                      attributes:@{NSFontAttributeName:self.desc.font}
                                                         context:nil].size;
     
-    CGRect frame = self.desc.frame;
-    frame.size.height = expectedLabelSize.height;
+//    CGRect frame = self.desc.frame;
+//    frame.size.height = expectedLabelSize.height;
+//
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        self.desc.frame = frame;
+//    });    
 
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.desc.frame = frame;
-    });    
-    
     
     // imageview
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -104,7 +104,7 @@
     
     [UIView animateWithDuration:0.3
                           delay:0.0
-                        options: UIViewAnimationCurveEaseInOut
+                        options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          self.getStarted.alpha = 1;
                          self.signIn.alpha = 1;

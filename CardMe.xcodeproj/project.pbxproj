@@ -72,6 +72,8 @@
 		298B140A1A941CA0003FA165 /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = 298B14081A941CA0003FA165 /* UIImage+FX.m */; };
 		29969C6A1A9D9C2B005A1318 /* MyCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29969C691A9D9C2B005A1318 /* MyCardViewController.m */; };
 		29969C6D1A9DAB55005A1318 /* FontsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29969C6C1A9DAB55005A1318 /* FontsViewController.m */; };
+		29969C721A9EEAC8005A1318 /* MainViewCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29969C711A9EEAC8005A1318 /* MainViewCollectionCell.m */; };
+		29969C751A9EEB2B005A1318 /* MainViewTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29969C741A9EEB2B005A1318 /* MainViewTableCell.m */; };
 		29B23ECA1A96B046002514B5 /* CardReceivedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B23EC91A96B046002514B5 /* CardReceivedViewController.m */; };
 		29C5276D1A97E980005F610B /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C5275F1A97E980005F610B /* first.png */; };
 		29C5276E1A97E980005F610B /* fourth.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C527601A97E980005F610B /* fourth.png */; };
@@ -223,6 +225,10 @@
 		29969C691A9D9C2B005A1318 /* MyCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCardViewController.m; sourceTree = "<group>"; };
 		29969C6B1A9DAB55005A1318 /* FontsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontsViewController.h; sourceTree = "<group>"; };
 		29969C6C1A9DAB55005A1318 /* FontsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontsViewController.m; sourceTree = "<group>"; };
+		29969C701A9EEAC8005A1318 /* MainViewCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewCollectionCell.h; sourceTree = "<group>"; };
+		29969C711A9EEAC8005A1318 /* MainViewCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewCollectionCell.m; sourceTree = "<group>"; };
+		29969C731A9EEB2B005A1318 /* MainViewTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewTableCell.h; sourceTree = "<group>"; };
+		29969C741A9EEB2B005A1318 /* MainViewTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewTableCell.m; sourceTree = "<group>"; };
 		29B23EC81A96B046002514B5 /* CardReceivedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardReceivedViewController.h; sourceTree = "<group>"; };
 		29B23EC91A96B046002514B5 /* CardReceivedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardReceivedViewController.m; sourceTree = "<group>"; };
 		29C5275F1A97E980005F610B /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
@@ -317,18 +323,6 @@
 				291BD7011A8BDF6F00B8FE20 /* AppDelegate.h */,
 				291BD7021A8BDF6F00B8FE20 /* AppDelegate.m */,
 				291BD70A1A8BDF6F00B8FE20 /* Main.storyboard */,
-				29969C6B1A9DAB55005A1318 /* FontsViewController.h */,
-				29969C6C1A9DAB55005A1318 /* FontsViewController.m */,
-				29969C681A9D9C2B005A1318 /* MyCardViewController.h */,
-				29969C691A9D9C2B005A1318 /* MyCardViewController.m */,
-				2962107E1A97CE8B00698759 /* CustomCollectionViewLayout.h */,
-				2962107F1A97CE8B00698759 /* CustomCollectionViewLayout.m */,
-				2962107B1A97CACB00698759 /* CustomCollectionView.h */,
-				2962107C1A97CACB00698759 /* CustomCollectionView.m */,
-				2956029F1A96F7C3001F72EC /* ProfileViewController.h */,
-				295602A01A96F7C3001F72EC /* ProfileViewController.m */,
-				29B23EC81A96B046002514B5 /* CardReceivedViewController.h */,
-				29B23EC91A96B046002514B5 /* CardReceivedViewController.m */,
 				291BD70F1A8BDF6F00B8FE20 /* LaunchScreen.xib */,
 				291BD7991A8D8F4300B8FE20 /* Images.xcassets */,
 				291BD7041A8BDF6F00B8FE20 /* CardMe.xcdatamodeld */,
@@ -491,11 +485,17 @@
 		291BD7A21A8DA83500B8FE20 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				29969C6F1A9EEA52005A1318 /* Main View Controller */,
+				29969C6E1A9EEA2D005A1318 /* Share View Controller */,
 				298B13F71A92B63B003FA165 /* First Setup Views */,
-				291BD79E1A8DA82000B8FE20 /* MainViewController.h */,
-				291BD79F1A8DA82000B8FE20 /* MainViewController.m */,
-				35DA2A3E1A8DC0DF00E6D1F2 /* MCPBrowerViewController.h */,
-				35DA2A3F1A8DC0DF00E6D1F2 /* MCPBrowerViewController.m */,
+				29969C6B1A9DAB55005A1318 /* FontsViewController.h */,
+				29969C6C1A9DAB55005A1318 /* FontsViewController.m */,
+				29969C681A9D9C2B005A1318 /* MyCardViewController.h */,
+				29969C691A9D9C2B005A1318 /* MyCardViewController.m */,
+				29B23EC81A96B046002514B5 /* CardReceivedViewController.h */,
+				29B23EC91A96B046002514B5 /* CardReceivedViewController.m */,
+				2956029F1A96F7C3001F72EC /* ProfileViewController.h */,
+				295602A01A96F7C3001F72EC /* ProfileViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -533,6 +533,32 @@
 				298B14081A941CA0003FA165 /* UIImage+FX.m */,
 			);
 			name = FXImageView;
+			sourceTree = "<group>";
+		};
+		29969C6E1A9EEA2D005A1318 /* Share View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2962107E1A97CE8B00698759 /* CustomCollectionViewLayout.h */,
+				2962107F1A97CE8B00698759 /* CustomCollectionViewLayout.m */,
+				2962107B1A97CACB00698759 /* CustomCollectionView.h */,
+				2962107C1A97CACB00698759 /* CustomCollectionView.m */,
+				35DA2A3E1A8DC0DF00E6D1F2 /* MCPBrowerViewController.h */,
+				35DA2A3F1A8DC0DF00E6D1F2 /* MCPBrowerViewController.m */,
+			);
+			name = "Share View Controller";
+			sourceTree = "<group>";
+		};
+		29969C6F1A9EEA52005A1318 /* Main View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				291BD79E1A8DA82000B8FE20 /* MainViewController.h */,
+				291BD79F1A8DA82000B8FE20 /* MainViewController.m */,
+				29969C701A9EEAC8005A1318 /* MainViewCollectionCell.h */,
+				29969C711A9EEAC8005A1318 /* MainViewCollectionCell.m */,
+				29969C731A9EEB2B005A1318 /* MainViewTableCell.h */,
+				29969C741A9EEB2B005A1318 /* MainViewTableCell.m */,
+			);
+			name = "Main View Controller";
 			sourceTree = "<group>";
 		};
 		29C5275E1A97E96B005F610B /* Onboarding */ = {
@@ -716,6 +742,7 @@
 				298B14091A941CA0003FA165 /* FXImageView.m in Sources */,
 				291BD74F1A8BDFCB00B8FE20 /* LIALinkedInApplication.m in Sources */,
 				29C527741A97E980005F610B /* TDBWalkthrough.m in Sources */,
+				29969C751A9EEB2B005A1318 /* MainViewTableCell.m in Sources */,
 				291BD73D1A8BDFAB00B8FE20 /* AFNetworkReachabilityManager.m in Sources */,
 				291BD79D1A8D90D600B8FE20 /* RootViewController.m in Sources */,
 				291BD7411A8BDFAB00B8FE20 /* AFURLResponseSerialization.m in Sources */,
@@ -726,6 +753,7 @@
 				29B23ECA1A96B046002514B5 /* CardReceivedViewController.m in Sources */,
 				291BD7001A8BDF6F00B8FE20 /* main.m in Sources */,
 				291BD7501A8BDFCB00B8FE20 /* LIALinkedInAuthorizationViewController.m in Sources */,
+				29969C721A9EEAC8005A1318 /* MainViewCollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -141,7 +141,7 @@
 
     Card *card = [NSEntityDescription insertNewObjectForEntityForName:@"Card" inManagedObjectContext:[CoreDataManager sharedManager].moc];
 
-
+    card.fullName = self.dto.fullName;
     card.fontName = self.dto.fonts[0];
     card.fontSize = self.dto.fonts[1];
     card.colorRed = self.dto.colors[0];

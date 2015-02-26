@@ -82,6 +82,8 @@
 
         [CoreDataManager sharedManager].currentUser = user;
     }
+
+    [[CoreDataManager sharedManager].moc save:nil];
 }
 
 
