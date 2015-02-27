@@ -1289,12 +1289,11 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-ZJ-wpP">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">CardMe is an app that makes your card exchanges easier so you don't have to hold anymore hundreds of paper cards and can do it entirely on our app.
+                                <mutableString key="text">CardMe is an app that makes your business card exchanges easier. Instead of having to keep track of hundreds of paper cards, you can store and exchange digital business cards entirely on our app.
 
-To start is really easy, we need you to link our app with your Linkedin account so we can grab the most important business information of you so instead of just having a paper business card with contact info the person will be able to see all your skills and competences with just one click on your card!
+Getting started is really easy. Simply sign in using your LinkedIn account. We use your LinkedIn profile  to create a custom business card that showcases your skills and experiences with just one click. You can then customize the appearance of the card and exchange it with other CardMe users in the area. 
 
-
-                                </string>
+                                </mutableString>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1428,7 +1427,7 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                     <outletCollection property="gestureRecognizers" destination="3eI-8L-8eB" appends="YES" id="Haz-RX-6Ed"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="So this is how your card looks like, if you want to change something, just click on the field." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JII-Pf-uu4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" This is how your card will look like, if you want to change something, just click on the field." lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JII-Pf-uu4">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1444,7 +1443,8 @@ To start is really easy, we need you to link our app with your Linkedin account 
                                         <exclude reference="kcl-Es-PWF"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="45" width="702" height="116"/>
                                     <mask key="constraints">
                                         <include reference="kcl-Es-PWF"/>
                                     </mask>

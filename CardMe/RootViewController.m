@@ -93,9 +93,9 @@ typedef NS_ENUM(NSInteger, TDBButtonTag) {
 
     // Setting the text for the different slides of the walkthrough
     walkthrough.descriptions = [NSArray arrayWithObjects:
-                                @"Create your own personalized card",
-                                @"Import your information from LinkedIn",
-                                @"Exchange cards with nearby users",
+                                @"Collect business cards linked to Linkedin",
+                                @"Exchange card with nearby users",
+                                @"Customize your personal card",
                                 @"Browse your collection of cards",
                                 nil];
 
